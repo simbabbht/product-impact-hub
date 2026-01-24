@@ -1,10 +1,11 @@
 import { useState, FormEvent } from 'react';
-import { Mail, Linkedin, Calendar, Send, CheckCircle } from 'lucide-react';
+import { Mail, Linkedin, Send, CheckCircle } from 'lucide-react';
 
 export function Contact() {
   const [formState, setFormState] = useState({
     name: '',
     email: '',
+    profession: '',
     message: '',
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -15,7 +16,7 @@ export function Contact() {
     setIsSubmitted(true);
     setTimeout(() => {
       setIsSubmitted(false);
-      setFormState({ name: '', email: '', message: '' });
+      setFormState({ name: '', email: '', profession: '', message: '' });
     }, 3000);
   };
 
@@ -31,14 +32,14 @@ export function Contact() {
           {/* Quick links */}
           <div className="flex flex-wrap justify-center gap-3 mb-10">
             <a 
-              href="mailto:contact@example.com" 
+              href="mailto:simonbabouhot.pro@gmail.com" 
               className="btn-primary"
             >
               <Mail className="w-4 h-4" />
               Email
             </a>
             <a 
-              href="https://linkedin.com" 
+              href="https://www.linkedin.com/in/simonbabouhot/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="btn-secondary"
@@ -46,20 +47,11 @@ export function Contact() {
               <Linkedin className="w-4 h-4" />
               LinkedIn
             </a>
-            <a 
-              href="https://calendly.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="btn-secondary"
-            >
-              <Calendar className="w-4 h-4" />
-              Calendly
-            </a>
           </div>
 
           {/* Contact form */}
           <div className="glass-card p-6 md:p-8 text-left">
-            <h3 className="text-h3 mb-4 text-center">Ou laissez-moi un message</h3>
+            <h3 className="text-h3 mb-4 text-center">Envoyez-moi un message</h3>
             
             {isSubmitted ? (
               <div className="flex flex-col items-center justify-center py-8 text-accent">
@@ -98,6 +90,21 @@ export function Contact() {
                     onChange={(e) => setFormState(prev => ({ ...prev, email: e.target.value }))}
                     className="w-full px-4 py-3 rounded-md bg-surface border border-border focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors text-body"
                     placeholder="votre@email.com"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="profession" className="block text-small font-medium mb-1">
+                    Profession
+                  </label>
+                  <input
+                    type="text"
+                    id="profession"
+                    maxLength={100}
+                    value={formState.profession}
+                    onChange={(e) => setFormState(prev => ({ ...prev, profession: e.target.value }))}
+                    className="w-full px-4 py-3 rounded-md bg-surface border border-border focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors text-body"
+                    placeholder="Votre poste / profession"
                   />
                 </div>
                 

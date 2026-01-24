@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Index from "./pages/Index";
 import ProjectDetail from "./pages/ProjectDetail";
+import CoreStudio from "./pages/CoreStudio";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -20,6 +21,8 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/projet/:slug" element={<ProjectDetail />} />
+            <Route path="/work/:slug" element={<ProjectDetail />} />
+            <Route path="/core-studio" element={<CoreStudio />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
