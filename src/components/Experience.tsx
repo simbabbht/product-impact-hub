@@ -1,31 +1,35 @@
-import { Building2, Users, ArrowUpRight, TrendingUp, Calendar, Target } from 'lucide-react';
+import { Building2, Users, ArrowUpRight, TrendingUp, Calendar, Target, FolderOpen } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const experiences = [
   {
-    title: 'Allianz',
-    role: 'Product Owner, espace client digital',
-    subtitle: 'Espace Client Digital',
+    title: 'Allianz France',
+    role: 'Product Owner, Espace client digital',
     period: 'Depuis 2021',
     highlights: [
-      { icon: Users, text: 'Produit à forte audience (+200k utilisateurs actifs)' },
-      { icon: ArrowUpRight, text: 'Coordination métier / tech / design sur features critiques' },
-      { icon: ArrowUpRight, text: 'Amélioration continue des parcours utilisateurs' },
+      { icon: Users, text: 'Produit à forte audience (+200K utilisateurs)' },
+      { icon: ArrowUpRight, text: 'Backlog & priorisation : cadrage des besoins clients, arbitrages avec métier / IT, animation en agile' },
+      { icon: ArrowUpRight, text: 'Delivery end-to-end : user stories, suivi dev, recette/UAT, déploiement & release' },
+      { icon: TrendingUp, text: 'Mesure & amélioration continue : tests utilisateurs + dashboards KPI pour piloter la performance' },
+    ],
+    relatedProjects: [
+      { label: 'Refonte Home Espace Client', href: '/work/refonte-home-espace-client' },
+      { label: 'Déclaration de sinistre en ligne', href: '/work/declaration-sinistre-en-ligne' },
     ],
   },
   {
-    title: 'Allianz',
-    role: 'Business Developer, affiliation & e-partenariat',
-    subtitle: 'Acquisition Marketing',
+    title: 'Allianz France',
+    role: 'Business Developer, affiliation & e-Partenariat',
     period: '2020–2021',
     highlights: [
-      { icon: TrendingUp, text: 'Acquisition via display, affiliation, emailing' },
-      { icon: Users, text: '+200 000 leads/an générés' },
-      { icon: ArrowUpRight, text: '+100 campagnes marketing pilotées' },
+      { icon: TrendingUp, text: "Campagnes d'acquisition : display, affiliation, emailing, SEA" },
+      { icon: ArrowUpRight, text: 'Pilotage performance : analyse, optimisation continue et reporting' },
+      { icon: ArrowUpRight, text: 'Refonte des communications : kits & assets de campagne' },
     ],
     results: [
       '+200 000 leads/an',
       '+100 campagnes',
-      'Display, affiliation, emailing',
+      '+3 partenariats stratégiques',
     ],
   },
 ];
@@ -34,7 +38,7 @@ export function Experience() {
   return (
     <section id="experience" className="section">
       <div className="container-custom">
-        <h2 className="text-h2 text-center mb-10">Expérience</h2>
+        <h2 className="text-h2 text-center mb-10">Expériences</h2>
 
         <div className="flex flex-col gap-4 max-w-2xl mx-auto">
           {experiences.map((exp, index) => (
@@ -69,6 +73,27 @@ export function Experience() {
                       </li>
                     ))}
                   </ul>
+
+                  {exp.relatedProjects && (
+                    <div className="mt-4 pt-4 border-t border-border">
+                      <div className="flex items-center gap-2 mb-2">
+                        <FolderOpen className="w-4 h-4 text-accent" />
+                        <span className="text-small font-semibold">Projets liés</span>
+                      </div>
+                      <div className="flex flex-wrap gap-2">
+                        {exp.relatedProjects.map((project) => (
+                          <Link
+                            key={project.href}
+                            to={project.href}
+                            className="inline-flex items-center gap-1 text-small text-accent hover:text-accent/80 transition-colors"
+                          >
+                            <ArrowUpRight className="w-3 h-3" />
+                            {project.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  )}
 
                   {exp.results && (
                     <div className="mt-4 pt-4 border-t border-border">
