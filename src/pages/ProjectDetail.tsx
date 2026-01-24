@@ -6,6 +6,7 @@ import { Footer } from '@/components/Footer';
 import { ScrollToTop } from '@/components/ScrollToTop';
 import profileImage from '@/assets/SB_Profil2.png';
 import allianzLogo from '@/assets/brands/allianz.png';
+import espaceClientHero from '@/assets/projects/espace-client-hero.png';
 
 interface ProjectData {
   title: string;
@@ -22,7 +23,7 @@ interface ProjectData {
 const projectsData: Record<string, ProjectData> = {
   'refonte-home-espace-client': {
     title: "Moderniser et harmoniser l'Espace Client — une refonte à fort enjeu d'adoption",
-    image: '/placeholder.svg',
+    image: espaceClientHero,
     overview: `La homepage de l'espace client n'avait plus évolué depuis longtemps et devait être alignée avec la charte groupe Allianz, sans "casser" les habitudes d'un univers historique très différent. Le défi était d'autant plus particulier que le produit s'adresse à un périmètre défense & sécurité, avec des profils et une appétence digitale très hétérogènes.
 
 L'enjeu : réussir une transition hybride (continuité + modernisation), améliorer la lisibilité des informations clés, et renforcer l'activation / l'usage de l'espace client sur tout le portefeuille (environ 330 000 personnes concernées).
@@ -158,11 +159,19 @@ export default function ProjectDetail() {
             <span className="text-sm text-muted-foreground">Allianz France</span>
           </div>
 
-          {/* Hero image placeholder */}
-          <div className="mb-12 rounded-xl overflow-hidden border border-border bg-surface-2 flex items-center justify-center">
-            <div className="w-full h-[300px] md:h-[400px] flex items-center justify-center text-white/50">
-              <span className="text-small">Image à venir</span>
-            </div>
+          {/* Hero image */}
+          <div className="mb-12 rounded-xl overflow-hidden border border-border bg-surface-2">
+            {project.image && project.image !== '/placeholder.svg' ? (
+              <img 
+                src={project.image} 
+                alt={project.title} 
+                className="w-full h-[300px] md:h-[400px] object-cover"
+              />
+            ) : (
+              <div className="w-full h-[300px] md:h-[400px] flex items-center justify-center text-white/50">
+                <span className="text-small">Image à venir</span>
+              </div>
+            )}
           </div>
 
           {/* Content sections */}
