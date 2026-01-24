@@ -20,9 +20,9 @@ export function Skills() {
       <div className="container-custom">
         <h2 className="text-h2 text-center mb-6">Compétences</h2>
 
-        <div className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-4xl mx-auto">
           {/* Hard Skills */}
-          <div className="glass-card p-6 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+          <div className="glass-card p-4 sm:p-6 w-full opacity-0 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
             <h3 className="text-h3 mb-4 text-center">Hard skills</h3>
             <div className="flex flex-wrap justify-center gap-2">
               {hardSkills.map((skill, index) => (
@@ -37,7 +37,7 @@ export function Skills() {
           </div>
 
           {/* Soft Skills */}
-          <div className="glass-card p-6 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+          <div className="glass-card p-4 sm:p-6 w-full opacity-0 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
             <h3 className="text-h3 mb-4 text-center">Soft skills</h3>
             <div className="flex flex-wrap justify-center gap-2">
               {softSkills.map((skill) => (

@@ -27,11 +27,11 @@ export function Services() {
       <div className="container-custom">
         <h2 className="text-h2 text-center mb-10">Ce que je fais</h2>
 
-        <div className="grid md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
           {services.map((service, index) => (
             <div 
               key={service.title}
-              className="glass-card p-6 hover:border-accent/30 transition-all duration-300 opacity-0 animate-fade-in-up"
+              className="glass-card p-4 sm:p-6 w-full hover:border-accent/30 transition-all duration-300 opacity-0 animate-fade-in-up"
               style={{ animationDelay: `${0.1 + index * 0.1}s` }}
             >
               <div className="w-12 h-12 rounded-lg bg-accent-muted flex items-center justify-center mb-4">

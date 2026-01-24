@@ -7,7 +7,7 @@ export function Freelance() {
   return (
     <section id="core-studio" className="section">
       <div className="container-custom">
-        <div className="max-w-3xl mx-auto text-center">
+        <div className="w-full max-w-3xl mx-auto text-center px-0">
           {/* Location chips */}
           <div className="flex flex-wrap justify-center gap-2 mb-6">
             {locations.map((location) => (

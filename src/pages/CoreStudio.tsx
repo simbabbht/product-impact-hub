@@ -1,4 +1,4 @@
-import { Globe, Workflow, ArrowLeft, Mail } from 'lucide-react';
+import { Globe, Workflow, ArrowLeft, Mail, Settings } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const offers = [
@@ -34,6 +34,10 @@ export default function CoreStudio() {
         <div className="container-custom">
           <Link 
             to="/" 
+            onClick={(e) => {
+              e.preventDefault();
+              window.location.href = '/';
+            }}
             className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
@@ -43,9 +47,15 @@ export default function CoreStudio() {
       </header>
 
       <main className="py-16 md:py-24">
-        <div className="container-custom">
+        <div className="container-custom w-full">
           {/* Hero */}
-          <div className="max-w-2xl mx-auto text-center mb-16">
+          <div className="w-full max-w-2xl mx-auto text-center mb-16">
+            {/* Badge "Page en conception" */}
+            <div className="inline-flex items-center gap-2 text-muted-foreground text-small mb-4">
+              <Settings className="w-4 h-4" />
+              <span>— Page en conception.</span>
+            </div>
+
             <div className="inline-flex items-center gap-2 chip mb-6">
               <span className="text-accent font-semibold">Core Studio</span>
             </div>
@@ -58,18 +68,18 @@ export default function CoreStudio() {
           </div>
 
           {/* Offers */}
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl mx-auto mb-16">
             {offers.map((offer) => (
               <div 
                 key={offer.title}
-                className="glass-card p-8 hover:border-accent/30 transition-all duration-300"
+                className="glass-card p-4 sm:p-8 w-full hover:border-accent/30 transition-all duration-300"
               >
-                <div className="w-12 h-12 rounded-full bg-accent-muted flex items-center justify-center mb-6">
+                <div className="w-12 h-12 rounded-full bg-accent-muted flex items-center justify-center mb-6 mx-auto sm:mx-0">
                   <offer.icon className="w-6 h-6 text-accent" />
                 </div>
                 
-                <h2 className="text-h3 mb-3">{offer.title}</h2>
-                <p className="text-muted-foreground text-small mb-6">{offer.description}</p>
+                <h2 className="text-h3 mb-3 text-center sm:text-left">{offer.title}</h2>
+                <p className="text-muted-foreground text-small mb-6 text-center sm:text-left">{offer.description}</p>
                 
                 <ul className="space-y-2">
                   {offer.details.map((detail) => (
