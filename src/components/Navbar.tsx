@@ -14,7 +14,6 @@ const navLinks = [
 const projectLinks = [
   { href: '/work/refonte-home-espace-client', label: 'Refonte Home Espace Client' },
   { href: '/work/declaration-sinistre-en-ligne', label: 'Déclaration de sinistre en ligne' },
-  { href: '/work/changer-mon-rib', label: 'Changer mon RIB' },
 ];
 
 export function Navbar() {

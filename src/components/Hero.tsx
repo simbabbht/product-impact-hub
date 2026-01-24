@@ -60,8 +60,8 @@ export function Hero() {
                 className="w-full h-full object-cover"
               />
             </div>
-            <p className="text-body font-semibold">Simon Babouot</p>
-            <p className="text-muted-foreground text-small">Product Owner</p>
+            <p className="text-h3 font-bold">Simon Babouot</p>
+            <p className="text-muted-foreground text-body font-medium">Product Owner</p>
           </div>
         </div>
 
