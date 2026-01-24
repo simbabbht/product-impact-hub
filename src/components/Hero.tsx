@@ -6,7 +6,7 @@ export function Hero() {
   return (
     <section id="hero" className="min-h-[85vh] flex items-center section pt-[120px]">
       <div className="container-custom">
-        <div className="grid lg:grid-cols-[1fr_auto] gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-[1fr_auto] gap-12 lg:gap-16 items-start">
           {/* Left column - All content */}
           <div className="order-2 lg:order-1">
             {/* H1 */}
