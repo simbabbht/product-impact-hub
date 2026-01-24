@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { useEffect } from 'react';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, LayoutDashboard, FileCheck } from 'lucide-react';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { ScrollToTop } from '@/components/ScrollToTop';
@@ -8,6 +8,12 @@ import profileImage from '@/assets/SB_Profil2.png';
 import allianzLogo from '@/assets/brands/allianz.png';
 import espaceClientHero from '@/assets/projects/espace-client-hero.png';
 import declarationSinistreHero from '@/assets/projects/declaration-sinistre-hero.png';
+
+// Icon mapping for each project
+const projectIcons: Record<string, React.ElementType> = {
+  'refonte-home-espace-client': LayoutDashboard,
+  'declaration-sinistre-en-ligne': FileCheck,
+};
 
 interface ProjectData {
   title: string;
@@ -101,6 +107,7 @@ J'ai coordonné la refonte "dépoussiérage" en mode quick wins, avec une priori
 export default function ProjectDetail() {
   const { slug } = useParams<{ slug: string }>();
   const project = slug ? projectsData[slug] : null;
+  const ProjectIcon = slug ? projectIcons[slug] : null;
 
   // Scroll to top when component mounts
   useEffect(() => {
@@ -114,7 +121,14 @@ export default function ProjectDetail() {
         <ScrollToTop />
         <div className="container-custom section pt-[120px] text-center">
           <h1 className="text-h2 mb-4">Projet non trouvé</h1>
-          <Link to="/" className="btn-primary">
+          <Link 
+            to="/" 
+            onClick={(e) => {
+              e.preventDefault();
+              window.location.href = '/';
+            }}
+            className="btn-primary inline-flex items-center gap-2"
+          >
             <ArrowLeft className="w-4 h-4" />
             Retour à l'accueil
           </Link>
@@ -129,13 +143,13 @@ export default function ProjectDetail() {
       <Navbar />
       
       <main className="pt-[100px] pb-16">
-        <div className="container-custom">
+        <div className="container-custom w-full">
           {/* Back link */}
           <Link 
             to="/" 
             onClick={(e) => {
               e.preventDefault();
-              window.location.href = '/#experience';
+              window.location.href = '/';
             }}
             className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-8 cursor-pointer"
           >
@@ -143,11 +157,14 @@ export default function ProjectDetail() {
             Retour à l'accueil
           </Link>
 
-          {/* Title - centered */}
-          <h1 className="text-h1 mb-4 text-foreground text-center">{project.title}</h1>
+          {/* Title with icon - centered */}
+          <div className="flex items-center justify-center gap-3 mb-4">
+            {ProjectIcon && <ProjectIcon className="w-8 h-8 text-accent flex-shrink-0" />}
+            <h1 className="text-h1 text-foreground text-center">{project.title}</h1>
+          </div>
 
           {/* Meta header - centered */}
-          <div className="flex items-center justify-center gap-2 mb-8">
+          <div className="flex items-center justify-center gap-2 mb-8 flex-wrap">
             <img 
               src={profileImage} 
               alt="Simon Babouhot" 
@@ -164,26 +181,26 @@ export default function ProjectDetail() {
           </div>
 
           {/* Hero image */}
-          <div className="mb-12 rounded-xl overflow-hidden border border-border bg-surface-2">
+          <div className="mb-12 rounded-xl overflow-hidden border border-border bg-surface-2 w-full">
             {project.image && project.image !== '/placeholder.svg' ? (
               <img 
                 src={project.image} 
                 alt={project.title} 
-                className="w-full h-[300px] md:h-[400px] object-cover"
+                className="w-full h-[250px] sm:h-[300px] md:h-[400px] object-cover"
               />
             ) : (
-              <div className="w-full h-[300px] md:h-[400px] flex items-center justify-center text-white/50">
+              <div className="w-full h-[250px] sm:h-[300px] md:h-[400px] flex items-center justify-center text-white/50">
                 <span className="text-small">Image à venir</span>
               </div>
             )}
           </div>
 
           {/* Content sections */}
-          <div className="max-w-3xl mx-auto space-y-12">
+          <div className="w-full max-w-3xl mx-auto space-y-12 px-0">
             {/* Contexte */}
             <section>
               <h2 className="text-h2 mb-4 text-foreground">Contexte</h2>
-              <p className="text-muted-foreground whitespace-pre-line text-justify">{project.overview}</p>
+              <p className="text-muted-foreground whitespace-pre-line text-justify break-words">{project.overview}</p>
             </section>
 
             {/* Fonctionnalités clés */}
@@ -245,15 +262,22 @@ export default function ProjectDetail() {
             </section>
 
             {/* Impact */}
-            <section className="glass-card p-6">
+            <section className="glass-card p-4 sm:p-6 w-full">
               <h2 className="text-h2 mb-4 text-foreground">Impact</h2>
-              <p className="text-accent font-medium text-justify">{project.outcome}</p>
+              <p className="text-accent font-medium text-justify break-words">{project.outcome}</p>
             </section>
           </div>
 
           {/* Back CTA */}
           <div className="text-center mt-12">
-            <Link to="/" className="btn-secondary">
+            <Link 
+              to="/" 
+              onClick={(e) => {
+                e.preventDefault();
+                window.location.href = '/';
+              }}
+              className="btn-secondary inline-flex items-center gap-2"
+            >
               <ArrowLeft className="w-4 h-4" />
               Retour à l'accueil
             </Link>
