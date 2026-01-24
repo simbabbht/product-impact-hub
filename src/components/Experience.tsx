@@ -13,8 +13,8 @@ const experiences = [
       { icon: TrendingUp, text: 'Mesure & amélioration continue : tests utilisateurs + dashboards KPI pour piloter la performance' },
     ],
     relatedProjects: [
-      { label: 'Refonte Home Espace Client', href: '/work/refonte-home-espace-client' },
-      { label: 'Déclaration de sinistre en ligne', href: '/work/declaration-sinistre-en-ligne' },
+      { label: "Moderniser et harmoniser l'Espace Client — une refonte à fort enjeu d'adoption", href: '/work/refonte-home-espace-client' },
+      { label: "Optimiser la déclaration de sinistre en ligne — moins de friction, plus d'autonomie", href: '/work/declaration-sinistre-en-ligne' },
     ],
   },
   {

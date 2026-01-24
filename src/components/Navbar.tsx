@@ -12,8 +12,8 @@ const navLinks = [
 ];
 
 const projectLinks = [
-  { href: '/work/refonte-home-espace-client', label: 'Refonte Home Espace Client' },
-  { href: '/work/declaration-sinistre-en-ligne', label: 'Déclaration de sinistre en ligne' },
+  { href: '/work/refonte-home-espace-client', label: "Moderniser et harmoniser l'Espace Client — une refonte à fort enjeu d'adoption" },
+  { href: '/work/declaration-sinistre-en-ligne', label: "Optimiser la déclaration de sinistre en ligne — moins de friction, plus d'autonomie" },
 ];
 
 export function Navbar() {
@@ -90,7 +90,7 @@ export function Navbar() {
             </button>
             
             {isProjectsDropdownOpen && (
-              <div className="absolute top-full left-0 mt-2 w-64 glass-card rounded-lg p-2 animate-fade-in border border-border bg-background shadow-lg z-50">
+              <div className="absolute top-full left-0 mt-2 w-80 glass-card rounded-lg p-2 animate-fade-in border border-border bg-background shadow-lg z-50">
                 {projectLinks.map((project) => (
                   <Link
                     key={project.href}
