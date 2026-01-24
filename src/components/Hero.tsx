@@ -16,8 +16,8 @@ export function Hero() {
           className="text-body md:text-h3 font-normal text-muted-foreground max-w-3xl mx-auto mb-6 opacity-0 animate-fade-in-up"
           style={{ animationDelay: "0.2s" }}
         >
-          Je suis Simon, Product Owner chez Allianz. J'ai à ma charge l'ensemble de de l'Espace client (env. 200K
-          utilisateurs). En parallèle, je travaille sur des projets autour de l'automatisation et de l'IA.
+          4–5 ans en grand groupe (Allianz) sur un espace client à forte audience. J'aide les équipes à construire des
+          parcours simples, prioriser efficacement et livrer proprement.
         </p>
 
         {/* Chips */}
@@ -43,7 +43,7 @@ export function Hero() {
           </a>
           <a href="https://calendly.com" target="_blank" rel="noopener noreferrer" className="btn-secondary">
             <Calendar className="w-4 h-4" />
-            Réserver 15 min
+            Réserver 30 min
           </a>
         </div>
 
