@@ -44,7 +44,7 @@ const hobbies: HobbyData[] = [
     content: {
       title: 'Musique',
       links: [
-        { label: 'Ma playlist Spotify', url: 'https://open.spotify.com/', icon: 'spotify' },
+        { label: 'Ma playlist Spotify', url: 'https://open.spotify.com/playlist/6nFxzlAX37LwJJsEI9HTmk?si=e99629903b6a418d', icon: 'spotify' },
       ],
       list: ['Led Zeppelin', 'Red Hot Chili Peppers', 'Frank Ocean'],
       albums: [

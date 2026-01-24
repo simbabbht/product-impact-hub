@@ -27,7 +27,7 @@ const experiences = [
       { icon: ArrowUpRight, text: 'Refonte des communications : kits & assets de campagne' },
     ],
     results: [
-      '+200 000 leads/an',
+      '+130 000 leads/an',
       '+100 campagnes',
       '+3 partenariats stratégiques',
     ],
