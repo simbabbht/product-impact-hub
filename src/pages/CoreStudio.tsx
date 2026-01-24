@@ -50,14 +50,11 @@ export default function CoreStudio() {
         <div className="container-custom w-full">
           {/* Hero */}
           <div className="w-full max-w-2xl mx-auto text-center mb-16">
-            {/* Badge "Page en conception" */}
-            <div className="inline-flex items-center gap-2 text-muted-foreground text-small mb-4">
-              <Settings className="w-4 h-4" />
-              <span>— Page en conception.</span>
-            </div>
-
+            {/* Badge "Page en conception" as chip */}
             <div className="inline-flex items-center gap-2 chip mb-6">
+              <Settings className="w-4 h-4" />
               <span className="text-accent font-semibold">Core Studio</span>
+              <span className="text-muted-foreground">— Page en conception</span>
             </div>
             
             <h1 className="text-h1 mb-6">Core Studio</h1>
