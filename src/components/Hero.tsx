@@ -51,7 +51,7 @@ export function Hero() {
           </div>
 
           {/* Right column - Photo only */}
-          <div className="flex flex-col items-center order-1 lg:order-2 opacity-0 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+          <div className="flex flex-col items-center order-1 lg:order-2 lg:mt-8 opacity-0 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
             <div className="w-36 h-36 md:w-44 md:h-44 rounded-full bg-surface-2 border-2 border-border flex items-center justify-center overflow-hidden mb-4">
               <span className="text-muted-foreground text-small">Photo</span>
             </div>
