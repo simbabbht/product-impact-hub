@@ -129,30 +129,36 @@ export default function ProjectDetail() {
       <main className="pt-[100px] pb-16">
         <div className="container-custom">
           {/* Back link */}
-          <Link 
-            to="/" 
+          <a 
+            href="/" 
             className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-8"
           >
             <ArrowLeft className="w-4 h-4" />
             Retour à l'accueil
-          </Link>
+          </a>
 
           {/* Title - centered */}
           <h1 className="text-h1 mb-4 text-white text-center">{project.title}</h1>
 
           {/* Meta header - centered */}
-          <div className="flex items-center justify-center gap-2 mb-8">
-            <img 
-              src={profileImage} 
-              alt="Simon Babouhot" 
-              className="w-8 h-8 rounded-full object-cover border border-border"
-            />
-            <img 
-              src={allianzLogo} 
-              alt="Allianz" 
-              className="w-8 h-8 rounded-full object-contain bg-white border border-border"
-            />
-            <span className="text-sm text-white/70">Simon Babouhot · Allianz France</span>
+          <div className="flex items-center justify-center gap-3 mb-8">
+            <div className="flex items-center gap-2">
+              <img 
+                src={profileImage} 
+                alt="Simon Babouhot" 
+                className="w-6 h-6 rounded-full object-cover border border-border"
+              />
+              <span className="text-sm text-white/70">Simon Babouhot</span>
+            </div>
+            <span className="text-white/40">·</span>
+            <div className="flex items-center gap-2">
+              <img 
+                src={allianzLogo} 
+                alt="Allianz" 
+                className="w-6 h-6 rounded-full object-contain bg-white border border-border"
+              />
+              <span className="text-sm text-white/70">Allianz France</span>
+            </div>
           </div>
 
           {/* Hero image placeholder */}
