@@ -130,8 +130,8 @@ export default function ProjectDetail() {
         <div className="container-custom">
           {/* Back link */}
           <Link 
-            to="/" 
-            onClick={() => window.scrollTo(0, 0)}
+            to="/#experience" 
+            onClick={() => setTimeout(() => document.getElementById('experience')?.scrollIntoView({ behavior: 'smooth' }), 100)}
             className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-8 cursor-pointer"
           >
             <ArrowLeft className="w-4 h-4" />
@@ -139,27 +139,23 @@ export default function ProjectDetail() {
           </Link>
 
           {/* Title - centered */}
-          <h1 className="text-h1 mb-4 text-white text-center">{project.title}</h1>
+          <h1 className="text-h1 mb-4 text-foreground text-center">{project.title}</h1>
 
           {/* Meta header - centered */}
-          <div className="flex items-center justify-center gap-3 mb-8">
-            <div className="flex items-center gap-2">
-              <img 
-                src={profileImage} 
-                alt="Simon Babouhot" 
-                className="w-6 h-6 rounded-full object-cover border border-border"
-              />
-              <span className="text-sm text-white/70">Simon Babouhot</span>
-            </div>
-            <span className="text-white/40">·</span>
-            <div className="flex items-center gap-2">
-              <img 
-                src={allianzLogo} 
-                alt="Allianz" 
-                className="w-6 h-6 rounded-full object-contain bg-white border border-border"
-              />
-              <span className="text-sm text-white/70">Allianz France</span>
-            </div>
+          <div className="flex items-center justify-center gap-2 mb-8">
+            <img 
+              src={profileImage} 
+              alt="Simon Babouhot" 
+              className="w-6 h-6 rounded-full object-cover border border-border"
+            />
+            <span className="text-sm text-muted-foreground">Simon Babouhot</span>
+            <span className="text-sm text-muted-foreground">pour</span>
+            <img 
+              src={allianzLogo} 
+              alt="Allianz" 
+              className="w-6 h-6 rounded-full object-contain bg-white border border-border"
+            />
+            <span className="text-sm text-muted-foreground">Allianz France</span>
           </div>
 
           {/* Hero image placeholder */}
@@ -173,16 +169,16 @@ export default function ProjectDetail() {
           <div className="max-w-3xl mx-auto space-y-12">
             {/* Contexte */}
             <section>
-              <h2 className="text-h2 mb-4 text-white">Contexte</h2>
-              <p className="text-white/[0.88] whitespace-pre-line">{project.overview}</p>
+              <h2 className="text-h2 mb-4 text-foreground">Contexte</h2>
+              <p className="text-muted-foreground whitespace-pre-line">{project.overview}</p>
             </section>
 
             {/* Fonctionnalités clés */}
             <section>
-              <h2 className="text-h2 mb-4 text-white">Fonctionnalités clés</h2>
+              <h2 className="text-h2 mb-4 text-foreground">Fonctionnalités clés</h2>
               <ul className="space-y-2">
                 {project.keyFeatures.map((feature, index) => (
-                  <li key={index} className="flex items-start gap-3 text-white/[0.88]">
+                  <li key={index} className="flex items-start gap-3 text-muted-foreground">
                     <span className="text-accent mt-1">•</span>
                     <span>{feature}</span>
                   </li>
@@ -192,10 +188,10 @@ export default function ProjectDetail() {
 
             {/* Approche & stratégie */}
             <section>
-              <h2 className="text-h2 mb-4 text-white">Approche & stratégie</h2>
+              <h2 className="text-h2 mb-4 text-foreground">Approche & stratégie</h2>
               <ul className="space-y-2">
                 {project.strategies.map((strategy, index) => (
-                  <li key={index} className="flex items-start gap-3 text-white/[0.88]">
+                  <li key={index} className="flex items-start gap-3 text-muted-foreground">
                     <span className="text-accent mt-1">•</span>
                     <span>{strategy}</span>
                   </li>
@@ -205,16 +201,16 @@ export default function ProjectDetail() {
 
             {/* Outils & méthodes */}
             <section>
-              <h2 className="text-h2 mb-4 text-white">Outils & méthodes</h2>
-              <p className="text-white/[0.88]">{project.technologies}</p>
+              <h2 className="text-h2 mb-4 text-foreground">Outils & méthodes</h2>
+              <p className="text-muted-foreground">{project.technologies}</p>
             </section>
 
             {/* Résultats */}
             <section>
-              <h2 className="text-h2 mb-4 text-white">Résultats</h2>
+              <h2 className="text-h2 mb-4 text-foreground">Résultats</h2>
               <ul className="space-y-2">
                 {project.results.map((result, index) => (
-                  <li key={index} className="flex items-start gap-3 text-white/[0.88]">
+                  <li key={index} className="flex items-start gap-3 text-muted-foreground">
                     <span className="text-accent mt-1">•</span>
                     <span>{result}</span>
                   </li>
@@ -224,10 +220,10 @@ export default function ProjectDetail() {
 
             {/* Défis & apprentissages */}
             <section>
-              <h2 className="text-h2 mb-4 text-white">Défis & apprentissages</h2>
+              <h2 className="text-h2 mb-4 text-foreground">Défis & apprentissages</h2>
               <ul className="space-y-2">
                 {project.challenges.map((challenge, index) => (
-                  <li key={index} className="flex items-start gap-3 text-white/[0.88]">
+                  <li key={index} className="flex items-start gap-3 text-muted-foreground">
                     <span className="text-accent mt-1">•</span>
                     <span>{challenge}</span>
                   </li>
@@ -237,7 +233,7 @@ export default function ProjectDetail() {
 
             {/* Impact */}
             <section className="glass-card p-6">
-              <h2 className="text-h2 mb-4 text-white">Impact</h2>
+              <h2 className="text-h2 mb-4 text-foreground">Impact</h2>
               <p className="text-accent font-medium">{project.outcome}</p>
             </section>
           </div>
