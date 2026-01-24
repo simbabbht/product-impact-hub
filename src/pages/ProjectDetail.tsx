@@ -144,20 +144,6 @@ export default function ProjectDetail() {
       
       <main className="pt-[100px] pb-16">
         <div className="container-custom w-full">
-          {/* Back button */}
-          <div className="mb-8">
-            <Link 
-              to="/" 
-              onClick={(e) => {
-                e.preventDefault();
-                window.location.href = '/';
-              }}
-              className="btn-secondary inline-flex items-center gap-2"
-            >
-              <ArrowLeft className="w-4 h-4" />
-              Retour à l'accueil
-            </Link>
-          </div>
 
           {/* Title with icon - centered */}
           <div className="flex items-center justify-center gap-3 mb-4">
