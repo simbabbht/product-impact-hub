@@ -25,7 +25,7 @@ export function Hero() {
 
             {/* Chips */}
             <div
-              className="flex flex-wrap gap-2 mb-8 opacity-0 animate-fade-in-up"
+              className="flex flex-wrap gap-2 mb-8 opacity-0 animate-fade-in-up justify-center md:justify-start"
               style={{ animationDelay: "0.3s" }}
             >
               {chips.map((chip) => (
@@ -37,7 +37,7 @@ export function Hero() {
 
             {/* CTAs */}
             <div
-              className="flex flex-wrap gap-3 opacity-0 animate-fade-in-up"
+              className="flex flex-wrap gap-3 opacity-0 animate-fade-in-up justify-center md:justify-start"
               style={{ animationDelay: "0.4s" }}
             >
               <a href="#contact" className="btn-primary">
