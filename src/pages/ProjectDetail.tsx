@@ -183,7 +183,7 @@ export default function ProjectDetail() {
             {/* Contexte */}
             <section>
               <h2 className="text-h2 mb-4 text-foreground">Contexte</h2>
-              <p className="text-muted-foreground whitespace-pre-line">{project.overview}</p>
+              <p className="text-muted-foreground whitespace-pre-line text-justify">{project.overview}</p>
             </section>
 
             {/* Fonctionnalités clés */}
@@ -247,7 +247,7 @@ export default function ProjectDetail() {
             {/* Impact */}
             <section className="glass-card p-6">
               <h2 className="text-h2 mb-4 text-foreground">Impact</h2>
-              <p className="text-accent font-medium">{project.outcome}</p>
+              <p className="text-accent font-medium text-justify">{project.outcome}</p>
             </section>
           </div>
 

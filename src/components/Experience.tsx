@@ -68,27 +68,27 @@ export function Experience() {
                   <ul className="space-y-2">
                     {exp.highlights.map((item) => (
                       <li key={item.text} className="flex items-start gap-2 text-small">
-                        <item.icon className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
-                        <span>{item.text}</span>
+                        <item.icon className="w-4 h-4 text-accent mt-0.5 flex-shrink-0 hidden md:block" />
+                        <span className="w-full">{item.text}</span>
                       </li>
                     ))}
                   </ul>
 
                   {exp.relatedProjects && (
                     <div className="mt-4 pt-4 border-t border-border">
-                      <div className="flex items-center gap-2 mb-2">
+                      <div className="flex items-center gap-2 mb-2 justify-center md:justify-start">
                         <FolderOpen className="w-4 h-4 text-accent" />
                         <span className="text-small font-semibold">Projets liés</span>
                       </div>
-                      <div className="flex flex-wrap gap-2">
+                      <div className="flex flex-col md:flex-row md:flex-wrap gap-2">
                         {exp.relatedProjects.map((project) => (
                           <Link
                             key={project.href}
                             to={project.href}
-                            className="inline-flex items-center gap-1 text-small text-accent hover:text-accent/80 transition-colors"
+                            className="inline-flex items-center gap-1 text-small text-accent hover:text-accent/80 transition-colors w-full md:w-auto"
                           >
-                            <ArrowUpRight className="w-3 h-3" />
-                            {project.label}
+                            <ArrowUpRight className="w-3 h-3 flex-shrink-0" />
+                            <span>{project.label}</span>
                           </Link>
                         ))}
                       </div>
@@ -97,11 +97,11 @@ export function Experience() {
 
                   {exp.results && (
                     <div className="mt-4 pt-4 border-t border-border">
-                      <div className="flex items-center gap-2 mb-2">
+                      <div className="flex items-center gap-2 mb-2 justify-center md:justify-start">
                         <Target className="w-4 h-4 text-accent" />
                         <span className="text-small font-semibold">Résultats</span>
                       </div>
-                      <div className="flex flex-wrap gap-2">
+                      <div className="flex flex-wrap gap-2 justify-center md:justify-start">
                         {exp.results.map((result) => (
                           <span key={result} className="chip text-xs">
                             {result}
