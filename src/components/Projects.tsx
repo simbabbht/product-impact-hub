@@ -1,8 +1,10 @@
-import { FileText, LayoutDashboard, Folder } from 'lucide-react';
+import { FileText, LayoutDashboard, Folder, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const projects = [
   {
     icon: FileText,
+    slug: 'optimisation-parcours-sinistre',
     title: 'Optimisation parcours sinistre',
     context: 'Simplification du parcours de déclaration pour les clients.',
     role: [
@@ -14,6 +16,7 @@ const projects = [
   },
   {
     icon: LayoutDashboard,
+    slug: 'refonte-onboarding',
     title: 'Refonte onboarding',
     context: 'Modernisation de l\'expérience d\'inscription nouveaux clients.',
     role: [
@@ -25,6 +28,7 @@ const projects = [
   },
   {
     icon: Folder,
+    slug: 'amelioration-espace-documents',
     title: 'Amélioration espace documents',
     context: 'Centralisation et accès simplifié aux documents clients.',
     role: [
@@ -46,7 +50,7 @@ export function Projects() {
           {projects.map((project, index) => (
             <div 
               key={project.title}
-              className="glass-card p-6 hover:border-accent/30 transition-all duration-300 opacity-0 animate-fade-in-up group"
+              className="glass-card p-6 hover:border-accent/30 transition-all duration-300 opacity-0 animate-fade-in-up group flex flex-col"
               style={{ animationDelay: `${0.1 + index * 0.1}s` }}
             >
               <div className="w-10 h-10 rounded-lg bg-accent-muted flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -65,8 +69,18 @@ export function Projects() {
                 ))}
               </ul>
               
-              <div className="pt-3 border-t border-border">
+              <div className="pt-3 border-t border-border mb-4">
                 <p className="text-xs text-accent font-medium">{project.impact}</p>
+              </div>
+
+              <div className="mt-auto">
+                <Link 
+                  to={`/projet/${project.slug}`}
+                  className="inline-flex items-center gap-2 text-small font-medium text-accent hover:text-accent/80 transition-colors"
+                >
+                  Voir le projet
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
               </div>
             </div>
           ))}

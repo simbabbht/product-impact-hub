@@ -1,5 +1,7 @@
 import { Globe, Workflow, LayoutTemplate, MapPin } from 'lucide-react';
 
+const locations = ['Nouvelle-Calédonie', 'France', 'Australie', 'Nouvelle-Zélande'];
+
 const offers = [
   {
     icon: Globe,
@@ -23,19 +25,23 @@ export function Freelance() {
     <section id="freelance" className="section">
       <div className="container-custom">
         <div className="text-center mb-10">
-          <div className="inline-flex items-center gap-2 chip mb-4">
-            <MapPin className="w-4 h-4" />
-            Nouvelle-Calédonie
+          <div className="flex flex-wrap justify-center gap-2 mb-4">
+            {locations.map((location) => (
+              <div key={location} className="inline-flex items-center gap-2 chip">
+                <MapPin className="w-4 h-4" />
+                {location}
+              </div>
+            ))}
           </div>
           <h2 className="text-h2 mb-3">Disponible pour des missions freelance</h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Installé en Nouvelle-Calédonie, je propose des missions à distance 
+            Basé en Nouvelle-Calédonie, je propose des missions à distance 
             en product management et automatisation.
           </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-4">
-          {offers.map((offer, index) => (
+          {offers.map((offer) => (
             <div 
               key={offer.title}
               className="glass-card p-6 text-center hover:border-accent/30 transition-all duration-300"
