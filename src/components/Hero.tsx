@@ -1,6 +1,6 @@
 import { ArrowRight, Calendar } from "lucide-react";
 
-const chips = ["+200k utilisateurs", "Discovery + Delivery", "UX & coordination"];
+const chips = ["Product", "Automation & IA", "Customer Experience"];
 
 export function Hero() {
   return (
@@ -8,7 +8,7 @@ export function Hero() {
       <div className="container-custom text-center">
         {/* Main heading */}
         <h1 className="text-h1 mb-4 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
-          Product Owner — Créer des expériences simples et <span className="gradient-text">utiles.</span>
+          Product Owner — Créer des expériences simples et <span className="gradient-text">utiles</span>
         </h1>
 
         {/* Subtitle */}
@@ -16,8 +16,7 @@ export function Hero() {
           className="text-body md:text-h3 font-normal text-muted-foreground max-w-3xl mx-auto mb-6 opacity-0 animate-fade-in-up"
           style={{ animationDelay: "0.2s" }}
         >
-          Je suis Simon, Product Owner pour le groupe Allianz. Je pilote l'ensemble de l'Espace client (env. 200K
-          utilisateurs). En parallèle, je travaille sur des projets autour de l'automatisation et de l'IA.
+          Je suis Simon, Product Owner pour le groupe Allianz. Je pilote l'ensemble de l'espace client (environ 200K utilisateurs). En parallèle, je travaille sur des projets autour de l'automatisation et de l'IA.
         </p>
 
         {/* Chips */}
@@ -43,7 +42,7 @@ export function Hero() {
           </a>
           <a href="https://calendly.com" target="_blank" rel="noopener noreferrer" className="btn-secondary">
             <Calendar className="w-4 h-4" />
-            Réserver 15 min
+            Prendre rendez-vous
           </a>
         </div>
 
