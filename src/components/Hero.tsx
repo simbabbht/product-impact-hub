@@ -8,7 +8,7 @@ export function Hero() {
       <div className="container-custom text-center">
         {/* Main heading */}
         <h1 className="text-h1 mb-4 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
-          Product Owner — Créer des expériences simples et utiles, <span className="gradient-text">avec impact.</span>
+          Product Owner — Créer des expériences simples et <span className="gradient-text">utiles.</span>
         </h1>
 
         {/* Subtitle */}
