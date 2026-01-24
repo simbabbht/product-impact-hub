@@ -1,4 +1,5 @@
 import { ArrowRight, Calendar } from "lucide-react";
+import profilePhoto from "@/assets/SB_Profil2.png";
 
 const chips = ["Product", "Automation & IA", "Customer Experience"];
 
@@ -43,7 +44,7 @@ export function Hero() {
                 Me contacter
                 <ArrowRight className="w-4 h-4" />
               </a>
-              <a href="https://calendly.com" target="_blank" rel="noopener noreferrer" className="btn-secondary">
+              <a href="https://calendly.com/simonbabouhot-pro/30min" target="_blank" rel="noopener noreferrer" className="btn-secondary">
                 <Calendar className="w-4 h-4" />
                 Prendre rendez-vous
               </a>
@@ -52,8 +53,12 @@ export function Hero() {
 
           {/* Right column - Photo only */}
           <div className="flex flex-col items-center order-1 lg:order-2 lg:mt-8 opacity-0 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
-            <div className="w-36 h-36 md:w-44 md:h-44 rounded-full bg-surface-2 border-2 border-border flex items-center justify-center overflow-hidden mb-4">
-              <span className="text-muted-foreground text-small">Photo</span>
+            <div className="w-36 h-36 md:w-44 md:h-44 rounded-full bg-surface-2 border-2 border-border flex items-center justify-center overflow-hidden mb-4 shadow-lg">
+              <img 
+                src={profilePhoto} 
+                alt="Simon Babouot - Product Owner" 
+                className="w-full h-full object-cover"
+              />
             </div>
             <p className="text-body font-semibold">Simon Babouot</p>
             <p className="text-muted-foreground text-small">Product Owner</p>

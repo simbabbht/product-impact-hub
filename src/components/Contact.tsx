@@ -1,5 +1,5 @@
 import { useState, FormEvent } from 'react';
-import { Mail, Linkedin, Send, CheckCircle } from 'lucide-react';
+import { Mail, Linkedin, Calendar, Send, CheckCircle } from 'lucide-react';
 
 export function Contact() {
   const [formState, setFormState] = useState({
@@ -46,6 +46,15 @@ export function Contact() {
             >
               <Linkedin className="w-4 h-4" />
               LinkedIn
+            </a>
+            <a 
+              href="https://calendly.com/simonbabouhot-pro/30min" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="btn-secondary"
+            >
+              <Calendar className="w-4 h-4" />
+              Calendly
             </a>
           </div>
 
