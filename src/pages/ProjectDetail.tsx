@@ -132,8 +132,11 @@ export default function ProjectDetail() {
         <div className="container-custom">
           {/* Back link */}
           <Link 
-            to="/#experience" 
-            onClick={() => setTimeout(() => document.getElementById('experience')?.scrollIntoView({ behavior: 'smooth' }), 100)}
+            to="/" 
+            onClick={(e) => {
+              e.preventDefault();
+              window.location.href = '/#experience';
+            }}
             className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-8 cursor-pointer"
           >
             <ArrowLeft className="w-4 h-4" />
