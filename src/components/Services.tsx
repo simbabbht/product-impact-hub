@@ -3,18 +3,21 @@ import { Target, Layers, TrendingUp } from 'lucide-react';
 const services = [
   {
     icon: Target,
-    title: 'Cadrage & vision produit',
-    description: 'Clarifier les objectifs, définir le MVP, construire une roadmap réaliste.',
+    title: 'Cadrage & stratégie produit',
+    description: 'Transformer un besoin flou en vision claire, MVP et roadmap réaliste.',
+    bullets: ['Discovery (interviews, irritants, data)', 'Story mapping & priorisation', 'Alignement stakeholders'],
   },
   {
     icon: Layers,
-    title: 'Pilotage delivery',
-    description: 'Gestion du backlog, rituels agiles, suivi release, assurance qualité.',
+    title: 'Delivery & qualité d\'exécution',
+    description: 'Piloter la livraison de bout en bout, sans surprise : backlog, dépendances, recette, release.',
+    bullets: ['Scrum / rituels & synchronisation', 'User stories + critères d\'acceptance', 'QA, UAT, suivi post-prod'],
   },
   {
     icon: TrendingUp,
-    title: 'Expérience & adoption',
-    description: 'Optimiser les parcours, réduire les frictions, mesurer l\'impact via KPI.',
+    title: 'Adoption & impact mesuré',
+    description: 'Réduire la friction, augmenter l\'autonomie, et prouver l\'impact via KPI.',
+    bullets: ['Optimisation parcours & accessibilité', 'KPI / dashboards & itérations', 'Boucle feedback → amélioration continue'],
   },
 ];
 
@@ -35,7 +38,15 @@ export function Services() {
                 <service.icon className="w-6 h-6 text-accent" />
               </div>
               <h3 className="text-h3 mb-2">{service.title}</h3>
-              <p className="text-muted-foreground text-small">{service.description}</p>
+              <p className="text-muted-foreground text-small mb-3">{service.description}</p>
+              <ul className="space-y-1">
+                {service.bullets.map((bullet) => (
+                  <li key={bullet} className="text-muted-foreground text-small flex items-start gap-2">
+                    <span className="text-accent mt-1">•</span>
+                    <span>{bullet}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>

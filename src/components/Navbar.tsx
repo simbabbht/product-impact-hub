@@ -5,7 +5,7 @@ import { Moon, Sun, Menu, X } from 'lucide-react';
 const navLinks = [
   { href: '#services', label: 'Services' },
   { href: '#competences', label: 'Compétences' },
-  { href: '#experience', label: 'Expérience' },
+  { href: '#experience', label: 'Expériences' },
   { href: '#projets', label: 'Projets' },
   { href: '#freelance', label: 'Freelance' },
   { href: '#contact', label: 'Contact' },
@@ -35,7 +35,7 @@ export function Navbar() {
       <div className="container-custom flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="text-h3 font-semibold gradient-text">
-          PO
+          SB
         </a>
 
         {/* Desktop Navigation */}
