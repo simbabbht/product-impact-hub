@@ -3,6 +3,8 @@ import { Dumbbell, Music as MusicIcon, Sparkles, X, ExternalLink, Globe } from '
 import albumLZ from '@/assets/hobbies/LZ.jpg';
 import albumRHCP from '@/assets/hobbies/RHCP.jpg';
 import albumOcean from '@/assets/hobbies/OCEAN.jpg';
+import sportRun from '@/assets/hobbies/Sport_Run.jpeg';
+import sportBike from '@/assets/hobbies/Sport_Bike.jpeg';
 import { WorldMap } from './WorldMap';
 
 interface AlbumCover {
@@ -31,11 +33,11 @@ const hobbies: HobbyData[] = [
     label: 'Sport',
     content: {
       title: 'Sport',
-      images: ['/images/hobbies-sport-1.jpg', '/images/hobbies-sport-2.jpg'],
+      images: [sportRun, sportBike],
       links: [
         { label: 'Mon profil Strava', url: 'https://www.strava.com/athletes/sbabouhot', icon: 'strava' },
       ],
-      text: 'Triathlon en préparation — objectifs progressifs et régularité.',
+      text: 'Run, Vélo, Musculation, Natation et plein d\'autres',
     },
   },
   { 
