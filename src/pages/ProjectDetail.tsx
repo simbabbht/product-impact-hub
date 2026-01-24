@@ -5,6 +5,7 @@ import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { ScrollToTop } from '@/components/ScrollToTop';
 import profileImage from '@/assets/SB_Profil2.png';
+import allianzLogo from '@/assets/brands/allianz.png';
 
 interface ProjectData {
   title: string;
@@ -136,19 +137,21 @@ export default function ProjectDetail() {
             Retour à l'accueil
           </Link>
 
-          {/* Title */}
-          <h1 className="text-h1 mb-4 text-white">{project.title}</h1>
+          {/* Title - centered */}
+          <h1 className="text-h1 mb-4 text-white text-center">{project.title}</h1>
 
-          {/* Meta header */}
-          <div className="flex items-center gap-2 mb-8">
+          {/* Meta header - centered */}
+          <div className="flex items-center justify-center gap-2 mb-8">
             <img 
               src={profileImage} 
               alt="Simon Babouhot" 
               className="w-8 h-8 rounded-full object-cover border border-border"
             />
-            <div className="w-8 h-8 rounded-full bg-[#003781] flex items-center justify-center border border-border">
-              <span className="text-white text-xs font-bold">A</span>
-            </div>
+            <img 
+              src={allianzLogo} 
+              alt="Allianz" 
+              className="w-8 h-8 rounded-full object-contain bg-white border border-border"
+            />
             <span className="text-sm text-white/70">Simon Babouhot · Allianz France</span>
           </div>
 
