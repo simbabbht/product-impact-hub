@@ -1,5 +1,11 @@
 import { useState } from 'react';
-import { Dumbbell, Music, Sparkles, X, ExternalLink } from 'lucide-react';
+import { Dumbbell, Music as MusicIcon, Sparkles, X, ExternalLink, Music2 } from 'lucide-react';
+
+interface AlbumCover {
+  src: string;
+  alt: string;
+  label: string;
+}
 
 interface HobbyData {
   icon: typeof Dumbbell;
@@ -10,6 +16,7 @@ interface HobbyData {
     links?: { label: string; url: string }[];
     text?: string;
     list?: string[];
+    albums?: AlbumCover[];
   };
 }
 
@@ -27,7 +34,7 @@ const hobbies: HobbyData[] = [
     },
   },
   { 
-    icon: Music, 
+    icon: MusicIcon, 
     label: 'Musique',
     content: {
       title: 'Musique',
@@ -35,6 +42,11 @@ const hobbies: HobbyData[] = [
         { label: 'Ma playlist Spotify', url: 'https://open.spotify.com/' },
       ],
       list: ['Led Zeppelin', 'Red Hot Chili Peppers', 'Frank Ocean'],
+      albums: [
+        { src: '/images/hobbies/music/led-zeppelin.jpg', alt: 'Led Zeppelin I album cover', label: 'Led Zeppelin I' },
+        { src: '/images/hobbies/music/blood-sugar-sex-magik.jpg', alt: 'Blood Sugar Sex Magik album cover', label: 'Blood Sugar Sex Magik' },
+        { src: '/images/hobbies/music/blonde.jpg', alt: 'Blonde album cover', label: 'Blonde' },
+      ],
     },
   },
   { 
@@ -144,6 +156,32 @@ export function About() {
                           </span>
                         ))}
                       </div>
+                    </div>
+                  )}
+
+                  {/* Album covers for Music */}
+                  {hobby.content.albums && (
+                    <div className="grid grid-cols-3 gap-3 mb-4">
+                      {hobby.content.albums.map((album) => (
+                        <div key={album.label} className="flex flex-col items-center gap-2">
+                          <div className="aspect-square w-full rounded-lg overflow-hidden glass-card border border-border/50 hover:border-accent/30 transition-colors duration-300">
+                            <img 
+                              src={album.src} 
+                              alt={album.alt}
+                              className="w-full h-full object-cover"
+                              onError={(e) => {
+                                const target = e.target as HTMLImageElement;
+                                target.style.display = 'none';
+                                const placeholder = document.createElement('div');
+                                placeholder.className = 'w-full h-full flex items-center justify-center bg-surface-2';
+                                placeholder.innerHTML = '<svg class="w-8 h-8 text-muted-foreground" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18V5l12-2v13M9 18c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3 3 1.34 3 3zM21 16c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3 3 1.34 3 3z"/></svg>';
+                                target.parentElement?.appendChild(placeholder);
+                              }}
+                            />
+                          </div>
+                          <span className="text-xs text-muted-foreground text-center">{album.label}</span>
+                        </div>
+                      ))}
                     </div>
                   )}
 

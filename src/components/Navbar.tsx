@@ -1,20 +1,28 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useTheme } from './ThemeProvider';
-import { Moon, Sun, Menu, X } from 'lucide-react';
+import { Moon, Sun, Menu, X, ChevronDown } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const navLinks = [
   { href: '#services', label: 'Services' },
+  { href: '#core-studio', label: 'Core Studio' },
   { href: '#competences', label: 'Compétences' },
   { href: '#experience', label: 'Expériences' },
-  { href: '#projets', label: 'Projets' },
-  { href: '#freelance', label: 'Freelance' },
   { href: '#contact', label: 'Contact' },
+];
+
+const projectLinks = [
+  { href: '/work/refonte-home-espace-client', label: 'Refonte Home Espace Client' },
+  { href: '/work/declaration-sinistre-en-ligne', label: 'Déclaration de sinistre en ligne' },
 ];
 
 export function Navbar() {
   const { theme, toggleTheme } = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isProjectsDropdownOpen, setIsProjectsDropdownOpen] = useState(false);
+  const [isMobileProjectsOpen, setIsMobileProjectsOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,6 +30,27 @@ export function Navbar() {
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsProjectsDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setIsProjectsDropdownOpen(false);
+        setIsMobileProjectsOpen(false);
+      }
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
   }, []);
 
   return (
@@ -49,6 +78,34 @@ export function Navbar() {
               {link.label}
             </a>
           ))}
+          
+          {/* Projects Dropdown */}
+          <div className="relative" ref={dropdownRef}>
+            <button
+              onClick={() => setIsProjectsDropdownOpen(!isProjectsDropdownOpen)}
+              aria-expanded={isProjectsDropdownOpen}
+              aria-haspopup="true"
+              className="text-small font-medium text-muted-foreground hover:text-foreground transition-colors duration-200 inline-flex items-center gap-1"
+            >
+              Projets
+              <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isProjectsDropdownOpen ? 'rotate-180' : ''}`} />
+            </button>
+            
+            {isProjectsDropdownOpen && (
+              <div className="absolute top-full left-0 mt-2 w-64 glass-card rounded-lg p-2 animate-fade-in border border-border bg-background shadow-lg z-50">
+                {projectLinks.map((project) => (
+                  <Link
+                    key={project.href}
+                    to={project.href}
+                    onClick={() => setIsProjectsDropdownOpen(false)}
+                    className="block px-3 py-2 text-small text-muted-foreground hover:text-foreground hover:bg-surface-2 rounded-md transition-colors duration-200"
+                  >
+                    {project.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Theme Toggle & Mobile Menu Button */}
@@ -93,6 +150,36 @@ export function Navbar() {
                 {link.label}
               </a>
             ))}
+            
+            {/* Mobile Projects Accordion */}
+            <div>
+              <button
+                onClick={() => setIsMobileProjectsOpen(!isMobileProjectsOpen)}
+                aria-expanded={isMobileProjectsOpen}
+                className="w-full text-left text-body font-medium text-muted-foreground hover:text-foreground transition-colors duration-200 py-2 flex items-center justify-between"
+              >
+                Projets
+                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isMobileProjectsOpen ? 'rotate-180' : ''}`} />
+              </button>
+              
+              {isMobileProjectsOpen && (
+                <div className="pl-4 flex flex-col gap-2 mt-2 border-l border-border">
+                  {projectLinks.map((project) => (
+                    <Link
+                      key={project.href}
+                      to={project.href}
+                      onClick={() => {
+                        setIsMobileMenuOpen(false);
+                        setIsMobileProjectsOpen(false);
+                      }}
+                      className="text-small text-muted-foreground hover:text-foreground transition-colors duration-200 py-1"
+                    >
+                      {project.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
         </div>
       )}
