@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import { Dumbbell, Music as MusicIcon, Sparkles, X, ExternalLink } from 'lucide-react';
+import { Dumbbell, Music as MusicIcon, Sparkles, X, ExternalLink, Globe } from 'lucide-react';
 import albumLZ from '@/assets/hobbies/LZ.jpg';
 import albumRHCP from '@/assets/hobbies/RHCP.jpg';
 import albumOcean from '@/assets/hobbies/OCEAN.jpg';
+import { WorldMap } from './WorldMap';
 
 interface AlbumCover {
   src: string;
@@ -20,6 +21,7 @@ interface HobbyData {
     text?: string;
     list?: string[];
     albums?: AlbumCover[];
+    customComponent?: 'worldMap';
   };
 }
 
@@ -53,12 +55,19 @@ const hobbies: HobbyData[] = [
     },
   },
   { 
+    icon: Globe, 
+    label: 'Voyage',
+    content: {
+      title: 'Voyage',
+      customComponent: 'worldMap',
+    },
+  },
+  { 
     icon: Sparkles, 
     label: 'Divers',
     content: {
       title: 'Divers',
-      images: ['/images/hobbies-divers-1.jpg'],
-      text: 'Je pioche des inspirations dans le design, les cultures, et les jeux de stratégie.',
+      text: 'Pas d\'actualités pour le moment.',
     },
   },
 ];
@@ -82,9 +91,13 @@ export function About() {
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-h2 mb-6">Mes hobbies</h2>
           
-          <p className="text-muted-foreground mb-8">
+          <p className="text-muted-foreground mb-2">
             Quand je ne suis pas sur un backlog, vous me trouverez à faire du sport, 
             admirer la nature, écouter de la musique — ou explorer de nouveaux designs.
+          </p>
+
+          <p className="text-small text-muted-foreground/70 mb-8">
+            Cliquez sur l'icône pour en découvrir plus.
           </p>
 
           <div className="flex flex-wrap justify-center gap-3 mb-6">
@@ -122,8 +135,13 @@ export function About() {
                     {hobby.content.title}
                   </h3>
 
+                  {/* Custom component for Voyage */}
+                  {hobby.content.customComponent === 'worldMap' && (
+                    <WorldMap />
+                  )}
+
                   {/* Images grid */}
-                  {hobby.content.images && (
+                  {hobby.content.images && !hobby.content.customComponent && (
                     <div className="grid grid-cols-2 gap-3 mb-4">
                       {hobby.content.images.map((img, idx) => (
                         <div key={idx} className="aspect-square rounded-lg overflow-hidden border border-border bg-surface-2">
@@ -142,8 +160,15 @@ export function About() {
                   )}
 
                   {/* Text */}
-                  {hobby.content.text && (
+                  {hobby.content.text && !hobby.content.customComponent && (
                     <p className="text-small text-muted-foreground mb-4">
+                      {hobby.content.text}
+                    </p>
+                  )}
+
+                  {/* Text for Divers (centered) */}
+                  {hobby.content.text && hobby.label === 'Divers' && (
+                    <p className="text-muted-foreground text-center py-8">
                       {hobby.content.text}
                     </p>
                   )}
