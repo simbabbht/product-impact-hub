@@ -1,7 +1,9 @@
 import { useParams, Link } from 'react-router-dom';
+import { useEffect } from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
+import { ScrollToTop } from '@/components/ScrollToTop';
 
 interface ProjectData {
   title: string;
@@ -81,10 +83,16 @@ export default function ProjectDetail() {
   const { slug } = useParams<{ slug: string }>();
   const project = slug ? projectsData[slug] : null;
 
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [slug]);
+
   if (!project) {
     return (
       <div className="min-h-screen bg-background">
         <Navbar />
+        <ScrollToTop />
         <div className="container-custom section pt-[120px] text-center">
           <h1 className="text-h2 mb-4">Projet non trouvé</h1>
           <Link to="/" className="btn-primary">
@@ -187,6 +195,7 @@ export default function ProjectDetail() {
         </div>
       </main>
 
+      <ScrollToTop />
       <Footer />
     </div>
   );

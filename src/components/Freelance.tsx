@@ -1,6 +1,6 @@
 import { Globe, Workflow, LayoutTemplate, MapPin } from 'lucide-react';
 
-const locations = ['Nouvelle-Calédonie', 'France', 'Australie', 'Nouvelle-Zélande'];
+const locations = ['Nouvelle-Calédonie', 'France', 'Australie & Nouvelle-Zélande'];
 
 const offers = [
   {
