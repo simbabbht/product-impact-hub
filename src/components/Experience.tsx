@@ -1,9 +1,9 @@
-import { Building2, Users, ArrowUpRight, TrendingUp, Calendar } from 'lucide-react';
+import { Building2, Users, ArrowUpRight, TrendingUp, Calendar, Target } from 'lucide-react';
 
 const experiences = [
   {
     title: 'Allianz',
-    role: 'Product Owner',
+    role: 'Product Owner, espace client digital',
     subtitle: 'Espace Client Digital',
     period: 'Depuis 2021',
     highlights: [
@@ -22,6 +22,11 @@ const experiences = [
       { icon: Users, text: '+200 000 leads/an générés' },
       { icon: ArrowUpRight, text: '+100 campagnes marketing pilotées' },
     ],
+    results: [
+      '+200 000 leads/an',
+      '+100 campagnes',
+      'Display, affiliation, emailing',
+    ],
   },
 ];
 
@@ -31,7 +36,7 @@ export function Experience() {
       <div className="container-custom">
         <h2 className="text-h2 text-center mb-10">Expérience</h2>
 
-        <div className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+        <div className="flex flex-col gap-4 max-w-2xl mx-auto">
           {experiences.map((exp, index) => (
             <div 
               key={exp.role} 
@@ -50,7 +55,6 @@ export function Experience() {
                   </div>
                   
                   <div className="flex items-center gap-2 mb-3">
-                    <p className="text-muted-foreground text-small">{exp.subtitle}</p>
                     <span className="inline-flex items-center gap-1 text-xs text-accent">
                       <Calendar className="w-3 h-3" />
                       {exp.period}
@@ -65,6 +69,22 @@ export function Experience() {
                       </li>
                     ))}
                   </ul>
+
+                  {exp.results && (
+                    <div className="mt-4 pt-4 border-t border-border">
+                      <div className="flex items-center gap-2 mb-2">
+                        <Target className="w-4 h-4 text-accent" />
+                        <span className="text-small font-semibold">Résultats</span>
+                      </div>
+                      <div className="flex flex-wrap gap-2">
+                        {exp.results.map((result) => (
+                          <span key={result} className="chip text-xs">
+                            {result}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
