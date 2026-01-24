@@ -1,5 +1,8 @@
 import { useState } from 'react';
-import { Dumbbell, Music as MusicIcon, Sparkles, X, ExternalLink, Music2 } from 'lucide-react';
+import { Dumbbell, Music as MusicIcon, Sparkles, X, ExternalLink } from 'lucide-react';
+import albumLZ from '@/assets/hobbies/LZ.jpg';
+import albumRHCP from '@/assets/hobbies/RHCP.jpg';
+import albumOcean from '@/assets/hobbies/OCEAN.jpg';
 
 interface AlbumCover {
   src: string;
@@ -43,9 +46,9 @@ const hobbies: HobbyData[] = [
       ],
       list: ['Led Zeppelin', 'Red Hot Chili Peppers', 'Frank Ocean'],
       albums: [
-        { src: '/images/hobbies/music/led-zeppelin.jpg', alt: 'Led Zeppelin I album cover', label: 'Led Zeppelin I' },
-        { src: '/images/hobbies/music/blood-sugar-sex-magik.jpg', alt: 'Blood Sugar Sex Magik album cover', label: 'Blood Sugar Sex Magik' },
-        { src: '/images/hobbies/music/blonde.jpg', alt: 'Blonde album cover', label: 'Blonde' },
+        { src: albumLZ, alt: 'Led Zeppelin II album cover', label: 'Led Zeppelin II' },
+        { src: albumRHCP, alt: 'Blood Sugar Sex Magik album cover', label: 'Blood Sugar Sex Magik' },
+        { src: albumOcean, alt: 'Blonde album cover', label: 'Blonde' },
       ],
     },
   },

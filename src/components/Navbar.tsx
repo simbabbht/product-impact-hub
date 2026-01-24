@@ -5,15 +5,16 @@ import { Link } from 'react-router-dom';
 
 const navLinks = [
   { href: '#services', label: 'Services' },
-  { href: '#core-studio', label: 'Core Studio' },
   { href: '#competences', label: 'Compétences' },
   { href: '#experience', label: 'Expériences' },
+  { href: '#freelance', label: 'Freelance' },
   { href: '#contact', label: 'Contact' },
 ];
 
 const projectLinks = [
   { href: '/work/refonte-home-espace-client', label: 'Refonte Home Espace Client' },
   { href: '/work/declaration-sinistre-en-ligne', label: 'Déclaration de sinistre en ligne' },
+  { href: '/work/changer-mon-rib', label: 'Changer mon RIB' },
 ];
 
 export function Navbar() {
@@ -69,17 +70,15 @@ export function Navbar() {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-6">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-small font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
-            >
-              {link.label}
-            </a>
-          ))}
+          {/* Services link */}
+          <a
+            href="#services"
+            className="text-small font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
+          >
+            Services
+          </a>
           
-          {/* Projects Dropdown */}
+          {/* Projects Dropdown - after Services */}
           <div className="relative" ref={dropdownRef}>
             <button
               onClick={() => setIsProjectsDropdownOpen(!isProjectsDropdownOpen)}
@@ -106,6 +105,17 @@ export function Navbar() {
               </div>
             )}
           </div>
+          
+          {/* Rest of nav links (after Projets) */}
+          {navLinks.slice(1).map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="text-small font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
+            >
+              {link.label}
+            </a>
+          ))}
         </div>
 
         {/* Theme Toggle & Mobile Menu Button */}
