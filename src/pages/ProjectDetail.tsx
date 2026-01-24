@@ -129,13 +129,14 @@ export default function ProjectDetail() {
       <main className="pt-[100px] pb-16">
         <div className="container-custom">
           {/* Back link */}
-          <a 
-            href="/" 
-            className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-8"
+          <Link 
+            to="/" 
+            onClick={() => window.scrollTo(0, 0)}
+            className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-8 cursor-pointer"
           >
             <ArrowLeft className="w-4 h-4" />
             Retour à l'accueil
-          </a>
+          </Link>
 
           {/* Title - centered */}
           <h1 className="text-h1 mb-4 text-white text-center">{project.title}</h1>
