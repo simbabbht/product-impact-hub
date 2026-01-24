@@ -7,6 +7,7 @@ import { ScrollToTop } from '@/components/ScrollToTop';
 import profileImage from '@/assets/SB_Profil2.png';
 import allianzLogo from '@/assets/brands/allianz.png';
 import espaceClientHero from '@/assets/projects/espace-client-hero.png';
+import declarationSinistreHero from '@/assets/projects/declaration-sinistre-hero.png';
 
 interface ProjectData {
   title: string;
@@ -60,7 +61,7 @@ J'ai piloté la refonte de bout en bout : cadrage produit, conception avec le de
   },
   'declaration-sinistre-en-ligne': {
     title: "Optimiser la déclaration de sinistre en ligne — moins de friction, plus d'autonomie",
-    image: '/placeholder.svg',
+    image: declarationSinistreHero,
     overview: `Le parcours de déclaration de sinistre devait gagner en simplicité et fiabilité pour accélérer la prise en charge côté gestion, réduire les frictions côté client, et favoriser le canal digital. Sur une base d'environ 200 000 utilisateurs, les demandes en ligne ont fortement progressé (~5 000 → ~8 000), rendant la qualité du parcours encore plus critique.
 
 Objectif : permettre à un assuré de déclarer un sinistre plus rapidement (en moyenne 10 min → 8 min) tout en limitant les erreurs, les blocages et les sollicitations inutiles.
