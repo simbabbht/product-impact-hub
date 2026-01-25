@@ -33,34 +33,34 @@ const projectsData: Record<string, ProjectData> = {
     image: espaceClientHero,
     overview: `L'Espace client n'avait plus évolué depuis longtemps et devait être aligné avec la charte groupe Allianz, sans "casser" les habitudes d'un univers historique très différent. Le défi était d'autant plus particulier que le produit s'adresse à un périmètre niche défense & sécurité, avec des profils et une appétence digitale très hétérogènes.
 
-L'enjeu : réussir une transition hybride (continuité + modernisation), améliorer la lisibilité des informations clés, et renforcer l'activation / l'usage de l'espace client sur tout le portefeuille (environ 330 000 personnes concernées).
+**L'enjeu** : *réussir une transition hybride* (continuité + modernisation), améliorer la lisibilité des informations clés, et renforcer l'activation / l'usage de l'espace client sur tout le portefeuille (environ 330 000 personnes concernées).
 
 J'ai piloté la refonte de bout en bout : cadrage produit, conception avec les designers, tests utilisateurs, priorisation, recette et delivery.`,
     keyFeatures: [
-      "Nouvelle hiérarchie d'information et structure de homepage (accès plus direct aux actions clés)",
-      "Harmonisation UI selon charte groupe (composants, accessibilité/contrastes, cohérence globale)",
+      "*Nouvelle hiérarchie d'information* et structure de homepage (accès plus direct aux actions clés)",
+      "*Harmonisation UI* selon charte groupe (composants, accessibilité/contrastes, cohérence globale)",
       "Optimisation de la lisibilité et des repères (éviter la perte d'habitude lors de la transition)",
       "Parcours d'activation et première connexion clarifiés",
-      "Itérations post-release basées sur retours utilisateurs et signaux d'usage",
+      "*Itérations post-release* basées sur retours utilisateurs et signaux d'usage",
     ],
     strategies: [
-      "Priorisation : focus sur le dashboard (zone la plus vue) et les frictions les plus fréquentes",
+      "Priorisation : focus sur le *dashboard* (zone la plus vue) et les *frictions* les plus fréquentes",
       "User testing terrain : participation aux tests utilisateurs pour sécuriser les choix clés",
       "Alignement transverse : coordination directions métier / IT / design sur une cible partagée",
-      "Delivery end-to-end : backlog, user stories, recette, release plan, suivi post-déploiement",
+      "*Delivery end-to-end* : backlog, user stories, recette, release plan, suivi post-déploiement",
       "Accompagnement adoption : contribution aux moyens de communication pour maximiser l'activation",
     ],
     technologies: 'Salesforce Experience Cloud, Jira, Confluence, Figma',
     results: [
-      "*Activation* : passage de 50% à 65% du portefeuille (sur ~330 000 personnes)",
-      "Usage : hausse de l'utilisation de l'espace client et des demandes en ligne (en remplacement du papier / autres canaux)",
-      "Mobile : +10% d'usage sur mobile suite à la montée en adoption de l'espace personnel pour atteindre 65%",
-      "Base produit plus cohérente et scalable pour les évolutions futures",
+      "*Activation* : passage de 50% à 65%,
+      "Usage : *hausse de l'utilisation* de l'espace client et des demandes en ligne (en remplacement du papier / autres canaux)",
+      "Mobile : *+10%* d'usage sur mobile (65% vs 35% autres),
+      "Base produit plus *cohérente* et *scalable* pour les évolutions futures",
     ],
     challenges: [
-      "Concilier charte groupe et héritage historique sans désorienter les utilisateurs",
-      "Adapter l'expérience à une population aux profils très contrastés (appétence digitale variable)",
-      "Levier clé : combiner refonte + accompagnement adoption (communication) pour amplifier les résultats",
+      "*Concilier charte groupe et héritage historique* sans désorienter les utilisateurs",
+      "*Adapter l'expérience* à une population aux profils très contrastés (appétence digitale variable)",
+      "Levier clé : combiner refonte + adoption (communication) pour amplifier les résultats",
     ],
     outcome:
       "L'Espace client est passé d'un univers vieillissant et hétérogène à une expérience cohérente, modernisée et plus lisible, tout en respectant les repères historiques. Le gain d'activation et la progression mobile ont transformé l'Espace client en canal nettement plus utilisé, et ont posé une base solide pour les prochaines améliorations produit.",
@@ -68,37 +68,37 @@ J'ai piloté la refonte de bout en bout : cadrage produit, conception avec les d
   'declaration-sinistre-en-ligne': {
     title: "Optimiser la déclaration de sinistre en ligne — moins de friction, plus d'autonomie",
     image: declarationSinistreHero,
-    overview: `Le parcours de déclaration de sinistre devait gagner en simplicité et fiabilité pour accélérer la prise en charge côté gestion, réduire les frictions côté client, et favoriser le canal digital. Sur une base d'environ 200 000 utilisateurs, les demandes en ligne ont fortement progressé (~5 000 → ~8 000), rendant la qualité du parcours encore plus critique.
+    overview: `Le parcours de déclaration de sinistre devait gagner en *simplicité et fiabilité* pour accélérer la prise en charge côté gestion, *réduire les frictions* côté client, et favoriser le canal digital. Sur une base d'environ 200 000 utilisateurs, les demandes en ligne ont fortement progressé (~5 000 → ~8 000), rendant la qualité du parcours encore plus critique.
 
-Objectif : permettre à un assuré de déclarer un sinistre plus rapidement (en moyenne 10 min → 8 min) tout en limitant les erreurs, les blocages et les sollicitations inutiles.
+Objectif : permettre à un assuré de déclarer un sinistre plus rapidement (en moyenne 10 min et *réduction 8 min*) tout en limitant les erreurs, les blocages et les sollicitations inutiles.
 
-J'ai coordonné la refonte en mode quick wins, avec une priorisation stricte (contraintes de planning), et un travail étroit avec IT et l'équipe indemnisation.`,
+J'ai coordonné la refonte en mode *quick wins*, avec une priorisation stricte (contraintes de planning), et un travail étroit avec IT et l'équipe indemnisation.`,
     keyFeatures: [
-      "Simplification UX (réduction des frictions, clarification des étapes, microcopy plus utile)",
-      "Optimisation du téléchargement de pièces (gestion des blocages fréquents liés à la taille des documents)",
-      "Amélioration de la sélection de date (réduction des erreurs de saisie)",
-      "Mise en place d'un web callback pour être recontacté / aiguillé vers le bon service en cas de blocage",
-      "Renforcement recette / UAT sur scénarios réels",
+      "*Simplification UX* (réduction des frictions, clarification des étapes, microcopy plus utile)",
+      "Optimisation du *téléchargement de pièces* (gestion des blocages fréquents liés à la taille des documents)",
+      "Amélioration de la *sélection de date* (réduction des erreurs de saisie)",
+      "Mise en place d'un *web callback* pour être recontacté / aiguillé vers le bon service en cas de blocage",
+      "*Renforcement recette / UAT* sur scénarios réels",
     ],
     strategies: [
-      "Audit des frictions : identification et priorisation des irritants (client + gestion)",
-      "Fiabilité d'abord : sécuriser les points bloquants avant d'élargir le scope",
-      "Quick wins pilotés : maximiser l'impact sous contrainte de délai",
-      "Collaboration tripartite : IT + gestion/indemnisation + produit pour arbitrer vite et bien",
-      "Optimisation orientée temps client : réduire l'effort et accélérer la complétion",
-      "Boucle de feedback : itérations basées sur retours terrain et incidents récurrents",
+      "*Audit des frictions* : identification et priorisation des irritants (client + gestion)",
+      "*Fiabilité* : sécuriser les points bloquants avant d'élargir le scope",
+      "*Quick wins pilotés* : maximiser l'impact sous contrainte de délai",
+      "*Collaboration tripartite* : IT + gestion/indemnisation + produit pour arbitrer vite et bien",
+      "Optimisation orientée temps client : *réduire l'effort et accélérer la complétion*",
+      "*Boucle de feedback* : itérations basées sur retours terrain et incidents récurrents",
     ],
     technologies: 'Salesforce Experience Cloud, SI Gestion, SI Sinistres, Jira, Confluence, Figma.',
     results: [
-      "Volume : ~5 000 → ~8 000 demandes en ligne (adoption canal digital)",
-      "Temps moyen : 10 minutes → 8 minutes pour compléter une déclaration",
-      "Impact opérationnel : demandes reçues plus vite → traitement plus rapide côté gestion / indemnisation",
-      "Parcours plus robuste sur les points historiquement bloquants (pièces, dates, accompagnement)",
+      "Volume : * de 5 000 à 8 000 demandes* en ligne (adoption canal digital)",
+      "Temps moyen : *10 minutes → 8 minutes* pour compléter une déclaration",
+      "*Impact opérationnel* : demandes reçues plus vite → traitement plus rapide côté gestion / indemnisation",
+      "Parcours *plus robuste* sur les points historiquement bloquants (pièces, dates, accompagnement)",
     ],
     challenges: [
-      "Contrôle du scope : sous contrainte de planning, la priorisation est clé (quick wins à fort impact)",
-      'Importance des "petits détails UX" (upload, dates, messages d\'erreurs) : ce sont eux qui font exploser la friction',
-      "L'accompagnement (callback) est un vrai levier anti-abandon quand le selfcare atteint ses limites",
+      "*Contrôle du scope* : sous contrainte de planning, la priorisation est clé (quick wins à fort impact)",
+      'Importance des *"petits détails UX"* (upload, dates, messages d\'erreurs) : ce sont eux qui font exploser la friction',
+      "L'accompagnement (callback) est un vrai *levier anti-abandon* quand le selfcare atteint ses limites",
     ],
     outcome:
       "Le parcours sinistre est devenu plus rapide, plus simple et mieux assisté, soutenant l'augmentation du digital et améliorant l'efficacité côté gestion. Les quick wins ont modernisé l'expérience sans refonte lourde, tout en renforçant la fiabilité sur les points critiques.",
