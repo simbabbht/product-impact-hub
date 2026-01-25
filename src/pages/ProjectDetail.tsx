@@ -29,13 +29,13 @@ interface ProjectData {
 
 const projectsData: Record<string, ProjectData> = {
   'refonte-home-espace-client': {
-    title: "Moderniser et harmoniser l'Espace Client — une refonte à fort enjeu d'adoption",
+    title: "Moderniser l'Espace Client — une refonte à fort enjeu d'adoption",
     image: espaceClientHero,
-    overview: `La homepage de l'espace client n'avait plus évolué depuis longtemps et devait être alignée avec la charte groupe Allianz, sans "casser" les habitudes d'un univers historique très différent. Le défi était d'autant plus particulier que le produit s'adresse à un périmètre défense & sécurité, avec des profils et une appétence digitale très hétérogènes.
+    overview: `L'Espace client n'avait plus évolué depuis longtemps et devait être aligné avec la charte groupe Allianz, sans "casser" les habitudes d'un univers historique très différent. Le défi était d'autant plus particulier que le produit s'adresse à un périmètre niche défense & sécurité, avec des profils et une appétence digitale très hétérogènes.
 
 L'enjeu : réussir une transition hybride (continuité + modernisation), améliorer la lisibilité des informations clés, et renforcer l'activation / l'usage de l'espace client sur tout le portefeuille (environ 330 000 personnes concernées).
 
-J'ai piloté la refonte de bout en bout : cadrage produit, conception avec le design, tests utilisateurs, priorisation, recette et delivery jusqu'à la mise en production.`,
+J'ai piloté la refonte de bout en bout : cadrage produit, conception avec les designers, tests utilisateurs, priorisation, recette et delivery.`,
     keyFeatures: [
       "Nouvelle hiérarchie d'information et structure de homepage (accès plus direct aux actions clés)",
       "Harmonisation UI selon charte groupe (composants, accessibilité/contrastes, cohérence globale)",
@@ -44,18 +44,17 @@ J'ai piloté la refonte de bout en bout : cadrage produit, conception avec le de
       "Itérations post-release basées sur retours utilisateurs et signaux d'usage",
     ],
     strategies: [
-      "Approche \"transition contrôlée\" : conserver les repères essentiels tout en modernisant l'expérience",
-      "Priorisation orientée impact : focus sur la homepage (zone la plus vue) et les frictions les plus fréquentes",
+      "Priorisation : focus sur le dashboard (zone la plus vue) et les frictions les plus fréquentes",
       "User testing terrain : participation aux tests utilisateurs pour sécuriser les choix clés",
       "Alignement transverse : coordination directions métier / IT / design sur une cible partagée",
       "Delivery end-to-end : backlog, user stories, recette, release plan, suivi post-déploiement",
       "Accompagnement adoption : contribution aux moyens de communication pour maximiser l'activation",
     ],
-    technologies: 'Jira, Confluence, Figma, recette / UAT, dashboards KPI.',
+    technologies: 'Salesforce Experience Cloud, Jira, Confluence, Figma',
     results: [
-      "Activation : environ 50% → 65–70% du portefeuille (sur ~330 000 personnes)",
-      "Usage : hausse de l'utilisation de l'espace client et des demandes en ligne (au détriment du papier / autres canaux)",
-      "Mobile : +10% d'usage sur mobile suite à la montée en adoption de l'espace personnel",
+      "Activation : passsage de 50% à 65% du portefeuille (sur ~330 000 personnes)",
+      "Usage : hausse de l'utilisation de l'espace client et des demandes en ligne (en remplacement du papier / autres canaux)",
+      "Mobile : +10% d'usage sur mobile suite à la montée en adoption de l'espace personnel pour atteindre 65%",
       "Base produit plus cohérente et scalable pour les évolutions futures",
     ],
     challenges: [
@@ -63,7 +62,7 @@ J'ai piloté la refonte de bout en bout : cadrage produit, conception avec le de
       "Adapter l'expérience à une population aux profils très contrastés (appétence digitale variable)",
       "Levier clé : combiner refonte + accompagnement adoption (communication) pour amplifier les résultats",
     ],
-    outcome: "La homepage est passée d'un univers vieillissant et hétérogène à une expérience cohérente, modernisée et plus lisible, tout en respectant les repères historiques. Le gain d'activation et la progression mobile ont transformé l'espace client en canal nettement plus utilisé, et ont posé une base solide pour les prochaines améliorations produit.",
+    outcome: "L'Espace client est passée d'un univers vieillissant et hétérogène à une expérience cohérente, modernisée et plus lisible, tout en respectant les repères historiques. Le gain d'activation et la progression mobile ont transformé l'Espace client en canal nettement plus utilisé, et ont posé une base solide pour les prochaines améliorations produit.",
   },
   'declaration-sinistre-en-ligne': {
     title: "Optimiser la déclaration de sinistre en ligne — moins de friction, plus d'autonomie",
@@ -72,7 +71,7 @@ J'ai piloté la refonte de bout en bout : cadrage produit, conception avec le de
 
 Objectif : permettre à un assuré de déclarer un sinistre plus rapidement (en moyenne 10 min → 8 min) tout en limitant les erreurs, les blocages et les sollicitations inutiles.
 
-J'ai coordonné la refonte "dépoussiérage" en mode quick wins, avec une priorisation stricte (contraintes de planning), et un travail étroit avec IT et l'équipe indemnisation.`,
+J'ai coordonné la refonte en mode quick wins, avec une priorisation stricte (contraintes de planning), et un travail étroit avec IT et l'équipe indemnisation.`,
     keyFeatures: [
       "Simplification UX (réduction des frictions, clarification des étapes, microcopy plus utile)",
       "Optimisation du téléchargement de pièces (gestion des blocages fréquents liés à la taille des documents)",
@@ -88,7 +87,7 @@ J'ai coordonné la refonte "dépoussiérage" en mode quick wins, avec une priori
       "Optimisation orientée temps client : réduire l'effort et accélérer la complétion",
       "Boucle de feedback : itérations basées sur retours terrain et incidents récurrents",
     ],
-    technologies: 'Jira, Confluence, Figma, recette / UAT, dashboards KPI.',
+    technologies: 'Salesforce Experience Cloud, SI Gestion, SI Sinistres, Jira, Confluence, Figma.',
     results: [
       "Volume : ~5 000 → ~8 000 demandes en ligne (adoption canal digital)",
       "Temps moyen : 10 minutes → 8 minutes pour compléter une déclaration",
@@ -98,7 +97,7 @@ J'ai coordonné la refonte "dépoussiérage" en mode quick wins, avec une priori
     challenges: [
       "Contrôle du scope : sous contrainte de planning, la priorisation est clé (quick wins à fort impact)",
       "Importance des \"petits détails UX\" (upload, dates, messages d'erreurs) : ce sont eux qui font exploser la friction",
-      "L'accompagnement (callback) est un vrai levier anti-abandon quand le self-serve atteint ses limites",
+      "L'accompagnement (callback) est un vrai levier anti-abandon quand le selfcare atteint ses limites",
     ],
     outcome: "Le parcours sinistre est devenu plus rapide, plus simple et mieux assisté, soutenant l'augmentation du digital et améliorant l'efficacité côté gestion. Les quick wins ont modernisé l'expérience sans refonte lourde, tout en renforçant la fiabilité sur les points critiques.",
   },
@@ -193,7 +192,7 @@ export default function ProjectDetail() {
 
             {/* Fonctionnalités clés */}
             <section>
-              <h2 className="text-h2 mb-4 text-foreground">Fonctionnalités clés</h2>
+              <h2 className="text-h2 mb-4 text-foreground">🎯 Objectifs</h2>
               <ul className="space-y-2">
                 {project.keyFeatures.map((feature, index) => (
                   <li key={index} className="flex items-start gap-3 text-muted-foreground">
@@ -206,7 +205,7 @@ export default function ProjectDetail() {
 
             {/* Approche & stratégie */}
             <section>
-              <h2 className="text-h2 mb-4 text-foreground">Approche & stratégie</h2>
+              <h2 className="text-h2 mb-4 text-foreground">♟️ Approche & stratégie</h2>
               <ul className="space-y-2">
                 {project.strategies.map((strategy, index) => (
                   <li key={index} className="flex items-start gap-3 text-muted-foreground">
@@ -219,13 +218,13 @@ export default function ProjectDetail() {
 
             {/* Outils & méthodes */}
             <section>
-              <h2 className="text-h2 mb-4 text-foreground">Outils & méthodes</h2>
+              <h2 className="text-h2 mb-4 text-foreground">⚙️ Outils & méthodes</h2>
               <p className="text-muted-foreground">{project.technologies}</p>
             </section>
 
             {/* Résultats */}
             <section>
-              <h2 className="text-h2 mb-4 text-foreground">Résultats</h2>
+              <h2 className="text-h2 mb-4 text-foreground">🥇 Résultats</h2>
               <ul className="space-y-2">
                 {project.results.map((result, index) => (
                   <li key={index} className="flex items-start gap-3 text-muted-foreground">
@@ -238,7 +237,7 @@ export default function ProjectDetail() {
 
             {/* Défis & apprentissages */}
             <section>
-              <h2 className="text-h2 mb-4 text-foreground">Défis & apprentissages</h2>
+              <h2 className="text-h2 mb-4 text-foreground">🧠 Défis & apprentissages</h2>
               <ul className="space-y-2">
                 {project.challenges.map((challenge, index) => (
                   <li key={index} className="flex items-start gap-3 text-muted-foreground">
@@ -251,7 +250,7 @@ export default function ProjectDetail() {
 
             {/* Impact */}
             <section className="glass-card p-4 sm:p-6 w-full">
-              <h2 className="text-h2 mb-4 text-foreground">Impact</h2>
+              <h2 className="text-h2 mb-4 text-foreground">🚀 Impact</h2>
               <p className="text-accent font-medium text-justify break-words">{project.outcome}</p>
             </section>
           </div>
