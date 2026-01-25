@@ -12,7 +12,7 @@ const navLinks = [
 
 const projectLinks = [
   { href: '/work/refonte-home-espace-client', label: "Moderniser et harmoniser l'Espace Client — une refonte à fort enjeu d'adoption" },
-  { href: '/work/declaration-sinistre-en-ligne', label: "Optimiser la déclaration de sinistre en ligne — moins de friction, plus d'autonomie" },
+  { href: '/work/declaration-sinistre-en-ligne', label: "Optimiser la déclaration de sinistre en ligne — moins de frictions, plus d'autonomie" },
 ];
 
 export function Navbar() {
