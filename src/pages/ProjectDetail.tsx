@@ -62,7 +62,8 @@ J'ai piloté la refonte de bout en bout : cadrage produit, conception avec les d
       "Adapter l'expérience à une population aux profils très contrastés (appétence digitale variable)",
       "Levier clé : combiner refonte + accompagnement adoption (communication) pour amplifier les résultats",
     ],
-    outcome: "L'Espace client est passé d'un univers vieillissant et hétérogène à une expérience cohérente, modernisée et plus lisible, tout en respectant les repères historiques. Le gain d'activation et la progression mobile ont transformé l'Espace client en canal nettement plus utilisé, et ont posé une base solide pour les prochaines améliorations produit.",
+    outcome:
+      "L'Espace client est passé d'un univers vieillissant et hétérogène à une expérience cohérente, modernisée et plus lisible, tout en respectant les repères historiques. Le gain d'activation et la progression mobile ont transformé l'Espace client en canal nettement plus utilisé, et ont posé une base solide pour les prochaines améliorations produit.",
   },
   'declaration-sinistre-en-ligne': {
     title: "Optimiser la déclaration de sinistre en ligne — moins de friction, plus d'autonomie",
@@ -96,10 +97,11 @@ J'ai coordonné la refonte en mode quick wins, avec une priorisation stricte (co
     ],
     challenges: [
       "Contrôle du scope : sous contrainte de planning, la priorisation est clé (quick wins à fort impact)",
-      "Importance des \"petits détails UX\" (upload, dates, messages d'erreurs) : ce sont eux qui font exploser la friction",
+      'Importance des "petits détails UX" (upload, dates, messages d\'erreurs) : ce sont eux qui font exploser la friction',
       "L'accompagnement (callback) est un vrai levier anti-abandon quand le selfcare atteint ses limites",
     ],
-    outcome: "Le parcours sinistre est devenu plus rapide, plus simple et mieux assisté, soutenant l'augmentation du digital et améliorant l'efficacité côté gestion. Les quick wins ont modernisé l'expérience sans refonte lourde, tout en renforçant la fiabilité sur les points critiques.",
+    outcome:
+      "Le parcours sinistre est devenu plus rapide, plus simple et mieux assisté, soutenant l'augmentation du digital et améliorant l'efficacité côté gestion. Les quick wins ont modernisé l'expérience sans refonte lourde, tout en renforçant la fiabilité sur les points critiques.",
   },
 };
 
@@ -109,8 +111,8 @@ function renderInlineEmphasis(text: string) {
   const parts = text.split(/(\*\*.*?\*\*|\*.*?\*)/g);
 
   return parts.map((part, i) => {
-    const isBold = part.startsWith("**") && part.endsWith("**");
-    const isSemi = !isBold && part.startsWith("*") && part.endsWith("*");
+    const isBold = part.startsWith('**') && part.endsWith('**');
+    const isSemi = !isBold && part.startsWith('*') && part.endsWith('*');
 
     if (isBold) {
       return (
@@ -149,8 +151,8 @@ export default function ProjectDetail() {
         <ScrollToTop />
         <div className="container-custom section pt-[120px] text-center">
           <h1 className="text-h2 mb-4">Projet non trouvé</h1>
-          <Link 
-            to="/" 
+          <Link
+            to="/"
             onClick={(e) => {
               e.preventDefault();
               window.location.href = '/';
@@ -169,10 +171,9 @@ export default function ProjectDetail() {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      
+
       <main className="pt-[100px] pb-16">
         <div className="container-custom w-full">
-
           {/* Title with icon - centered */}
           <div className="flex items-center justify-center gap-3 mb-4">
             {ProjectIcon && <ProjectIcon className="w-8 h-8 text-accent flex-shrink-0" />}
@@ -181,16 +182,16 @@ export default function ProjectDetail() {
 
           {/* Meta header - centered */}
           <div className="flex items-center justify-center gap-2 mb-8 flex-wrap">
-            <img 
-              src={profileImage} 
-              alt="Simon Babouhot" 
+            <img
+              src={profileImage}
+              alt="Simon Babouhot"
               className="w-6 h-6 rounded-full object-cover border border-border"
             />
             <span className="text-sm text-muted-foreground">Simon Babouhot</span>
             <span className="text-sm text-muted-foreground">pour</span>
-            <img 
-              src={allianzLogo} 
-              alt="Allianz" 
+            <img
+              src={allianzLogo}
+              alt="Allianz"
               className="w-6 h-6 rounded-full object-contain bg-white border border-border"
             />
             <span className="text-sm text-muted-foreground">Allianz France</span>
@@ -199,9 +200,9 @@ export default function ProjectDetail() {
           {/* Hero image */}
           <div className="mb-12 rounded-xl overflow-hidden border border-border bg-surface-2 w-full">
             {project.image && project.image !== '/placeholder.svg' ? (
-              <img 
-                src={project.image} 
-                alt={project.title} 
+              <img
+                src={project.image}
+                alt={project.title}
                 className="w-full h-[250px] sm:h-[300px] md:h-[400px] object-cover"
               />
             ) : (
@@ -216,7 +217,9 @@ export default function ProjectDetail() {
             {/* Contexte */}
             <section>
               <h2 className="text-h2 mb-4 text-foreground">Contexte</h2>
-              <p className="text-muted-foreground whitespace-pre-line text-justify break-words">{project.overview}</p>
+              <p className="text-muted-foreground whitespace-pre-line text-justify break-words">
+                {project.overview}
+              </p>
             </section>
 
             {/* Fonctionnalités clés */}
@@ -255,10 +258,10 @@ export default function ProjectDetail() {
             <section>
               <h2 className="text-h2 mb-4 text-foreground">🥇 Résultats</h2>
               <ul className="space-y-2">
-                {project.results.map((result, index) => (
+                {project.results?.map((result, index) => (
                   <li key={index} className="flex items-start gap-3 text-muted-foreground">
                     <span className="text-accent mt-1">•</span>
-                    <span>{result}</span>
+                    <span>{renderInlineEmphasis(result)}</span>
                   </li>
                 ))}
               </ul>
@@ -271,7 +274,7 @@ export default function ProjectDetail() {
                 {project.challenges.map((challenge, index) => (
                   <li key={index} className="flex items-start gap-3 text-muted-foreground">
                     <span className="text-accent mt-1">•</span>
-                    <span>{challenge}</span>
+                    <span>{renderInlineEmphasis(challenge)}</span>
                   </li>
                 ))}
               </ul>
@@ -286,8 +289,8 @@ export default function ProjectDetail() {
 
           {/* Back CTA */}
           <div className="text-center mt-12">
-            <Link 
-              to="/" 
+            <Link
+              to="/"
               onClick={(e) => {
                 e.preventDefault();
                 window.location.href = '/';
