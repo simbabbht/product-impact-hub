@@ -66,7 +66,7 @@ J'ai piloté la refonte de bout en bout : cadrage produit, conception avec les d
       "L'Espace client est passé d'un univers vieillissant et hétérogène à une expérience *cohérente*, *modernisée* et plus lisible, tout en respectant les repères historiques. Le gain d'activation et la progression mobile ont transformé l'Espace client en canal nettement plus utilisé, et ont posé une base solide pour les prochaines améliorations produit.",
   },
   'declaration-sinistre-en-ligne': {
-    title: "Optimiser la déclaration de sinistre en ligne — moins de friction, plus d'autonomie",
+    title: "Optimiser la déclaration de sinistre en ligne — moins de frictions, plus d'autonomie",
     image: declarationSinistreHero,
     overview: `Le parcours de déclaration de sinistre devait gagner en *simplicité et fiabilité* pour accélérer la prise en charge côté gestion, *réduire les frictions* côté client, et favoriser le canal digital. Sur une base d'environ 200 000 utilisateurs, les demandes en ligne ont fortement progressé (~5 000 → ~8 000), rendant la qualité du parcours encore plus critique.
 
