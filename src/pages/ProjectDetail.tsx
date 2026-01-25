@@ -218,7 +218,7 @@ export default function ProjectDetail() {
             <section>
               <h2 className="text-h2 mb-4 text-foreground">Contexte</h2>
               <p className="text-muted-foreground whitespace-pre-line text-justify break-words">
-                {project.overview}
+                {renderInlineEmphasis(project.overview)}
               </p>
             </section>
 
@@ -229,7 +229,7 @@ export default function ProjectDetail() {
                 {project.keyFeatures.map((feature, index) => (
                   <li key={index} className="flex items-start gap-3 text-muted-foreground">
                     <span className="text-accent mt-1">•</span>
-                    <span>{feature}</span>
+                    <span>{renderInlineEmphasis(feature)}</span>
                   </li>
                 ))}
               </ul>
@@ -242,7 +242,7 @@ export default function ProjectDetail() {
                 {project.strategies.map((strategy, index) => (
                   <li key={index} className="flex items-start gap-3 text-muted-foreground">
                     <span className="text-accent mt-1">•</span>
-                    <span>{strategy}</span>
+                    <span>{renderInlineEmphasis(strategy)}</span>
                   </li>
                 ))}
               </ul>
@@ -251,7 +251,7 @@ export default function ProjectDetail() {
             {/* Outils & méthodes */}
             <section>
               <h2 className="text-h2 mb-4 text-foreground">⚙️ Outils & méthodes</h2>
-              <p className="text-muted-foreground">{project.technologies}</p>
+              <p className="text-muted-foreground">{renderInlineEmphasis(project.technologies)}</p>
             </section>
 
             {/* Résultats */}
@@ -283,7 +283,7 @@ export default function ProjectDetail() {
             {/* Impact */}
             <section className="glass-card p-4 sm:p-6 w-full">
               <h2 className="text-h2 mb-4 text-foreground">🚀 Impact</h2>
-              <p className="text-accent font-medium text-justify break-words">{project.outcome}</p>
+              <p className="text-accent font-medium text-justify break-words">{renderInlineEmphasis(project.outcome)}</p>
             </section>
           </div>
 
