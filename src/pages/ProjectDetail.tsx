@@ -52,7 +52,7 @@ J'ai piloté la refonte de bout en bout : cadrage produit, conception avec les d
     ],
     technologies: 'Salesforce Experience Cloud, Jira, Confluence, Figma',
     results: [
-      "<strong>Activation</strong> : passsage de 50% à 65% du portefeuille (sur ~330 000 personnes)",
+      "*Activation* : passage de 50% à 65% du portefeuille (sur ~330 000 personnes)",
       "Usage : hausse de l'utilisation de l'espace client et des demandes en ligne (en remplacement du papier / autres canaux)",
       "Mobile : +10% d'usage sur mobile suite à la montée en adoption de l'espace personnel pour atteindre 65%",
       "Base produit plus cohérente et scalable pour les évolutions futures",
