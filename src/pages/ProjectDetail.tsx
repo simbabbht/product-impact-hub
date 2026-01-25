@@ -103,6 +103,35 @@ J'ai coordonné la refonte en mode quick wins, avec une priorisation stricte (co
   },
 };
 
+// Renders **bold** and *semi-bold* markers inside plain strings
+function renderInlineEmphasis(text: string) {
+  // Split on **...** or *...*
+  const parts = text.split(/(\*\*.*?\*\*|\*.*?\*)/g);
+
+  return parts.map((part, i) => {
+    const isBold = part.startsWith("**") && part.endsWith("**");
+    const isSemi = !isBold && part.startsWith("*") && part.endsWith("*");
+
+    if (isBold) {
+      return (
+        <span key={i} className="font-semibold text-foreground">
+          {part.slice(2, -2)}
+        </span>
+      );
+    }
+
+    if (isSemi) {
+      return (
+        <span key={i} className="font-medium text-foreground">
+          {part.slice(1, -1)}
+        </span>
+      );
+    }
+
+    return <span key={i}>{part}</span>;
+  });
+}
+
 export default function ProjectDetail() {
   const { slug } = useParams<{ slug: string }>();
   const project = slug ? projectsData[slug] : null;
