@@ -52,9 +52,9 @@ J'ai piloté la refonte de bout en bout : cadrage produit, conception avec les d
     ],
     technologies: 'Salesforce Experience Cloud, Jira, Confluence, Figma',
     results: [
-      "*Activation* : passage de 50% à 65%,
+      "**Activation** : passage de *50% à 65%* du portefeuille (sur ~330 000 personnes)",
       "Usage : *hausse de l'utilisation* de l'espace client et des demandes en ligne (en remplacement du papier / autres canaux)",
-      "Mobile : *+10%* d'usage sur mobile (65% vs 35% autres),
+      "Mobile : *+10%* d'usage sur mobile suite à la montée en adoption de l'espace personnel pour atteindre 65%",
       "Base produit plus *cohérente* et *scalable* pour les évolutions futures",
     ],
     challenges: [
@@ -63,14 +63,14 @@ J'ai piloté la refonte de bout en bout : cadrage produit, conception avec les d
       "Levier clé : combiner refonte + adoption (communication) pour amplifier les résultats",
     ],
     outcome:
-      "L'Espace client est passé d'un univers vieillissant et hétérogène à une expérience cohérente, modernisée et plus lisible, tout en respectant les repères historiques. Le gain d'activation et la progression mobile ont transformé l'Espace client en canal nettement plus utilisé, et ont posé une base solide pour les prochaines améliorations produit.",
+      "L'Espace client est passé d'un univers vieillissant et hétérogène à une expérience *cohérente*, *modernisée* et plus lisible, tout en respectant les repères historiques. Le gain d'activation et la progression mobile ont transformé l'Espace client en canal nettement plus utilisé, et ont posé une base solide pour les prochaines améliorations produit.",
   },
   'declaration-sinistre-en-ligne': {
     title: "Optimiser la déclaration de sinistre en ligne — moins de friction, plus d'autonomie",
     image: declarationSinistreHero,
     overview: `Le parcours de déclaration de sinistre devait gagner en *simplicité et fiabilité* pour accélérer la prise en charge côté gestion, *réduire les frictions* côté client, et favoriser le canal digital. Sur une base d'environ 200 000 utilisateurs, les demandes en ligne ont fortement progressé (~5 000 → ~8 000), rendant la qualité du parcours encore plus critique.
 
-Objectif : permettre à un assuré de déclarer un sinistre plus rapidement (en moyenne 10 min et *réduction 8 min*) tout en limitant les erreurs, les blocages et les sollicitations inutiles.
+**Objectif** : permettre à un assuré de déclarer un sinistre plus rapidement (en moyenne *10 min → 8 min*) tout en limitant les erreurs, les blocages et les sollicitations inutiles.
 
 J'ai coordonné la refonte en mode *quick wins*, avec une priorisation stricte (contraintes de planning), et un travail étroit avec IT et l'équipe indemnisation.`,
     keyFeatures: [
@@ -90,7 +90,7 @@ J'ai coordonné la refonte en mode *quick wins*, avec une priorisation stricte (
     ],
     technologies: 'Salesforce Experience Cloud, SI Gestion, SI Sinistres, Jira, Confluence, Figma.',
     results: [
-      "Volume : * de 5 000 à 8 000 demandes* en ligne (adoption canal digital)",
+      "Volume : **~5 000 → ~8 000 demandes** en ligne (adoption canal digital)",
       "Temps moyen : *10 minutes → 8 minutes* pour compléter une déclaration",
       "*Impact opérationnel* : demandes reçues plus vite → traitement plus rapide côté gestion / indemnisation",
       "Parcours *plus robuste* sur les points historiquement bloquants (pièces, dates, accompagnement)",
@@ -101,7 +101,7 @@ J'ai coordonné la refonte en mode *quick wins*, avec une priorisation stricte (
       "L'accompagnement (callback) est un vrai *levier anti-abandon* quand le selfcare atteint ses limites",
     ],
     outcome:
-      "Le parcours sinistre est devenu plus rapide, plus simple et mieux assisté, soutenant l'augmentation du digital et améliorant l'efficacité côté gestion. Les quick wins ont modernisé l'expérience sans refonte lourde, tout en renforçant la fiabilité sur les points critiques.",
+      "Le parcours sinistre est devenu *plus rapide*, *plus simple* et *mieux assisté*, soutenant l'augmentation du digital et améliorant l'efficacité côté gestion. Les quick wins ont modernisé l'expérience sans refonte lourde, tout en renforçant la fiabilité sur les points critiques.",
   },
 };
 
