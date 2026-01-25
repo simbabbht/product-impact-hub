@@ -25,7 +25,7 @@ export function Services() {
   return (
     <section id="services" className="section">
       <div className="container-custom">
-        <h2 className="text-h2 text-center mb-10">Ce que je fais</h2>
+        <h2 className="text-h2 text-center mb-10">Mes services</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
           {services.map((service, index) => (
