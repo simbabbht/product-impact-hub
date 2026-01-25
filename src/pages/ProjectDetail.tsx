@@ -52,7 +52,7 @@ J'ai piloté la refonte de bout en bout : cadrage produit, conception avec les d
     ],
     technologies: 'Salesforce Experience Cloud, Jira, Confluence, Figma',
     results: [
-      "Activation : passsage de 50% à 65% du portefeuille (sur ~330 000 personnes)",
+      "<strong>Activation</strong> : passsage de 50% à 65% du portefeuille (sur ~330 000 personnes)",
       "Usage : hausse de l'utilisation de l'espace client et des demandes en ligne (en remplacement du papier / autres canaux)",
       "Mobile : +10% d'usage sur mobile suite à la montée en adoption de l'espace personnel pour atteindre 65%",
       "Base produit plus cohérente et scalable pour les évolutions futures",
@@ -62,7 +62,7 @@ J'ai piloté la refonte de bout en bout : cadrage produit, conception avec les d
       "Adapter l'expérience à une population aux profils très contrastés (appétence digitale variable)",
       "Levier clé : combiner refonte + accompagnement adoption (communication) pour amplifier les résultats",
     ],
-    outcome: "L'Espace client est passée d'un univers vieillissant et hétérogène à une expérience cohérente, modernisée et plus lisible, tout en respectant les repères historiques. Le gain d'activation et la progression mobile ont transformé l'Espace client en canal nettement plus utilisé, et ont posé une base solide pour les prochaines améliorations produit.",
+    outcome: "L'Espace client est passé d'un univers vieillissant et hétérogène à une expérience cohérente, modernisée et plus lisible, tout en respectant les repères historiques. Le gain d'activation et la progression mobile ont transformé l'Espace client en canal nettement plus utilisé, et ont posé une base solide pour les prochaines améliorations produit.",
   },
   'declaration-sinistre-en-ligne': {
     title: "Optimiser la déclaration de sinistre en ligne — moins de friction, plus d'autonomie",
