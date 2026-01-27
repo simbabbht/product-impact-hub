@@ -34,7 +34,7 @@ export function Services() {
               className="glass-card p-4 sm:p-6 w-full hover:border-accent/30 transition-all duration-300 opacity-0 animate-fade-in-up"
               style={{ animationDelay: `${0.1 + index * 0.1}s` }}
             >
-              <div className="w-12 h-12 rounded-lg bg-accent-muted flex items-center justify-center mb-4">
+              <div className="w-12 h-12 rounded-lg bg-accent-muted flex items-center justify-center mb-4 mx-auto md:mx-0">
                 <service.icon className="w-6 h-6 text-accent" />
               </div>
               <h3 className="text-h3 mb-2">{service.title}</h3>
