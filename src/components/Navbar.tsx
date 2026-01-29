@@ -60,7 +60,7 @@ export function Navbar() {
           isScrolled ? 'top-3' : 'top-4'
         }`}
       >
-        <div className="glass-card rounded-full px-3 py-1.5 flex items-center gap-1 border border-border/30 shadow-lg backdrop-blur-xl">
+        <div className="glass-card rounded-full px-2.5 py-1 flex items-center gap-0.5 border border-border/30 shadow-lg backdrop-blur-xl">
           {/* Logo */}
           <Tooltip>
             <TooltipTrigger asChild>
@@ -82,7 +82,7 @@ export function Navbar() {
             </TooltipContent>
           </Tooltip>
 
-          <div className="w-px h-4 bg-border/50 mx-1" />
+          <div className="w-px h-3.5 bg-border/50 mx-0.5" />
 
           {/* Nav Items */}
           {navItems.map((item) => (
@@ -90,10 +90,10 @@ export function Navbar() {
               <TooltipTrigger asChild>
                 <button
                   onClick={() => handleNavClick(item.id)}
-                  className="p-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-surface-2/50 transition-all duration-200"
+                  className="p-1.5 rounded-full text-muted-foreground hover:text-foreground hover:bg-surface-2/50 transition-all duration-200"
                   aria-label={t(item.labelKey)}
                 >
-                  <item.icon className="w-4 h-4" />
+                  <item.icon className="w-3.5 h-3.5" />
                 </button>
               </TooltipTrigger>
               <TooltipContent side="bottom" className="text-xs">
@@ -102,18 +102,18 @@ export function Navbar() {
             </Tooltip>
           ))}
 
-          <div className="w-px h-4 bg-border/50 mx-1" />
+          <div className="w-px h-3.5 bg-border/50 mx-0.5" />
 
           {/* Language Toggle */}
           <Tooltip>
             <TooltipTrigger asChild>
               <button
                 onClick={() => setLanguage(language === 'fr' ? 'en' : 'fr')}
-                className="p-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-surface-2/50 transition-all duration-200 flex items-center gap-1"
+                className="p-1.5 rounded-full text-muted-foreground hover:text-foreground hover:bg-surface-2/50 transition-all duration-200 flex items-center gap-0.5"
                 aria-label={language === 'fr' ? 'Switch to English' : 'Passer en français'}
               >
-                <Globe className="w-4 h-4" />
-                <span className="text-xs font-medium uppercase">{language}</span>
+                <Globe className="w-3.5 h-3.5" />
+                <span className="text-[10px] font-medium uppercase">{language}</span>
               </button>
             </TooltipTrigger>
             <TooltipContent side="bottom" className="text-xs">
@@ -126,13 +126,13 @@ export function Navbar() {
             <TooltipTrigger asChild>
               <button
                 onClick={toggleTheme}
-                className="p-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-surface-2/50 transition-all duration-200"
+                className="p-1.5 rounded-full text-muted-foreground hover:text-foreground hover:bg-surface-2/50 transition-all duration-200"
                 aria-label={theme === 'dark' ? 'Light mode' : 'Dark mode'}
               >
                 {theme === 'dark' ? (
-                  <Sun className="w-4 h-4" />
+                  <Sun className="w-3.5 h-3.5" />
                 ) : (
-                  <Moon className="w-4 h-4" />
+                  <Moon className="w-3.5 h-3.5" />
                 )}
               </button>
             </TooltipTrigger>
@@ -163,14 +163,6 @@ export function Navbar() {
 
             {/* Right side controls */}
             <div className="flex items-center gap-1">
-              {/* Language */}
-              <button
-                onClick={() => setLanguage(language === 'fr' ? 'en' : 'fr')}
-                className="p-2 rounded-full text-muted-foreground hover:text-foreground transition-colors"
-              >
-                <span className="text-xs font-medium uppercase">{language}</span>
-              </button>
-
               {/* Theme */}
               <button
                 onClick={toggleTheme}
@@ -205,6 +197,18 @@ export function Navbar() {
                   <span className="text-sm font-medium">{t(item.labelKey)}</span>
                 </button>
               ))}
+              
+              {/* Language toggle in mobile menu */}
+              <button
+                onClick={() => {
+                  setLanguage(language === 'fr' ? 'en' : 'fr');
+                  setIsMobileMenuOpen(false);
+                }}
+                className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-muted-foreground hover:text-foreground hover:bg-surface-2/50 transition-all duration-200 text-left"
+              >
+                <Globe className="w-4 h-4" />
+                <span className="text-sm font-medium">{language === 'fr' ? 'English' : 'Français'}</span>
+              </button>
             </div>
           </div>
         )}
