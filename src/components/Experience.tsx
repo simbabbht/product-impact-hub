@@ -1,16 +1,16 @@
-import { Building2, Users, ArrowUpRight, TrendingUp, Calendar, Target, FolderOpen } from 'lucide-react';
+import { Building2, ArrowRight, TrendingUp, Calendar, Target, FolderOpen } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const experiences = [
   {
     title: 'Allianz France',
-    role: 'Product Owner, Espace client digital',
+    role: 'Product Owner, Espace Client digital',
     period: 'Depuis 2021',
     highlights: [
-      { icon: Users, text: 'Produit à forte audience (+200K utilisateurs)' },
-      { icon: ArrowUpRight, text: 'Backlog & priorisation : cadrage des besoins clients, arbitrages avec métier / IT, animation en agile' },
-      { icon: ArrowUpRight, text: 'Delivery end-to-end : user stories, suivi dev, recette/UAT, déploiement & release' },
-      { icon: TrendingUp, text: 'Mesure & amélioration continue : tests utilisateurs + dashboards KPI pour piloter la performance' },
+      { text: '+200K utilisateurs' },
+      { text: 'Backlog & priorisation : cadrage des besoins clients, arbitrages avec métier / IT, animation en agile' },
+      { text: 'Delivery end-to-end : user stories, suivi dev, recette/UAT, déploiement & release' },
+      { text: 'Mesure & amélioration continue : tests utilisateurs + dashboards KPI pour piloter la performance' },
     ],
     relatedProjects: [
       { label: "Moderniser et harmoniser l'Espace Client — une refonte à fort enjeu d'adoption", href: '/work/refonte-home-espace-client' },
@@ -19,12 +19,12 @@ const experiences = [
   },
   {
     title: 'Allianz France',
-    role: 'Business Developer, affiliation & e-Partenariat',
+    role: 'Business Developer, Affiliation & E-partenariat',
     period: '2020–2021',
     highlights: [
-      { icon: TrendingUp, text: "Campagnes d'acquisition : display, affiliation, emailing, SEA" },
-      { icon: ArrowUpRight, text: 'Pilotage performance : analyse, optimisation continue et reporting' },
-      { icon: ArrowUpRight, text: 'Refonte des communications : kits & assets de campagne' },
+      { text: "Campagnes d'acquisition : display, affiliation, emailing, SEA" },
+      { text: 'Pilotage performance : analyse, optimisation continue et reporting' },
+      { text: 'Refonte des communications : kits & assets de campagne' },
     ],
     results: [
       '+130 000 leads/an',
@@ -71,7 +71,7 @@ export function Experience() {
                   <ul className="space-y-2 w-full">
                     {exp.highlights.map((item) => (
                       <li key={item.text} className="flex items-start gap-2 text-small w-full">
-                        <item.icon className="w-4 h-4 text-accent mt-0.5 flex-shrink-0 hidden md:block" />
+                        <ArrowRight className="w-4 h-4 text-accent mt-0.5 flex-shrink-0 hidden md:block" />
                         <span className="w-full break-words">{item.text}</span>
                       </li>
                     ))}
@@ -109,7 +109,7 @@ export function Experience() {
                             to={project.href}
                             className="flex items-start gap-1 text-small text-accent hover:text-accent/80 transition-colors w-full break-words"
                           >
-                            <ArrowUpRight className="w-3 h-3 flex-shrink-0 mt-0.5" />
+                            <ArrowRight className="w-3 h-3 flex-shrink-0 mt-0.5" />
                             <span className="break-words">{project.label}</span>
                           </Link>
                         ))}

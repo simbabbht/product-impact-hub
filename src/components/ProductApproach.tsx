@@ -3,8 +3,8 @@ import { Target, Layers, TrendingUp } from 'lucide-react';
 const approachBlocks = [
   {
     icon: Target,
-    title: 'Vision & cadrage',
-    description: 'Objectifs, besoins utilisateurs, contraintes, scope & priorités',
+    title: 'Stratégie & cadrage',
+    description: 'Vision, objectifs, priorisation, alignement stakeholders',
   },
   {
     icon: Layers,
@@ -13,25 +13,21 @@ const approachBlocks = [
   },
   {
     icon: TrendingUp,
-    title: 'Mesure & amélioration continue',
+    title: 'Impact & amélioration',
     description: 'KPI, frictions, itérations, adoption & autonomie',
   },
 ];
 
-const hardSkills = [
+const skills = [
   'Agile / Scrum',
   'Backlog & User Stories',
   'UX/UI (Figma)',
+  'Jira / Confluence',
   'Data & KPI',
   'Recette & UAT',
-];
-
-const softSkills = [
   'Leadership collaboratif',
   'Communication claire',
   'Adaptabilité',
-  'Curiosité',
-  'Analyse',
 ];
 
 export function ProductApproach() {
@@ -57,42 +53,23 @@ export function ProductApproach() {
           ))}
         </div>
 
-        {/* Skills chips - more compact */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-3xl mx-auto">
-          {/* Hard Skills */}
-          <div className="glass-card p-4 w-full opacity-0 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-            <h3 className="text-small font-semibold mb-3 text-center">Hard skills</h3>
-            <div className="flex flex-wrap justify-center gap-2">
-              {hardSkills.map((skill) => (
-                <span
-                  key={skill}
-                  className="px-2.5 py-1 rounded-full bg-surface border border-border text-xs font-medium hover:border-accent/50 hover:bg-accent-muted transition-all duration-200 cursor-default"
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* Soft Skills */}
-          <div className="glass-card p-4 w-full opacity-0 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
-            <h3 className="text-small font-semibold mb-3 text-center">Soft skills</h3>
-            <div className="flex flex-wrap justify-center gap-2">
-              {softSkills.map((skill) => (
-                <span
-                  key={skill}
-                  className="px-2.5 py-1 rounded-full bg-surface border border-border text-xs font-medium hover:border-accent/50 hover:bg-accent-muted transition-all duration-200 cursor-default"
-                >
-                  {skill}
-                </span>
-              ))}
-              {/* Easter egg chip */}
+        {/* Unified skills chips */}
+        <div className="glass-card p-4 w-full max-w-3xl mx-auto opacity-0 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+          <div className="flex flex-wrap justify-center gap-2">
+            {skills.map((skill) => (
               <span
-                className="px-2.5 py-1 rounded-full bg-accent/10 border border-accent/30 text-xs font-medium hover:border-accent/50 hover:bg-accent/15 transition-all duration-200 cursor-default"
+                key={skill}
+                className="px-2.5 py-1 rounded-full bg-surface border border-border text-xs font-medium hover:border-accent/50 hover:bg-accent-muted transition-all duration-200 cursor-default"
               >
-                Always smiling 🙂
+                {skill}
               </span>
-            </div>
+            ))}
+            {/* Easter egg chip */}
+            <span
+              className="px-2.5 py-1 rounded-full bg-accent/10 border border-accent/30 text-xs font-medium hover:border-accent/50 hover:bg-accent/15 transition-all duration-200 cursor-default"
+            >
+              Always smiling 🙂
+            </span>
           </div>
         </div>
       </div>

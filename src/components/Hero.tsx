@@ -5,7 +5,7 @@ const chips = ["Product", "Automation & IA", "Customer Experience"];
 
 export function Hero() {
   return (
-    <section id="hero" className="min-h-[85vh] flex items-center section pt-[120px]">
+    <section id="hero" className="min-h-[85vh] flex items-center section pt-16 md:pt-24">
       <div className="container-custom">
         <div className="grid lg:grid-cols-[1fr_auto] gap-12 lg:gap-16 items-start">
           {/* Left column - All content */}
@@ -20,12 +20,13 @@ export function Hero() {
               className="text-body md:text-h3 font-normal text-muted-foreground max-w-2xl mb-6 opacity-0 animate-fade-in-up"
               style={{ animationDelay: "0.2s" }}
             >
-              Je suis Simon, Product Owner pour le groupe Allianz. Je pilote l'ensemble de l'espace client (environ 200K utilisateurs). En parallèle, je travaille sur des projets autour de l'automatisation et de l'IA.
+              Je suis Simon, Product Owner avec 5+ ans d'expérience, notamment au sein du groupe Allianz.
+              Je conçois des produits simples et utiles, avec un focus sur l'expérience client, le selfcare, et l'automatisation/IA.
             </p>
 
             {/* Chips */}
             <div
-              className="flex flex-wrap gap-2 mb-3 opacity-0 animate-fade-in-up justify-center md:justify-start"
+              className="flex flex-wrap gap-2 mb-8 opacity-0 animate-fade-in-up justify-center md:justify-start"
               style={{ animationDelay: "0.3s" }}
             >
               {chips.map((chip) => (
@@ -34,14 +35,6 @@ export function Hero() {
                 </span>
               ))}
             </div>
-
-            {/* Freelance availability micro-line */}
-            <p
-              className="text-small text-muted-foreground mb-8 opacity-0 animate-fade-in-up text-center md:text-left"
-              style={{ animationDelay: "0.35s" }}
-            >
-              Disponible en freelance — France / Nouvelle-Calédonie
-            </p>
 
             {/* CTAs */}
             <div

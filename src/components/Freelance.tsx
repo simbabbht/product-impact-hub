@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 const locations = ['Nouvelle-Calédonie', 'France', 'Australie', 'Nouvelle-Zélande'];
 
 const serviceLines = [
-  { label: 'Product Management', desc: 'apps & espaces clients, parcours selfcare, sinistres & documents, pilotage KPI' },
-  { label: 'Automatisation & IA', desc: 'workflows, no-code, agents IA, intégrations, reporting & dashboards' },
+  { label: 'Product Management', desc: 'apps, espaces clients, parcours selfcare, pilotage KPI' },
+  { label: 'Automatisation & IA', desc: 'workflows, no-code, agents IA, intégrations' },
 ];
 
 export function Freelance() {
