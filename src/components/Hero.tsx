@@ -5,7 +5,7 @@ const chips = ["Product", "Automation & IA", "Customer Experience"];
 
 export function Hero() {
   return (
-    <section id="hero" className="min-h-[85vh] flex items-center section pt-24 md:pt-20">
+    <section id="hero" className="min-h-[85vh] flex items-center section pt-28 md:pt-32 lg:pt-28">
       <div className="container-custom">
         <div className="grid lg:grid-cols-[1fr_auto] gap-12 lg:gap-16 items-start">
           {/* Left column - All content */}
@@ -20,7 +20,7 @@ export function Hero() {
               className="text-body md:text-h3 font-normal text-muted-foreground max-w-2xl mb-6 opacity-0 animate-fade-in-up"
               style={{ animationDelay: "0.2s" }}
             >
-              Je suis Simon, Product Owner avec 5+ ans d'expérience, notamment au sein du groupe Allianz.
+              Je suis Simon, Product Owner avec +5 ans d'expérience, notamment au sein du groupe Allianz.
               Je conçois des produits simples et utiles, avec un focus sur l'expérience client, le selfcare, et l'automatisation/IA.
             </p>
 
