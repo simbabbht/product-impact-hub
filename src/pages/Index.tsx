@@ -1,4 +1,3 @@
-import { Navbar } from '@/components/Navbar';
 import { Hero } from '@/components/Hero';
 import { Freelance } from '@/components/Freelance';
 import { ProductApproach } from '@/components/ProductApproach';
@@ -7,11 +6,11 @@ import { About } from '@/components/About';
 import { Contact } from '@/components/Contact';
 import { Footer } from '@/components/Footer';
 import { ScrollToTop } from '@/components/ScrollToTop';
+import { BottomNav } from '@/components/BottomNav';
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
-      <Navbar />
+    <div className="min-h-screen pb-24">
       <main>
         <Hero />
         <Freelance />
@@ -22,6 +21,7 @@ const Index = () => {
       </main>
       <ScrollToTop />
       <Footer />
+      <BottomNav />
     </div>
   );
 };
