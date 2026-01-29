@@ -7,13 +7,11 @@ import { Contact } from '@/components/Contact';
 import { Footer } from '@/components/Footer';
 import { ScrollToTop } from '@/components/ScrollToTop';
 import { Navbar } from '@/components/Navbar';
-import { MobileNav } from '@/components/MobileNav';
 
 const Index = () => {
   return (
-    <div className="min-h-screen pb-20 md:pb-0">
+    <div className="min-h-screen">
       <Navbar />
-      <MobileNav />
       <main>
         <Hero />
         <Freelance />
