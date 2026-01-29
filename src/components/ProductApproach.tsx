@@ -1,0 +1,102 @@
+import { Target, Layers, TrendingUp } from 'lucide-react';
+
+const approachBlocks = [
+  {
+    icon: Target,
+    title: 'Cadrage & priorisation',
+    description: 'Objectifs, user needs, découpage, backlog',
+  },
+  {
+    icon: Layers,
+    title: 'Delivery agile',
+    description: 'User stories, rituels, recette/UAT, releases',
+  },
+  {
+    icon: TrendingUp,
+    title: 'Mesure & adoption',
+    description: 'KPI, réduction de friction, itérations, autonomie utilisateur',
+  },
+];
+
+const hardSkills = [
+  'Agile / Scrum',
+  'Backlog & User Stories',
+  'UX/UI (Figma)',
+  'Jira / Confluence',
+  'Data visualisation',
+  'Recette & UAT',
+];
+
+const softSkills = [
+  'Leadership collaboratif',
+  'Communication claire',
+  'Adaptabilité',
+  'Curiosité',
+  'Analyse',
+];
+
+export function ProductApproach() {
+  return (
+    <section id="approche" className="section py-12 bg-surface-2/30">
+      <div className="container-custom">
+        <h2 className="text-h2 text-center mb-8">Mon approche produit</h2>
+
+        {/* Approach blocks */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full max-w-4xl mx-auto mb-8">
+          {approachBlocks.map((block, index) => (
+            <div
+              key={block.title}
+              className="glass-card p-4 sm:p-5 w-full hover:border-accent/30 transition-all duration-300 opacity-0 animate-fade-in-up text-center"
+              style={{ animationDelay: `${0.1 + index * 0.1}s` }}
+            >
+              <div className="w-10 h-10 rounded-lg bg-accent-muted flex items-center justify-center mb-3 mx-auto">
+                <block.icon className="w-5 h-5 text-accent" />
+              </div>
+              <h3 className="text-body font-semibold mb-1">{block.title}</h3>
+              <p className="text-muted-foreground text-small">{block.description}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Skills chips */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-4xl mx-auto">
+          {/* Hard Skills */}
+          <div className="glass-card p-4 sm:p-5 w-full opacity-0 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+            <h3 className="text-body font-semibold mb-3 text-center">Hard skills</h3>
+            <div className="flex flex-wrap justify-center gap-2">
+              {hardSkills.map((skill) => (
+                <span
+                  key={skill}
+                  className="px-3 py-1.5 rounded-full bg-surface border border-border text-small font-medium hover:border-accent/50 hover:bg-accent-muted transition-all duration-200 cursor-default"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Soft Skills */}
+          <div className="glass-card p-4 sm:p-5 w-full opacity-0 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
+            <h3 className="text-body font-semibold mb-3 text-center">Soft skills</h3>
+            <div className="flex flex-wrap justify-center gap-2">
+              {softSkills.map((skill) => (
+                <span
+                  key={skill}
+                  className="px-3 py-1.5 rounded-full bg-surface border border-border text-small font-medium hover:border-accent/50 hover:bg-accent-muted transition-all duration-200 cursor-default"
+                >
+                  {skill}
+                </span>
+              ))}
+              {/* Easter egg chip */}
+              <span
+                className="px-3 py-1.5 rounded-full bg-accent/10 border border-accent/30 text-small font-medium hover:border-accent/50 hover:bg-accent/15 transition-all duration-200 cursor-default"
+              >
+                Always smiling 🙂
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
