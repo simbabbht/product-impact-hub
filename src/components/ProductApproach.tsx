@@ -3,18 +3,18 @@ import { Target, Layers, TrendingUp } from 'lucide-react';
 const approachBlocks = [
   {
     icon: Target,
-    title: 'Cadrage & priorisation',
-    description: 'Objectifs, user needs, découpage, backlog',
+    title: 'Vision & cadrage',
+    description: 'Objectifs, besoins utilisateurs, contraintes, scope & priorités',
   },
   {
     icon: Layers,
-    title: 'Delivery agile',
-    description: 'User stories, rituels, recette/UAT, releases',
+    title: 'Delivery end-to-end',
+    description: 'Backlog, user stories, agile, recette/UAT, release & suivi',
   },
   {
     icon: TrendingUp,
-    title: 'Mesure & adoption',
-    description: 'KPI, réduction de friction, itérations, autonomie utilisateur',
+    title: 'Mesure & amélioration continue',
+    description: 'KPI, frictions, itérations, adoption & autonomie',
   },
 ];
 
@@ -22,8 +22,7 @@ const hardSkills = [
   'Agile / Scrum',
   'Backlog & User Stories',
   'UX/UI (Figma)',
-  'Jira / Confluence',
-  'Data visualisation',
+  'Data & KPI',
   'Recette & UAT',
 ];
 
@@ -58,16 +57,16 @@ export function ProductApproach() {
           ))}
         </div>
 
-        {/* Skills chips */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-4xl mx-auto">
+        {/* Skills chips - more compact */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-3xl mx-auto">
           {/* Hard Skills */}
-          <div className="glass-card p-4 sm:p-5 w-full opacity-0 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-            <h3 className="text-body font-semibold mb-3 text-center">Hard skills</h3>
+          <div className="glass-card p-4 w-full opacity-0 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+            <h3 className="text-small font-semibold mb-3 text-center">Hard skills</h3>
             <div className="flex flex-wrap justify-center gap-2">
               {hardSkills.map((skill) => (
                 <span
                   key={skill}
-                  className="px-3 py-1.5 rounded-full bg-surface border border-border text-small font-medium hover:border-accent/50 hover:bg-accent-muted transition-all duration-200 cursor-default"
+                  className="px-2.5 py-1 rounded-full bg-surface border border-border text-xs font-medium hover:border-accent/50 hover:bg-accent-muted transition-all duration-200 cursor-default"
                 >
                   {skill}
                 </span>
@@ -76,20 +75,20 @@ export function ProductApproach() {
           </div>
 
           {/* Soft Skills */}
-          <div className="glass-card p-4 sm:p-5 w-full opacity-0 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
-            <h3 className="text-body font-semibold mb-3 text-center">Soft skills</h3>
+          <div className="glass-card p-4 w-full opacity-0 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
+            <h3 className="text-small font-semibold mb-3 text-center">Soft skills</h3>
             <div className="flex flex-wrap justify-center gap-2">
               {softSkills.map((skill) => (
                 <span
                   key={skill}
-                  className="px-3 py-1.5 rounded-full bg-surface border border-border text-small font-medium hover:border-accent/50 hover:bg-accent-muted transition-all duration-200 cursor-default"
+                  className="px-2.5 py-1 rounded-full bg-surface border border-border text-xs font-medium hover:border-accent/50 hover:bg-accent-muted transition-all duration-200 cursor-default"
                 >
                   {skill}
                 </span>
               ))}
               {/* Easter egg chip */}
               <span
-                className="px-3 py-1.5 rounded-full bg-accent/10 border border-accent/30 text-small font-medium hover:border-accent/50 hover:bg-accent/15 transition-all duration-200 cursor-default"
+                className="px-2.5 py-1 rounded-full bg-accent/10 border border-accent/30 text-xs font-medium hover:border-accent/50 hover:bg-accent/15 transition-all duration-200 cursor-default"
               >
                 Always smiling 🙂
               </span>
