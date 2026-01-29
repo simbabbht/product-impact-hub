@@ -6,11 +6,12 @@ import { About } from '@/components/About';
 import { Contact } from '@/components/Contact';
 import { Footer } from '@/components/Footer';
 import { ScrollToTop } from '@/components/ScrollToTop';
-import { BottomNav } from '@/components/BottomNav';
+import { Navbar } from '@/components/Navbar';
 
 const Index = () => {
   return (
-    <div className="min-h-screen pb-24">
+    <div className="min-h-screen">
+      <Navbar />
       <main>
         <Hero />
         <Freelance />
@@ -21,7 +22,6 @@ const Index = () => {
       </main>
       <ScrollToTop />
       <Footer />
-      <BottomNav />
     </div>
   );
 };

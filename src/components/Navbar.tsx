@@ -1,45 +1,43 @@
 import { useState, useEffect, useRef } from 'react';
 import { useTheme } from './ThemeProvider';
-import { Moon, Sun, Menu, X, ChevronDown } from 'lucide-react';
+import { useLanguage } from './LanguageProvider';
+import { Moon, Sun, Briefcase, Sparkles, Building2, Heart, Mail, ChevronDown, Globe } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './ui/tooltip';
 
-const navLinks = [
-  { href: '#core-studio', label: 'Freelance' },
-  { href: '#approche', label: 'Approche' },
-  { href: '#experience', label: 'Expériences' },
-  { href: '#contact', label: 'Contact' },
+const navItems = [
+  { id: 'core-studio', icon: Briefcase, labelKey: 'nav.freelance' },
+  { id: 'approche', icon: Sparkles, labelKey: 'nav.approach' },
+  { id: 'experience', icon: Building2, labelKey: 'nav.experience' },
+  { id: 'about', icon: Heart, labelKey: 'nav.hobbies' },
+  { id: 'contact', icon: Mail, labelKey: 'nav.contact' },
 ];
 
 const projectLinks = [
-  { href: '/work/refonte-home-espace-client', label: "Moderniser et harmoniser l'Espace Client — une refonte à fort enjeu d'adoption" },
-  { href: '/work/declaration-sinistre-en-ligne', label: "Optimiser la déclaration de sinistre en ligne — moins de frictions, plus d'autonomie" },
+  { href: '/work/refonte-home-espace-client', labelKey: 'nav.projects.espaceClient' },
+  { href: '/work/declaration-sinistre-en-ligne', labelKey: 'nav.projects.sinistre' },
 ];
 
 export function Navbar() {
   const { theme, toggleTheme } = useTheme();
+  const { language, setLanguage, t } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isProjectsDropdownOpen, setIsProjectsDropdownOpen] = useState(false);
-  const [isMobileProjectsOpen, setIsMobileProjectsOpen] = useState(false);
+  const [isProjectsOpen, setIsProjectsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
   const navigate = useNavigate();
 
   const isHomePage = location.pathname === '/';
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
+  const handleNavClick = (id: string) => {
     if (isHomePage) {
-      // On homepage, smooth scroll to anchor
-      const element = document.querySelector(href);
+      const element = document.getElementById(id);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
       }
     } else {
-      // On other pages, navigate to homepage with anchor
-      window.location.href = '/' + href;
+      window.location.href = '/#' + id;
     }
-    setIsMobileMenuOpen(false);
   };
 
   useEffect(() => {
@@ -53,7 +51,7 @@ export function Navbar() {
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setIsProjectsDropdownOpen(false);
+        setIsProjectsOpen(false);
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
@@ -63,8 +61,7 @@ export function Navbar() {
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
-        setIsProjectsDropdownOpen(false);
-        setIsMobileProjectsOpen(false);
+        setIsProjectsOpen(false);
       }
     };
     document.addEventListener('keydown', handleKeyDown);
@@ -72,156 +69,130 @@ export function Navbar() {
   }, []);
 
   return (
-    <nav 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'glass-card py-2 border-b border-border/50' 
-          : 'py-4 bg-transparent'
-      }`}
-    >
-      <div className="container-custom flex items-center justify-between">
-        {/* Logo */}
-        <a 
-          href="/" 
-          onClick={(e) => {
-            e.preventDefault();
-            if (isHomePage) {
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            } else {
-              navigate('/');
-            }
-          }}
-          className="text-h3 font-semibold gradient-text"
-        >
-          SB
-        </a>
+    <TooltipProvider delayDuration={200}>
+      <nav 
+        className={`fixed top-3 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 ${
+          isScrolled ? 'top-2' : 'top-4'
+        }`}
+      >
+        <div className="glass-card rounded-full px-3 py-1.5 flex items-center gap-1 border border-border/30 shadow-lg backdrop-blur-xl">
+          {/* Logo */}
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <button
+                onClick={() => {
+                  if (isHomePage) {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  } else {
+                    navigate('/');
+                  }
+                }}
+                className="px-2 py-1 rounded-full text-sm font-semibold gradient-text hover:bg-surface-2/50 transition-colors"
+              >
+                SB
+              </button>
+            </TooltipTrigger>
+            <TooltipContent side="bottom" className="text-xs">
+              {t('nav.home')}
+            </TooltipContent>
+          </Tooltip>
 
-        <div className="hidden md:flex items-center gap-6">
-          {/* Freelance link */}
-          <a
-            href="#core-studio"
-            onClick={(e) => handleNavClick(e, '#core-studio')}
-            className="text-small font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
-          >
-            Freelance
-          </a>
-          
+          <div className="w-px h-4 bg-border/50 mx-1" />
+
+          {/* Nav Items */}
+          {navItems.map((item) => (
+            <Tooltip key={item.id}>
+              <TooltipTrigger asChild>
+                <button
+                  onClick={() => handleNavClick(item.id)}
+                  className="p-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-surface-2/50 transition-all duration-200"
+                  aria-label={t(item.labelKey)}
+                >
+                  <item.icon className="w-4 h-4" />
+                </button>
+              </TooltipTrigger>
+              <TooltipContent side="bottom" className="text-xs">
+                {t(item.labelKey)}
+              </TooltipContent>
+            </Tooltip>
+          ))}
+
           {/* Projects Dropdown */}
           <div className="relative" ref={dropdownRef}>
-            <button
-              onClick={() => setIsProjectsDropdownOpen(!isProjectsDropdownOpen)}
-              aria-expanded={isProjectsDropdownOpen}
-              aria-haspopup="true"
-              className="text-small font-medium text-muted-foreground hover:text-foreground transition-colors duration-200 inline-flex items-center gap-1"
-            >
-              Projets
-              <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isProjectsDropdownOpen ? 'rotate-180' : ''}`} />
-            </button>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <button
+                  onClick={() => setIsProjectsOpen(!isProjectsOpen)}
+                  aria-expanded={isProjectsOpen}
+                  className="p-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-surface-2/50 transition-all duration-200 flex items-center gap-0.5"
+                >
+                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isProjectsOpen ? 'rotate-180' : ''}`} />
+                </button>
+              </TooltipTrigger>
+              <TooltipContent side="bottom" className="text-xs">
+                {t('nav.projects')}
+              </TooltipContent>
+            </Tooltip>
             
-            {isProjectsDropdownOpen && (
-              <div className="absolute top-full left-0 mt-2 w-80 glass-card rounded-lg p-2 animate-fade-in border border-border bg-background shadow-lg z-50">
+            {isProjectsOpen && (
+              <div className="absolute top-full right-0 mt-2 w-72 glass-card rounded-xl p-2 animate-fade-in border border-border/30 shadow-xl backdrop-blur-xl z-50">
+                <p className="px-3 py-1.5 text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                  {t('nav.projects')}
+                </p>
                 {projectLinks.map((project) => (
                   <Link
                     key={project.href}
                     to={project.href}
-                    onClick={() => setIsProjectsDropdownOpen(false)}
-                    className="block px-3 py-2 text-small text-muted-foreground hover:text-foreground hover:bg-surface-2 rounded-md transition-colors duration-200"
+                    onClick={() => setIsProjectsOpen(false)}
+                    className="block px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-surface-2/50 rounded-lg transition-colors duration-200"
                   >
-                    {project.label}
+                    {t(project.labelKey)}
                   </Link>
                 ))}
               </div>
             )}
           </div>
-          
-          {/* Rest of nav links */}
-          {navLinks.slice(1).map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={(e) => handleNavClick(e, link.href)}
-              className="text-small font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
-            >
-              {link.label}
-            </a>
-          ))}
-        </div>
 
-        {/* Theme Toggle & Mobile Menu Button */}
-        <div className="flex items-center gap-2">
-          <button
-            onClick={toggleTheme}
-            className="p-2 rounded-md hover:bg-surface-2 transition-colors duration-200"
-            aria-label={theme === 'dark' ? 'Activer le mode clair' : 'Activer le mode sombre'}
-          >
-            {theme === 'dark' ? (
-              <Sun className="w-5 h-5" />
-            ) : (
-              <Moon className="w-5 h-5" />
-            )}
-          </button>
+          <div className="w-px h-4 bg-border/50 mx-1" />
 
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 rounded-md hover:bg-surface-2 transition-colors duration-200"
-            aria-label="Menu"
-          >
-            {isMobileMenuOpen ? (
-              <X className="w-5 h-5" />
-            ) : (
-              <Menu className="w-5 h-5" />
-            )}
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden glass-card mt-2 mx-2 rounded-lg p-4 animate-fade-in">
-          <div className="flex flex-col gap-3">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
-                className="text-body font-medium text-muted-foreground hover:text-foreground transition-colors duration-200 py-2"
-              >
-                {link.label}
-              </a>
-            ))}
-            
-            {/* Mobile Projects Accordion */}
-            <div>
+          {/* Language Toggle */}
+          <Tooltip>
+            <TooltipTrigger asChild>
               <button
-                onClick={() => setIsMobileProjectsOpen(!isMobileProjectsOpen)}
-                aria-expanded={isMobileProjectsOpen}
-                className="w-full text-left text-body font-medium text-muted-foreground hover:text-foreground transition-colors duration-200 py-2 flex items-center justify-between"
+                onClick={() => setLanguage(language === 'fr' ? 'en' : 'fr')}
+                className="p-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-surface-2/50 transition-all duration-200 flex items-center gap-1"
+                aria-label={language === 'fr' ? 'Switch to English' : 'Passer en français'}
               >
-                Projets
-                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isMobileProjectsOpen ? 'rotate-180' : ''}`} />
+                <Globe className="w-4 h-4" />
+                <span className="text-xs font-medium uppercase">{language}</span>
               </button>
-              
-              {isMobileProjectsOpen && (
-                <div className="pl-4 flex flex-col gap-2 mt-2 border-l border-border">
-                  {projectLinks.map((project) => (
-                    <Link
-                      key={project.href}
-                      to={project.href}
-                      onClick={() => {
-                        setIsMobileMenuOpen(false);
-                        setIsMobileProjectsOpen(false);
-                      }}
-                      className="text-small text-muted-foreground hover:text-foreground transition-colors duration-200 py-1"
-                    >
-                      {project.label}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
-          </div>
+            </TooltipTrigger>
+            <TooltipContent side="bottom" className="text-xs">
+              {language === 'fr' ? 'English' : 'Français'}
+            </TooltipContent>
+          </Tooltip>
+
+          {/* Theme Toggle */}
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <button
+                onClick={toggleTheme}
+                className="p-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-surface-2/50 transition-all duration-200"
+                aria-label={theme === 'dark' ? 'Light mode' : 'Dark mode'}
+              >
+                {theme === 'dark' ? (
+                  <Sun className="w-4 h-4" />
+                ) : (
+                  <Moon className="w-4 h-4" />
+                )}
+              </button>
+            </TooltipTrigger>
+            <TooltipContent side="bottom" className="text-xs">
+              {theme === 'dark' ? t('nav.lightMode') : t('nav.darkMode')}
+            </TooltipContent>
+          </Tooltip>
         </div>
-      )}
-    </nav>
+      </nav>
+    </TooltipProvider>
   );
 }
