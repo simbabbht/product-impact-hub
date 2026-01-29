@@ -3,6 +3,11 @@ import { Link } from 'react-router-dom';
 
 const locations = ['Nouvelle-Calédonie', 'France', 'Australie', 'Nouvelle-Zélande'];
 
+const serviceLines = [
+  { label: 'Product Management', desc: 'apps & espaces clients, parcours selfcare, sinistres & documents, pilotage KPI' },
+  { label: 'Automatisation & IA', desc: 'workflows, no-code, agents IA, intégrations, reporting & dashboards' },
+];
+
 export function Freelance() {
   return (
     <section id="core-studio" className="section">
@@ -23,14 +28,23 @@ export function Freelance() {
             <span className="text-accent">Freelance</span> — Core Studio
           </h2>
           
-          {/* Description */}
+          {/* Updated description */}
           <p className="text-muted-foreground max-w-xl mx-auto mb-4">
-            Basé entre la France et la Nouvelle-Calédonie, je propose des missions sur place ou à distance 
-            en product management, automatisation & IA.
+            Basé entre la France et la Nouvelle-Calédonie, j'accompagne sur place ou à distance 
+            des équipes sur 2 axes : Product Management et Automatisation & IA.
           </p>
 
+          {/* Service teaser lines */}
+          <div className="flex flex-col gap-2 max-w-xl mx-auto mb-6 text-left">
+            {serviceLines.map((service) => (
+              <p key={service.label} className="text-small text-muted-foreground">
+                <span className="font-semibold text-foreground">• {service.label}</span> — {service.desc}
+              </p>
+            ))}
+          </div>
+
           {/* CTA micro-line */}
-          <p className="text-small text-muted-foreground mb-6">
+          <p className="text-small text-muted-foreground mb-4">
             Pour en savoir plus : accéder à Core Studio.
           </p>
 
