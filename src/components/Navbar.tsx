@@ -4,8 +4,8 @@ import { Moon, Sun, Menu, X, ChevronDown } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const navLinks = [
-  { href: '#services', label: 'Services' },
-  { href: '#competences', label: 'Compétences' },
+  { href: '#core-studio', label: 'Freelance' },
+  { href: '#approche', label: 'Approche' },
   { href: '#experience', label: 'Expériences' },
   { href: '#contact', label: 'Contact' },
 ];
@@ -97,16 +97,16 @@ export function Navbar() {
         </a>
 
         <div className="hidden md:flex items-center gap-6">
-          {/* Services link */}
+          {/* Freelance link */}
           <a
-            href="#services"
-            onClick={(e) => handleNavClick(e, '#services')}
+            href="#core-studio"
+            onClick={(e) => handleNavClick(e, '#core-studio')}
             className="text-small font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
           >
-            Services
+            Freelance
           </a>
           
-          {/* Projects Dropdown - after Services */}
+          {/* Projects Dropdown */}
           <div className="relative" ref={dropdownRef}>
             <button
               onClick={() => setIsProjectsDropdownOpen(!isProjectsDropdownOpen)}
@@ -134,7 +134,7 @@ export function Navbar() {
             )}
           </div>
           
-          {/* Rest of nav links (after Projets) */}
+          {/* Rest of nav links */}
           {navLinks.slice(1).map((link) => (
             <a
               key={link.href}
