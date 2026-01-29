@@ -5,7 +5,7 @@ const chips = ["Product", "Automation & IA", "Customer Experience"];
 
 export function Hero() {
   return (
-    <section id="hero" className="min-h-[85vh] flex items-center section pt-16 md:pt-24">
+    <section id="hero" className="min-h-[85vh] flex items-center section pt-20 md:pt-16">
       <div className="container-custom">
         <div className="grid lg:grid-cols-[1fr_auto] gap-12 lg:gap-16 items-start">
           {/* Left column - All content */}

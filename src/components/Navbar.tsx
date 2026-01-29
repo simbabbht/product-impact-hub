@@ -1,29 +1,22 @@
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import { useTheme } from './ThemeProvider';
 import { useLanguage } from './LanguageProvider';
-import { Moon, Sun, Briefcase, Sparkles, Building2, Heart, Mail, ChevronDown, Globe } from 'lucide-react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Moon, Sun, Briefcase, Compass, Building2, Heart, Mail, Globe } from 'lucide-react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './ui/tooltip';
 
 const navItems = [
   { id: 'core-studio', icon: Briefcase, labelKey: 'nav.freelance' },
-  { id: 'approche', icon: Sparkles, labelKey: 'nav.approach' },
+  { id: 'approche', icon: Compass, labelKey: 'nav.approach' },
   { id: 'experience', icon: Building2, labelKey: 'nav.experience' },
   { id: 'about', icon: Heart, labelKey: 'nav.hobbies' },
   { id: 'contact', icon: Mail, labelKey: 'nav.contact' },
-];
-
-const projectLinks = [
-  { href: '/work/refonte-home-espace-client', labelKey: 'nav.projects.espaceClient' },
-  { href: '/work/declaration-sinistre-en-ligne', labelKey: 'nav.projects.sinistre' },
 ];
 
 export function Navbar() {
   const { theme, toggleTheme } = useTheme();
   const { language, setLanguage, t } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isProjectsOpen, setIsProjectsOpen] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -48,34 +41,15 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setIsProjectsOpen(false);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
-
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        setIsProjectsOpen(false);
-      }
-    };
-    document.addEventListener('keydown', handleKeyDown);
-    return () => document.removeEventListener('keydown', handleKeyDown);
-  }, []);
-
   return (
     <TooltipProvider delayDuration={200}>
+      {/* Desktop Navbar - hidden on mobile */}
       <nav 
-        className={`fixed top-3 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 ${
-          isScrolled ? 'top-2' : 'top-4'
+        className={`hidden md:block fixed top-3 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 ${
+          isScrolled ? 'top-2' : 'top-3'
         }`}
       >
-        <div className="glass-card rounded-full px-3 py-1.5 flex items-center gap-1 border border-border/30 shadow-lg backdrop-blur-xl">
+        <div className="glass-card rounded-full px-2 py-1 flex items-center gap-0.5 border border-border/30 shadow-lg backdrop-blur-xl">
           {/* Logo */}
           <Tooltip>
             <TooltipTrigger asChild>
@@ -87,7 +61,7 @@ export function Navbar() {
                     navigate('/');
                   }
                 }}
-                className="px-2 py-1 rounded-full text-sm font-semibold gradient-text hover:bg-surface-2/50 transition-colors"
+                className="px-2 py-1 rounded-full text-xs font-semibold gradient-text hover:bg-surface-2/50 transition-colors"
               >
                 SB
               </button>
@@ -97,7 +71,7 @@ export function Navbar() {
             </TooltipContent>
           </Tooltip>
 
-          <div className="w-px h-4 bg-border/50 mx-1" />
+          <div className="w-px h-3 bg-border/50 mx-0.5" />
 
           {/* Nav Items */}
           {navItems.map((item) => (
@@ -105,10 +79,10 @@ export function Navbar() {
               <TooltipTrigger asChild>
                 <button
                   onClick={() => handleNavClick(item.id)}
-                  className="p-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-surface-2/50 transition-all duration-200"
+                  className="p-1.5 rounded-full text-muted-foreground hover:text-foreground hover:bg-surface-2/50 transition-all duration-200"
                   aria-label={t(item.labelKey)}
                 >
-                  <item.icon className="w-4 h-4" />
+                  <item.icon className="w-3.5 h-3.5" />
                 </button>
               </TooltipTrigger>
               <TooltipContent side="bottom" className="text-xs">
@@ -117,54 +91,18 @@ export function Navbar() {
             </Tooltip>
           ))}
 
-          {/* Projects Dropdown */}
-          <div className="relative" ref={dropdownRef}>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <button
-                  onClick={() => setIsProjectsOpen(!isProjectsOpen)}
-                  aria-expanded={isProjectsOpen}
-                  className="p-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-surface-2/50 transition-all duration-200 flex items-center gap-0.5"
-                >
-                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isProjectsOpen ? 'rotate-180' : ''}`} />
-                </button>
-              </TooltipTrigger>
-              <TooltipContent side="bottom" className="text-xs">
-                {t('nav.projects')}
-              </TooltipContent>
-            </Tooltip>
-            
-            {isProjectsOpen && (
-              <div className="absolute top-full right-0 mt-2 w-72 glass-card rounded-xl p-2 animate-fade-in border border-border/30 shadow-xl backdrop-blur-xl z-50">
-                <p className="px-3 py-1.5 text-xs font-medium text-muted-foreground uppercase tracking-wider">
-                  {t('nav.projects')}
-                </p>
-                {projectLinks.map((project) => (
-                  <Link
-                    key={project.href}
-                    to={project.href}
-                    onClick={() => setIsProjectsOpen(false)}
-                    className="block px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-surface-2/50 rounded-lg transition-colors duration-200"
-                  >
-                    {t(project.labelKey)}
-                  </Link>
-                ))}
-              </div>
-            )}
-          </div>
-
-          <div className="w-px h-4 bg-border/50 mx-1" />
+          <div className="w-px h-3 bg-border/50 mx-0.5" />
 
           {/* Language Toggle */}
           <Tooltip>
             <TooltipTrigger asChild>
               <button
                 onClick={() => setLanguage(language === 'fr' ? 'en' : 'fr')}
-                className="p-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-surface-2/50 transition-all duration-200 flex items-center gap-1"
+                className="p-1.5 rounded-full text-muted-foreground hover:text-foreground hover:bg-surface-2/50 transition-all duration-200 flex items-center gap-0.5"
                 aria-label={language === 'fr' ? 'Switch to English' : 'Passer en français'}
               >
-                <Globe className="w-4 h-4" />
-                <span className="text-xs font-medium uppercase">{language}</span>
+                <Globe className="w-3.5 h-3.5" />
+                <span className="text-[10px] font-medium uppercase">{language}</span>
               </button>
             </TooltipTrigger>
             <TooltipContent side="bottom" className="text-xs">
@@ -177,13 +115,13 @@ export function Navbar() {
             <TooltipTrigger asChild>
               <button
                 onClick={toggleTheme}
-                className="p-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-surface-2/50 transition-all duration-200"
+                className="p-1.5 rounded-full text-muted-foreground hover:text-foreground hover:bg-surface-2/50 transition-all duration-200"
                 aria-label={theme === 'dark' ? 'Light mode' : 'Dark mode'}
               >
                 {theme === 'dark' ? (
-                  <Sun className="w-4 h-4" />
+                  <Sun className="w-3.5 h-3.5" />
                 ) : (
-                  <Moon className="w-4 h-4" />
+                  <Moon className="w-3.5 h-3.5" />
                 )}
               </button>
             </TooltipTrigger>
