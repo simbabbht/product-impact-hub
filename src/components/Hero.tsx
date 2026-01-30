@@ -5,14 +5,14 @@ const chips = ["Product", "Automation & IA", "Customer Experience"];
 
 export function Hero() {
   return (
-    <section id="hero" className="min-h-[85vh] flex items-center section pt-28 md:pt-32 lg:pt-28">
+    <section id="hero" className="min-h-[85vh] flex items-center section pt-32 md:pt-36 lg:pt-32">
       <div className="container-custom">
         <div className="grid lg:grid-cols-[1fr_auto] gap-12 lg:gap-16 items-start">
           {/* Left column - All content */}
           <div className="order-2 lg:order-1">
             {/* H1 */}
             <h1 className="text-h1 mb-2 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
-              Simon Babou
+              Simon Babouhot
             </h1>
 
             {/* Subtitle */}
@@ -27,7 +27,7 @@ export function Hero() {
             >
               Product Owner avec plus de 5 ans d'expérience, notamment au sein du groupe Allianz.
               <br /><br />
-              J'accompagne la conception et le développement de produits digitaux centrés utilisateurs (espaces clients, applications, parcours self-care), ainsi que la simplification et l'automatisation des processus métiers, avec une approche orientée efficacité et ROI.
+              J'accompagne la conception et l'évolution de produits digitaux centrés utilisateurs (espaces clients, applications, parcours self-care), ainsi que la simplification et l'automatisation de processus métiers, avec une approche pragmatique orientée impact et ROI.
             </p>
 
             {/* Chips */}
@@ -62,7 +62,7 @@ export function Hero() {
             <div className="w-36 h-36 md:w-44 md:h-44 rounded-full bg-surface-2 border-2 border-border flex items-center justify-center overflow-hidden shadow-lg">
               <img 
                 src={profilePhoto} 
-                alt="Simon Babou - Product Owner" 
+                alt="Simon Babouhot - Product Owner" 
                 className="w-full h-full object-cover"
               />
             </div>
