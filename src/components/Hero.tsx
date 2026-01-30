@@ -42,12 +42,11 @@ export function Hero() {
               style={{ animationDelay: "0.4s" }}
             >
               <a href="#contact" className="btn-primary">
-                Me contacter
+                Discutons de votre projet
                 <ArrowRight className="w-4 h-4" />
               </a>
               <a href="https://calendly.com/simonbabouhot-pro/30min" target="_blank" rel="noopener noreferrer" className="btn-secondary">
-                <Calendar className="w-4 h-4" />
-                Prendre rendez-vous
+                📅 Prendre rendez-vous
               </a>
             </div>
           </div>
