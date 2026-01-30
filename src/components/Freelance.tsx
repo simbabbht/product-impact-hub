@@ -9,16 +9,14 @@ const productItems = [
 ];
 
 const automationItems = [
-  'Audit des processus métiers',
-  'Identification des irritants et opportunités d\'automatisation',
-  'Mise en place de workflows automatisés',
-  'Recommandation et intégration d\'outils no-code / low-code',
-  'Approche orientée ROI, principalement pour les PME',
+  { title: 'Audit des processus métiers', desc: 'Analyse des flux existants et identification des points de friction' },
+  { title: 'Workflows automatisés', desc: 'Mise en place d\'automatisations fiables et adaptées aux usages réels' },
+  { title: 'Approche orientée ROI', desc: 'Optimisation du temps et des coûts, principalement pour les PME' },
 ];
 
 export function Freelance() {
   return (
-    <section id="accompagnement" className="section">
+    <section id="accompagnement" className="section bg-surface-2/30">
       <div className="container-custom">
         <div className="w-full max-w-4xl mx-auto text-center px-0">
           {/* Location chips */}
@@ -79,14 +77,17 @@ export function Freelance() {
               
               <h3 className="text-h3 mb-4">Automation & IA</h3>
               
-              <ul className="space-y-2 mb-4">
+              <div className="space-y-4 mb-4">
                 {automationItems.map((item) => (
-                  <li key={item} className="text-small text-muted-foreground flex items-start gap-2">
-                    <span className="text-accent mt-1">•</span>
-                    <span>{item}</span>
-                  </li>
+                  <div key={item.title} className="flex items-start gap-3">
+                    <span className="text-accent mt-1">→</span>
+                    <div>
+                      <p className="font-semibold text-foreground">{item.title}</p>
+                      <p className="text-small text-muted-foreground">{item.desc}</p>
+                    </div>
+                  </div>
                 ))}
-              </ul>
+              </div>
               
               {/* Badge formation */}
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-xs text-accent mb-4">
