@@ -1,13 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useTheme } from './ThemeProvider';
 import { useLanguage } from './LanguageProvider';
-import { Moon, Sun, Briefcase, Compass, Building2, Heart, Mail, Globe, Menu, X } from 'lucide-react';
+import { Moon, Sun, Briefcase, Building2, Heart, Mail, Globe, Menu, X } from 'lucide-react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './ui/tooltip';
 
 const navItems = [
-  { id: 'core-studio', icon: Briefcase, labelKey: 'nav.freelance' },
-  { id: 'approche', icon: Compass, labelKey: 'nav.approach' },
+  { id: 'accompagnement', icon: Briefcase, labelKey: 'nav.freelance' },
   { id: 'experience', icon: Building2, labelKey: 'nav.experience' },
   { id: 'about', icon: Heart, labelKey: 'nav.hobbies' },
   { id: 'contact', icon: Mail, labelKey: 'nav.contact' },
