@@ -7,6 +7,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import { LanguageProvider } from "@/components/LanguageProvider";
 import Index from "./pages/Index";
 import ProjectDetail from "./pages/ProjectDetail";
+import ProductOwner from "./pages/ProductOwner";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -21,6 +22,7 @@ const App = () => (
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<Index />} />
+              <Route path="/product-management" element={<ProductOwner />} />
               <Route path="/projet/:slug" element={<ProjectDetail />} />
               <Route path="/work/:slug" element={<ProjectDetail />} />
               <Route path="*" element={<NotFound />} />
