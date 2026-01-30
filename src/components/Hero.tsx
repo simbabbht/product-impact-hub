@@ -22,7 +22,7 @@ export function Hero() {
 
             {/* Paragraph */}
             <p
-              className="text-body md:text-h3 font-normal text-muted-foreground max-w-2xl mb-6 opacity-0 animate-fade-in-up"
+              className="text-small md:text-body font-normal text-muted-foreground max-w-2xl mb-6 opacity-0 animate-fade-in-up"
               style={{ animationDelay: "0.2s" }}
             >
               Product Owner avec plus de 5 ans d'expérience, notamment au sein du groupe Allianz.
