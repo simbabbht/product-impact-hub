@@ -1,44 +1,47 @@
 import { Building2, ArrowRight, TrendingUp, Calendar, Target, FolderOpen } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
-const experiences = [
-  {
-    title: 'Allianz France',
-    role: 'Product Owner, Espace Client digital',
-    period: 'Depuis 2021',
-    highlights: [
-      { text: '+200K utilisateurs' },
-      { text: 'Backlog & priorisation : cadrage des besoins clients, arbitrages avec métier / IT, animation en agile' },
-      { text: 'Delivery end-to-end : user stories, suivi dev, recette/UAT, déploiement & release' },
-      { text: 'Mesure & amélioration continue : tests utilisateurs + dashboards KPI pour piloter la performance' },
-    ],
-    relatedProjects: [
-      { label: "Moderniser et harmoniser l'Espace Client — une refonte à fort enjeu d'adoption", href: '/work/refonte-home-espace-client' },
-      { label: "Optimiser la déclaration de sinistre en ligne — moins de friction, plus d'autonomie", href: '/work/declaration-sinistre-en-ligne' },
-    ],
-  },
-  {
-    title: 'Allianz France',
-    role: 'Business Developer, Affiliation & E-partenariat',
-    period: '2020–2021',
-    highlights: [
-      { text: "Campagnes d'acquisition : display, affiliation, emailing, SEA" },
-      { text: 'Pilotage performance : analyse, optimisation continue et reporting' },
-      { text: 'Refonte des communications : kits & assets de campagne' },
-    ],
-    results: [
-      '+130 000 leads/an',
-      '+100 campagnes',
-      '+3 partenariats stratégiques',
-    ],
-  },
-];
+import { useLanguage } from './LanguageProvider';
 
 export function Experience() {
+  const { t } = useLanguage();
+
+  const experiences = [
+    {
+      title: 'Allianz France',
+      role: t('experience.exp1.role'),
+      period: t('experience.exp1.period'),
+      highlights: [
+        { text: t('experience.exp1.h1') },
+        { text: t('experience.exp1.h2') },
+        { text: t('experience.exp1.h3') },
+        { text: t('experience.exp1.h4') },
+      ],
+      relatedProjects: [
+        { label: t('experience.exp1.project1'), href: '/work/refonte-home-espace-client' },
+        { label: t('experience.exp1.project2'), href: '/work/declaration-sinistre-en-ligne' },
+      ],
+    },
+    {
+      title: 'Allianz France',
+      role: t('experience.exp2.role'),
+      period: t('experience.exp2.period'),
+      highlights: [
+        { text: t('experience.exp2.h1') },
+        { text: t('experience.exp2.h2') },
+        { text: t('experience.exp2.h3') },
+      ],
+      results: [
+        '+130 000 leads/an',
+        '+100 campagnes',
+        '+3 partenariats stratégiques',
+      ],
+    },
+  ];
+
   return (
     <section id="experience" className="section">
       <div className="container-custom">
-        <h2 className="text-h2 text-center mb-10">Mes expériences</h2>
+        <h2 className="text-h2 text-center mb-10">{t('experience.title')}</h2>
 
         <div className="flex flex-col gap-4 w-full max-w-4xl mx-auto">
           {experiences.map((exp, index) => (
@@ -66,7 +69,6 @@ export function Experience() {
 
               {/* Two-column layout on desktop */}
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-4">
-                {/* Left column: Missions */}
                 <div className="lg:col-span-3">
                   <ul className="space-y-2 w-full">
                     {exp.highlights.map((item) => (
@@ -78,19 +80,16 @@ export function Experience() {
                   </ul>
                 </div>
 
-                {/* Right column: Results + Projects */}
                 <div className="lg:col-span-2 flex flex-col gap-3">
                   {exp.results && (
                     <div className="pt-3 lg:pt-0 border-t lg:border-t-0 lg:border-l border-border lg:pl-4">
                       <div className="flex items-center gap-2 mb-2 justify-center lg:justify-start">
                         <Target className="w-4 h-4 text-accent" />
-                        <span className="text-small font-semibold">Résultats</span>
+                        <span className="text-small font-semibold">{t('experience.results')}</span>
                       </div>
                       <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
                         {exp.results.map((result) => (
-                          <span key={result} className="chip text-xs">
-                            {result}
-                          </span>
+                          <span key={result} className="chip text-xs">{result}</span>
                         ))}
                       </div>
                     </div>
@@ -100,7 +99,7 @@ export function Experience() {
                     <div className="pt-3 lg:pt-0 border-t lg:border-t-0 lg:border-l border-border lg:pl-4">
                       <div className="flex items-center gap-2 mb-2 justify-center lg:justify-start">
                         <FolderOpen className="w-4 h-4 text-accent" />
-                        <span className="text-small font-semibold">Projets liés</span>
+                        <span className="text-small font-semibold">{t('experience.relatedProjects')}</span>
                       </div>
                       <div className="flex flex-col gap-2 w-full">
                         {exp.relatedProjects.map((project) => (

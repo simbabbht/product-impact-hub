@@ -1,34 +1,36 @@
 import { ArrowRight } from "lucide-react";
 import profilePhoto from "@/assets/SB_Profil2.png";
+import { useLanguage } from "./LanguageProvider";
 
 const chips = ["Product", "Automation & IA", "Customer Experience"];
 
 export function Hero() {
+  const { t } = useLanguage();
+
+  const descriptionLines = t('hero.description').split('\n\n');
+
   return (
     <section id="hero" className="min-h-[85vh] flex items-center section pt-32 md:pt-36 lg:pt-32">
       <div className="container-custom">
         <div className="grid lg:grid-cols-[1fr_auto] gap-12 lg:gap-16 items-start">
-          {/* Left column - All content */}
+          {/* Left column */}
           <div className="order-2 lg:order-1">
-            {/* H1 */}
             <h1 className="text-h1 mb-2 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
-              Simon Babouhot
+              {t('hero.title')}
             </h1>
 
-            {/* Subtitle */}
             <p className="text-h3 text-accent font-semibold mb-6 animate-fade-in-up" style={{ animationDelay: "0.15s" }}>
-              Product Owner
+              {t('hero.subtitle')}
             </p>
 
-            {/* Paragraph */}
-            <p
+            <div
               className="text-small md:text-body font-normal text-muted-foreground max-w-2xl mb-6 opacity-0 animate-fade-in-up"
               style={{ animationDelay: "0.2s" }}
             >
-              Product Owner avec plus de 5 ans d'expérience, notamment au sein du groupe Allianz.
-              <br /><br />
-              J'accompagne la conception et l'évolution de produits digitaux centrés utilisateurs (espaces clients, applications, parcours self-care), ainsi que la simplification et l'automatisation de processus métiers, avec une approche pragmatique orientée impact et ROI.
-            </p>
+              {descriptionLines.map((line, i) => (
+                <p key={i} className={i > 0 ? 'mt-4' : ''}>{line}</p>
+              ))}
+            </div>
 
             {/* Chips */}
             <div
@@ -36,9 +38,7 @@ export function Hero() {
               style={{ animationDelay: "0.3s" }}
             >
               {chips.map((chip) => (
-                <span key={chip} className="chip">
-                  {chip}
-                </span>
+                <span key={chip} className="chip">{chip}</span>
               ))}
             </div>
 
@@ -48,23 +48,19 @@ export function Hero() {
               style={{ animationDelay: "0.4s" }}
             >
               <a href="#contact" className="btn-primary">
-                Parlons de votre projet
+                {t('hero.cta.contact')}
                 <ArrowRight className="w-4 h-4" />
               </a>
               <a href="https://calendly.com/simonbabouhot-pro/30min" target="_blank" rel="noopener noreferrer" className="btn-secondary">
-                📅 Prendre rendez-vous
+                📅 {t('hero.cta.appointment')}
               </a>
             </div>
           </div>
 
-          {/* Right column - Photo only (no name/title to avoid duplication) */}
+          {/* Right column - Photo */}
           <div className="flex flex-col items-center order-1 lg:order-2 lg:mt-8 opacity-0 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
             <div className="w-36 h-36 md:w-44 md:h-44 rounded-full bg-surface-2 border-2 border-border flex items-center justify-center overflow-hidden shadow-lg">
-              <img 
-                src={profilePhoto} 
-                alt="Simon Babouhot - Product Owner" 
-                className="w-full h-full object-cover"
-              />
+              <img src={profilePhoto} alt="Simon Babouhot - Product Owner" className="w-full h-full object-cover" />
             </div>
           </div>
         </div>

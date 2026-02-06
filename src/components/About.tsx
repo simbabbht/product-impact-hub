@@ -6,6 +6,7 @@ import albumOcean from '@/assets/hobbies/OCEAN.jpg';
 import sportRun from '@/assets/hobbies/Sport_Run.jpeg';
 import sportBike from '@/assets/hobbies/Sport_Bike.jpeg';
 import { WorldMap } from './WorldMap';
+import { useLanguage } from './LanguageProvider';
 
 interface AlbumCover {
   src: string;
@@ -15,12 +16,12 @@ interface AlbumCover {
 
 interface HobbyData {
   icon: typeof Dumbbell;
-  label: string;
+  labelKey: string;
   content: {
-    title: string;
+    titleKey: string;
     images?: string[];
-    links?: { label: string; url: string; icon?: string }[];
-    text?: string;
+    links?: { labelKey: string; url: string; icon?: string }[];
+    textKey?: string;
     list?: string[];
     albums?: AlbumCover[];
     customComponent?: 'worldMap';
@@ -30,23 +31,23 @@ interface HobbyData {
 const hobbies: HobbyData[] = [
   { 
     icon: Dumbbell, 
-    label: 'Sport',
+    labelKey: 'about.sport',
     content: {
-      title: 'Sport',
+      titleKey: 'about.sport',
       images: [sportRun, sportBike],
       links: [
-        { label: 'Mon profil Strava', url: 'https://www.strava.com/athletes/sbabouhot', icon: 'strava' },
+        { labelKey: 'about.strava', url: 'https://www.strava.com/athletes/sbabouhot', icon: 'strava' },
       ],
-      text: 'Run, Vélo, Musculation, Natation et plein d\'autres',
+      textKey: 'about.sportContent',
     },
   },
   { 
     icon: MusicIcon, 
-    label: 'Musique',
+    labelKey: 'about.music',
     content: {
-      title: 'Musique',
+      titleKey: 'about.music',
       links: [
-        { label: 'Ma playlist Spotify', url: 'https://open.spotify.com/playlist/6nFxzlAX37LwJJsEI9HTmk?si=e99629903b6a418d', icon: 'spotify' },
+        { labelKey: 'about.spotify', url: 'https://open.spotify.com/playlist/6nFxzlAX37LwJJsEI9HTmk?si=e99629903b6a418d', icon: 'spotify' },
       ],
       list: ['Led Zeppelin', 'Red Hot Chili Peppers', 'Frank Ocean'],
       albums: [
@@ -58,27 +59,28 @@ const hobbies: HobbyData[] = [
   },
   { 
     icon: Globe, 
-    label: 'Voyage',
+    labelKey: 'about.travel',
     content: {
-      title: 'Voyage',
+      titleKey: 'about.travel',
       customComponent: 'worldMap',
     },
   },
   { 
     icon: Sparkles, 
-    label: 'Divers',
+    labelKey: 'about.misc',
     content: {
-      title: 'Divers',
-      text: 'Pas d\'actualités pour le moment.',
+      titleKey: 'about.misc',
+      textKey: 'about.miscContent',
     },
   },
 ];
 
 export function About() {
   const [expandedHobby, setExpandedHobby] = useState<string | null>(null);
+  const { t, language } = useLanguage();
 
-  const handleHobbyClick = (label: string) => {
-    setExpandedHobby(expandedHobby === label ? null : label);
+  const handleHobbyClick = (labelKey: string) => {
+    setExpandedHobby(expandedHobby === labelKey ? null : labelKey);
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
@@ -91,30 +93,29 @@ export function About() {
     <section id="about" className="section bg-surface-2/30" onKeyDown={handleKeyDown}>
       <div className="container-custom">
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-h2 mb-6">Mes hobbies</h2>
+          <h2 className="text-h2 mb-6">{t('about.title')}</h2>
           
           <p className="text-muted-foreground mb-2">
-            Quand je ne suis pas sur un backlog, vous me trouverez à faire du sport, 
-            admirer la nature, écouter de la musique — ou explorer de nouveaux designs.
+            {t('about.subtitle')}
           </p>
 
           <p className="text-small text-muted-foreground/70 mb-8">
-            Cliquez sur l'icône pour en découvrir plus.
+            {language === 'fr' ? "Cliquez sur l'icône pour en découvrir plus." : 'Click an icon to learn more.'}
           </p>
 
           <div className="flex flex-wrap justify-center gap-3 mb-6">
             {hobbies.map((hobby) => (
               <button 
-                key={hobby.label}
-                onClick={() => handleHobbyClick(hobby.label)}
+                key={hobby.labelKey}
+                onClick={() => handleHobbyClick(hobby.labelKey)}
                 className={`inline-flex items-center gap-2 px-4 py-2 rounded-full border text-small cursor-pointer transition-all duration-300 ${
-                  expandedHobby === hobby.label 
+                  expandedHobby === hobby.labelKey 
                     ? 'bg-accent text-accent-foreground border-accent' 
                     : 'bg-surface border-border hover:border-accent/50 hover:bg-accent-muted'
                 }`}
               >
                 <hobby.icon className="w-4 h-4" />
-                <span>{hobby.label}</span>
+                <span>{t(hobby.labelKey)}</span>
               </button>
             ))}
           </div>
@@ -125,16 +126,16 @@ export function About() {
               <button 
                 onClick={() => setExpandedHobby(null)}
                 className="absolute top-4 right-4 text-muted-foreground hover:text-foreground transition-colors"
-                aria-label="Fermer"
+                aria-label={language === 'fr' ? 'Fermer' : 'Close'}
               >
                 <X className="w-5 h-5" />
               </button>
 
-              {hobbies.filter(h => h.label === expandedHobby).map((hobby) => (
-                <div key={hobby.label}>
+              {hobbies.filter(h => h.labelKey === expandedHobby).map((hobby) => (
+                <div key={hobby.labelKey}>
                   <h3 className="text-h3 mb-4 flex items-center justify-center gap-2">
                     <hobby.icon className="w-5 h-5 text-accent" />
-                    {hobby.content.title}
+                    {t(hobby.content.titleKey)}
                   </h3>
 
                   {/* Custom component for Voyage */}
@@ -149,7 +150,7 @@ export function About() {
                         <div key={idx} className="aspect-square rounded-lg overflow-hidden border border-border bg-surface-2">
                           <img 
                             src={img} 
-                            alt={`Photo ${hobby.label} ${idx + 1}`}
+                            alt={`Photo ${t(hobby.labelKey)} ${idx + 1}`}
                             className="w-full h-full object-cover"
                             onError={(e) => {
                               const target = e.target as HTMLImageElement;
@@ -162,23 +163,23 @@ export function About() {
                   )}
 
                   {/* Text */}
-                  {hobby.content.text && !hobby.content.customComponent && (
+                  {hobby.content.textKey && !hobby.content.customComponent && hobby.labelKey !== 'about.misc' && (
                     <p className="text-small text-muted-foreground mb-4">
-                      {hobby.content.text}
+                      {t(hobby.content.textKey)}
                     </p>
                   )}
 
                   {/* Text for Divers (centered) */}
-                  {hobby.content.text && hobby.label === 'Divers' && (
+                  {hobby.content.textKey && hobby.labelKey === 'about.misc' && (
                     <p className="text-muted-foreground text-center py-8">
-                      {hobby.content.text}
+                      {t(hobby.content.textKey)}
                     </p>
                   )}
 
                   {/* Top 3 list for Music */}
                   {hobby.content.list && (
                     <div className="mb-4">
-                      <span className="text-small font-semibold block mb-2">Top 3 artistes</span>
+                      <span className="text-small font-semibold block mb-2">Top 3 {language === 'fr' ? 'artistes' : 'artists'}</span>
                       <div className="flex flex-wrap justify-center gap-2">
                         {hobby.content.list.map((item, idx) => (
                           <span key={item} className="chip text-xs">
@@ -220,7 +221,7 @@ export function About() {
                     <div className="flex flex-wrap justify-center gap-2">
                       {hobby.content.links.map((link) => (
                         <a
-                          key={link.label}
+                          key={link.labelKey}
                           href={link.url}
                           target="_blank"
                           rel="noopener noreferrer"
@@ -237,7 +238,7 @@ export function About() {
                             </svg>
                           )}
                           {!link.icon && <ExternalLink className="w-3 h-3" />}
-                          {link.label}
+                          {t(link.labelKey)}
                         </a>
                       ))}
                     </div>
