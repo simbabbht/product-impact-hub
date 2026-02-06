@@ -62,7 +62,7 @@ export function Freelance() {
               
               <div className="flex justify-center md:justify-start">
                 <a 
-                  href="/product-management"
+                  href="/product-owner"
                   className="inline-flex items-center justify-center gap-2 text-accent hover:text-accent/80 font-medium transition-colors group w-full md:w-auto"
                 >
                   Découvrir l'accompagnement Product
@@ -101,7 +101,7 @@ export function Freelance() {
               
               <div className="flex justify-center md:justify-start">
                 <a 
-                  href="/automation-ia"
+                  href="/ops-builder"
                   className="inline-flex items-center justify-center gap-2 text-accent hover:text-accent/80 font-medium transition-colors group w-full md:w-auto"
                 >
                   Découvrir l'offre Automation & IA
