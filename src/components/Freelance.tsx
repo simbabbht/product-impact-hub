@@ -1,20 +1,23 @@
 import { MapPin, Briefcase, Bot, ArrowRight, GraduationCap } from 'lucide-react';
+import { useLanguage } from './LanguageProvider';
 
 const locations = ['Nouvelle-Calédonie', 'France'];
 
-const productItems = [
-  { title: 'Cadrage stratégique', desc: 'Vision, objectifs, alignement des parties prenantes' },
-  { title: 'Delivery end-to-end', desc: 'Backlog, user stories, recette UAT, release' },
-  { title: 'Pilotage de la performance', desc: 'KPI, data visualisation, adoption et autonomie' },
-];
-
-const automationItems = [
-  { title: 'Audit des processus métiers', desc: 'Analyse des flux existants et identification des points de friction' },
-  { title: 'Workflows automatisés', desc: 'Mise en place d\'automatisations fiables et adaptées aux usages réels' },
-  { title: 'Approche orientée ROI', desc: 'Optimisation du temps et des coûts, principalement pour les PME' },
-];
-
 export function Freelance() {
+  const { t } = useLanguage();
+
+  const productItems = [
+    { title: t('accompagnement.product.item1.title'), desc: t('accompagnement.product.item1.desc') },
+    { title: t('accompagnement.product.item2.title'), desc: t('accompagnement.product.item2.desc') },
+    { title: t('accompagnement.product.item3.title'), desc: t('accompagnement.product.item3.desc') },
+  ];
+
+  const automationItems = [
+    { title: t('accompagnement.automation.item1.title'), desc: t('accompagnement.automation.item1.desc') },
+    { title: t('accompagnement.automation.item2.title'), desc: t('accompagnement.automation.item2.desc') },
+    { title: t('accompagnement.automation.item3.title'), desc: t('accompagnement.automation.item3.desc') },
+  ];
+
   return (
     <section id="accompagnement" className="section bg-surface-2/30">
       <div className="container-custom">
@@ -29,13 +32,10 @@ export function Freelance() {
             ))}
           </div>
 
-          {/* Title */}
-          <h2 className="text-h2 mb-4">Mon accompagnement</h2>
+          <h2 className="text-h2 mb-4">{t('accompagnement.title')}</h2>
           
-          {/* Introduction */}
           <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
-            Basé entre la Nouvelle-Calédonie et la France, j'accompagne des équipes sur site ou à distance 
-            autour de deux expertises complémentaires : Product Management et Automation & IA.
+            {t('accompagnement.intro')}
           </p>
 
           {/* Two cards */}
@@ -46,7 +46,7 @@ export function Freelance() {
                 <Briefcase className="w-6 h-6 text-accent" />
               </div>
               
-              <h3 className="text-h3 mb-4 text-center md:text-left">Product Management</h3>
+              <h3 className="text-h3 mb-4 text-center md:text-left">{t('accompagnement.product.title')}</h3>
               
               <div className="space-y-4 mb-6">
                 {productItems.map((item) => (
@@ -65,7 +65,7 @@ export function Freelance() {
                   href="/product-owner"
                   className="inline-flex items-center justify-center gap-2 text-accent hover:text-accent/80 font-medium transition-colors group w-full md:w-auto"
                 >
-                  Découvrir l'accompagnement Product
+                  {t('accompagnement.product.cta')}
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
               </div>
@@ -77,7 +77,7 @@ export function Freelance() {
                 <Bot className="w-6 h-6 text-accent" />
               </div>
               
-              <h3 className="text-h3 mb-4 text-center md:text-left">Automation & IA</h3>
+              <h3 className="text-h3 mb-4 text-center md:text-left">{t('accompagnement.automation.title')}</h3>
               
               <div className="space-y-4 mb-4">
                 {automationItems.map((item) => (
@@ -95,7 +95,7 @@ export function Freelance() {
               <div className="flex justify-center md:justify-start">
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-xs text-accent mb-4">
                   <GraduationCap className="w-3.5 h-3.5" />
-                  Formation avancée Automation & IA — Le Wagon
+                  {t('accompagnement.automation.badge')}
                 </div>
               </div>
               
@@ -104,7 +104,7 @@ export function Freelance() {
                   href="/ops-builder"
                   className="inline-flex items-center justify-center gap-2 text-accent hover:text-accent/80 font-medium transition-colors group w-full md:w-auto"
                 >
-                  Découvrir l'offre Automation & IA
+                  {t('accompagnement.automation.cta')}
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
               </div>

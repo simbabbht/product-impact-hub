@@ -2,8 +2,11 @@ import { Bot } from 'lucide-react';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { ScrollToTop } from '@/components/ScrollToTop';
+import { useLanguage } from '@/components/LanguageProvider';
 
 export default function OpsBuilderFull() {
+  const { t } = useLanguage();
+
   return (
     <div className="min-h-screen">
       <Navbar />
@@ -15,9 +18,9 @@ export default function OpsBuilderFull() {
               <div className="w-14 h-14 rounded-full bg-accent-muted flex items-center justify-center mx-auto mb-6 animate-fade-in-up">
                 <Bot className="w-7 h-7 text-accent" />
               </div>
-              <h1 className="text-h1 mb-4 animate-fade-in-up">Ops Builder</h1>
+              <h1 className="text-h1 mb-4 animate-fade-in-up">{t('opsFull.heroTitle')}</h1>
               <p className="text-h3 text-muted-foreground font-normal animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
-                Automatisation & IA au service de la performance opérationnelle
+                {t('opsFull.heroSubtitle')}
               </p>
             </div>
           </div>
@@ -27,9 +30,7 @@ export default function OpsBuilderFull() {
         <section className="section bg-surface-2/30">
           <div className="container-custom">
             <div className="max-w-2xl mx-auto text-center">
-              <p className="text-body text-muted-foreground">
-                Le contenu détaillé de cette page sera complété prochainement.
-              </p>
+              <p className="text-body text-muted-foreground">{t('opsFull.placeholder')}</p>
             </div>
           </div>
         </section>
