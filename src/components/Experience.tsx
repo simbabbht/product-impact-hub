@@ -38,7 +38,7 @@ export function Experience() {
   return (
     <section id="experience" className="section">
       <div className="container-custom">
-        <h2 className="text-h2 text-center mb-10">Expériences</h2>
+        <h2 className="text-h2 text-center mb-10">Mes expériences</h2>
 
         <div className="flex flex-col gap-4 w-full max-w-4xl mx-auto">
           {experiences.map((exp, index) => (
