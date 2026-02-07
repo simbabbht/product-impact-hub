@@ -1,4 +1,4 @@
-import { ArrowRight, Users, CheckCircle, Building2, Smartphone, Settings, RefreshCw, Layers } from 'lucide-react';
+import { ArrowRight, Users, CheckCircle, Building2, Smartphone, Settings, RefreshCw, Layers, HelpCircle } from 'lucide-react';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { ScrollToTop } from '@/components/ScrollToTop';
@@ -6,6 +6,7 @@ import { useLanguage } from '@/components/LanguageProvider';
 
 const contextIcons = [Building2, Smartphone, Settings, Users, RefreshCw, Layers];
 const contextKeys = ['po.ctx1', 'po.ctx2', 'po.ctx3', 'po.ctx4', 'po.ctx5', 'po.ctx6'] as const;
+const whenKeys = ['po.when1', 'po.when2', 'po.when3', 'po.when4', 'po.when5'] as const;
 const roleKeys = ['po.role1', 'po.role2', 'po.role3', 'po.role4', 'po.role5'] as const;
 
 const projets = [
@@ -52,8 +53,27 @@ export default function ProductOwner() {
           </div>
         </section>
 
-        {/* Mon rôle */}
+        {/* Quand faire appel à moi ? */}
         <section className="section">
+          <div className="container-custom">
+            <div className="max-w-3xl mx-auto">
+              <h2 className="text-h2 mb-6 text-center">{t('po.whenTitle')}</h2>
+              <div className="glass-card p-6">
+                <ul className="space-y-3">
+                  {whenKeys.map((key) => (
+                    <li key={key} className="flex items-center gap-3">
+                      <HelpCircle className="w-5 h-5 text-accent flex-shrink-0" />
+                      <span className="text-body">{t(key)}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Ce que je fais */}
+        <section className="section bg-surface-2/30">
           <div className="container-custom">
             <div className="max-w-3xl mx-auto">
               <h2 className="text-h2 mb-6 text-center">{t('po.roleTitle')}</h2>
@@ -77,7 +97,7 @@ export default function ProductOwner() {
         </section>
 
         {/* Mes projets */}
-        <section className="section bg-surface-2/30">
+        <section className="section">
           <div className="container-custom">
             <div className="max-w-2xl mx-auto text-center">
               <h2 className="text-h2 mb-6">{t('po.projectsTitle')}</h2>
@@ -100,7 +120,7 @@ export default function ProductOwner() {
         </section>
 
         {/* CTA Final */}
-        <section className="section">
+        <section className="section bg-surface-2/30">
           <div className="container-custom">
             <div className="max-w-2xl mx-auto text-center">
               <p className="text-h3 mb-6">{t('po.ctaText')}</p>
