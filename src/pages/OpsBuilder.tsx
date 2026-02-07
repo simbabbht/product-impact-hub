@@ -80,9 +80,8 @@ export default function OpsBuilder() {
                   {t('ops.ctaPrimary')}
                   <ArrowRight className="w-4 h-4" />
                 </a>
-                <a href="/product-owner" className="btn-secondary">
-                  {t('ops.ctaSecondary')}
-                  <ArrowRight className="w-4 h-4" />
+                <a href="https://calendly.com/simonbabouhot-pro/30min" target="_blank" rel="noopener noreferrer" className="btn-secondary">
+                  📅 {t('ops.ctaSecondary')}
                 </a>
               </div>
             </div>
