@@ -40,7 +40,6 @@ export const translations = {
     'accompagnement.automation.item2.desc': 'Automatisations ciblées pour fiabiliser, accélérer et structurer les opérations',
     'accompagnement.automation.item3.title': 'Approche orientée ROI',
     'accompagnement.automation.item3.desc': 'Priorisation par impact concret : temps gagné, coûts réduits, efficacité accrue',
-    'accompagnement.automation.badge': 'Formation avancée Automation & IA — Le Wagon',
 
     // Experience
     'experience.title': 'Mes expériences',
@@ -69,8 +68,6 @@ export const translations = {
     'about.music': 'Musique',
     'about.spotify': 'Ma playlist Spotify',
     'about.travel': 'Voyage',
-    'about.misc': 'Divers',
-    'about.miscContent': "Pas d'actualités pour le moment.",
 
     // Contact
     'contact.title': 'Contact',
@@ -95,7 +92,7 @@ export const translations = {
 
     // Product Owner page
     'po.heroTitle': 'Product Owner',
-    'po.heroSubtitle': 'Concevoir et faire évoluer des produits digitaux',
+    'po.heroSubtitle': 'Mon objectif : accompagner et structurer le développement de vos produits digitaux',
     'po.contextsTitle': "Contextes et types de produits sur lesquels j'interviens",
     'po.ctx1': 'Espace client',
     'po.ctx2': 'Applications web et mobile',
@@ -103,12 +100,18 @@ export const translations = {
     'po.ctx4': 'Parcours self-care',
     'po.ctx5': 'Digitalisation de processus existants',
     'po.ctx6': 'Produits en refonte ou en phase de structuration',
-    'po.roleTitle': 'Mon rôle au cœur du produit',
+    'po.whenTitle': 'Quand faire appel à moi ?',
+    'po.when1': 'Vous lancez un nouveau produit digital (application, site, espace client)',
+    'po.when2': 'Votre backlog manque de structure ou de priorisation',
+    'po.when3': 'Les équipes métier et tech avancent en décalage',
+    'po.when4': 'Vous avez besoin de cadrer un projet complexe',
+    'po.when5': 'Vous souhaitez améliorer un produit existant',
+    'po.roleTitle': 'Ce que je fais',
     'po.roleDesc1': 'En tant que Product Owner, je fais le lien entre les besoins utilisateurs, les enjeux métier et les contraintes techniques.',
     'po.roleDesc2': 'Mon objectif est de transformer des problématiques complexes en solutions simples, utiles et mesurables.',
     'po.role1': 'Clarifier les besoins et les objectifs',
-    'po.role2': 'Prioriser ce qui crée le plus de valeur',
-    'po.role3': 'Aligner les parties prenantes',
+    'po.role2': 'Structurer la vision et la roadmap',
+    'po.role3': 'Prioriser ce qui crée le plus de valeur',
     'po.role4': 'Sécuriser la delivery',
     'po.role5': "Mesurer l'impact réel du produit",
     'po.projectsTitle': 'Mes projets',
@@ -119,15 +122,24 @@ export const translations = {
     'po.ctaPrimary': 'Parlons de votre projet',
     'po.ctaSecondary': 'Prendre rendez-vous',
 
-    // Ops Builder page (temp)
+    // Ops Builder page
     'ops.heroTitle': 'Ops Builder',
     'ops.heroSubtitle': 'Automation & IA orientées ROI pour les PME',
-    'ops.desc1': "Je finalise actuellement cette offre autour de l'automatisation des processus et de l'IA (formation avancée en cours, premiers cas d'usage en préparation).",
-    'ops.desc2': "En attendant, je peux déjà vous aider à identifier des quick wins et des opportunités d'optimisation.",
-    'ops.item1': 'Audit des processus métiers existants',
-    'ops.item2': "Identification de leviers d'automatisation",
-    'ops.item3': 'Approche orientée ROI et efficacité opérationnelle',
-    'ops.ctaPrimary': 'Parlons de votre projet',
+    'ops.roiNote': 'ROI : retour sur investissement — temps gagné, coûts réduits, efficacité opérationnelle.',
+    'ops.introText': "Cette offre vise à identifier et résoudre les pertes de temps et d'argent liées à des tâches répétitives ou mal structurées, afin de permettre aux équipes de se concentrer sur des missions à plus forte valeur ajoutée.",
+    'ops.whatTitle': 'Ce que je mets en place',
+    'ops.what1.title': 'Audit et analyse des processus',
+    'ops.what1.desc': "Cartographier les flux existants, identifier les tâches chronophages et les sources d'erreurs",
+    'ops.what2.title': 'Mise en place de systèmes simples',
+    'ops.what2.desc': 'Automatisations ciblées pour fiabiliser, accélérer et structurer les opérations',
+    'ops.what3.title': 'Approche orientée ROI',
+    'ops.what3.desc': 'Priorisation par impact concret : temps gagné, coûts réduits, efficacité accrue',
+    'ops.offersTitle': 'Offres',
+    'ops.offer1': 'Audit des processus existants',
+    'ops.offer2': "Mise en place d'un système opérationnel (avec documentation)",
+    'ops.offer3': 'Maintenance mensuelle possible',
+    'ops.offersNote': 'Offre principalement adaptée aux PME.',
+    'ops.ctaPrimary': "Voir si c'est pertinent pour vous",
     'ops.ctaSecondary': 'Découvrir mon accompagnement Product',
 
     // Ops Builder Full page
@@ -176,7 +188,6 @@ export const translations = {
     'accompagnement.automation.item2.desc': 'Targeted automations to make operations more reliable, faster, and structured',
     'accompagnement.automation.item3.title': 'ROI-driven approach',
     'accompagnement.automation.item3.desc': 'Prioritization by concrete impact: time saved, reduced costs, increased efficiency',
-    'accompagnement.automation.badge': 'Advanced Automation & AI Training — Le Wagon',
 
     // Experience
     'experience.title': 'My experience',
@@ -205,8 +216,6 @@ export const translations = {
     'about.music': 'Music',
     'about.spotify': 'My Spotify playlist',
     'about.travel': 'Travel',
-    'about.misc': 'Misc',
-    'about.miscContent': 'No news for now.',
 
     // Contact
     'contact.title': 'Contact',
@@ -231,7 +240,7 @@ export const translations = {
 
     // Product Owner page
     'po.heroTitle': 'Product Owner',
-    'po.heroSubtitle': 'Design and evolve digital products',
+    'po.heroSubtitle': 'My goal: support and structure the development of your digital products',
     'po.contextsTitle': 'Contexts and product types I work on',
     'po.ctx1': 'Customer portal',
     'po.ctx2': 'Web and mobile applications',
@@ -239,12 +248,18 @@ export const translations = {
     'po.ctx4': 'Self-care journeys',
     'po.ctx5': 'Digitalization of existing processes',
     'po.ctx6': 'Products undergoing redesign or structuring',
-    'po.roleTitle': 'My role at the heart of the product',
+    'po.whenTitle': 'When to call on me?',
+    'po.when1': 'You are launching a new digital product (application, website, customer portal)',
+    'po.when2': 'Your backlog lacks structure or prioritization',
+    'po.when3': 'Business and tech teams are misaligned',
+    'po.when4': 'You need to frame a complex project',
+    'po.when5': 'You want to improve an existing product',
+    'po.roleTitle': 'What I do',
     'po.roleDesc1': 'As a Product Owner, I bridge user needs, business challenges, and technical constraints.',
     'po.roleDesc2': 'My goal is to turn complex problems into simple, useful, and measurable solutions.',
     'po.role1': 'Clarify needs and objectives',
-    'po.role2': 'Prioritize what creates the most value',
-    'po.role3': 'Align stakeholders',
+    'po.role2': 'Structure the vision and roadmap',
+    'po.role3': 'Prioritize what creates the most value',
     'po.role4': 'Secure delivery',
     'po.role5': 'Measure real product impact',
     'po.projectsTitle': 'My projects',
@@ -255,15 +270,24 @@ export const translations = {
     'po.ctaPrimary': "Let's talk about your project",
     'po.ctaSecondary': 'Book a meeting',
 
-    // Ops Builder page (temp)
+    // Ops Builder page
     'ops.heroTitle': 'Ops Builder',
     'ops.heroSubtitle': 'ROI-focused Automation & AI for SMEs',
-    'ops.desc1': "I'm currently finalizing this offer around process automation and AI (advanced training in progress, first use cases being prepared).",
-    'ops.desc2': "In the meantime, I can already help you identify quick wins and optimization opportunities.",
-    'ops.item1': 'Audit of existing business processes',
-    'ops.item2': 'Identification of automation levers',
-    'ops.item3': 'ROI-driven approach and operational efficiency',
-    'ops.ctaPrimary': "Let's talk about your project",
+    'ops.roiNote': 'ROI: return on investment — time saved, reduced costs, operational efficiency.',
+    'ops.introText': "This offer aims to identify and resolve time and money losses linked to repetitive or poorly structured tasks, enabling teams to focus on higher value-added missions.",
+    'ops.whatTitle': 'What I implement',
+    'ops.what1.title': 'Process audit and analysis',
+    'ops.what1.desc': 'Map existing workflows, identify time-consuming tasks and error sources',
+    'ops.what2.title': 'Simple systems implementation',
+    'ops.what2.desc': 'Targeted automations to make operations more reliable, faster, and structured',
+    'ops.what3.title': 'ROI-driven approach',
+    'ops.what3.desc': 'Prioritization by concrete impact: time saved, reduced costs, increased efficiency',
+    'ops.offersTitle': 'Offers',
+    'ops.offer1': 'Audit of existing processes',
+    'ops.offer2': 'Implementation of an operational system (with documentation)',
+    'ops.offer3': 'Monthly maintenance available',
+    'ops.offersNote': 'Offer primarily designed for SMEs.',
+    'ops.ctaPrimary': "See if it's relevant for you",
     'ops.ctaSecondary': 'Discover my Product services',
 
     // Ops Builder Full page
