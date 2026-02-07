@@ -91,7 +91,7 @@ export function Freelance() {
               
               <a 
                 href="/ops-builder"
-                className="btn-secondary w-full justify-center text-base py-3 mt-2"
+                className="btn-primary w-full justify-center text-base py-3 mt-2"
               >
                 {t('accompagnement.automation.cta')}
                 <ArrowRight className="w-4 h-4" />

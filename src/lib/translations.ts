@@ -16,7 +16,7 @@ export const translations = {
     // Hero
     'hero.badge': 'Product Owner',
     'hero.title': 'Simon Babouhot',
-    'hero.subtitle': 'Product Owner',
+    'hero.subtitle': 'Product Management & Ops',
     'hero.description': "Product Owner avec plus de 5 ans d'expérience, notamment au sein du groupe Allianz.\n\nJ'accompagne la conception et l'évolution de produits digitaux centrés utilisateurs (espaces clients, applications, parcours self-care), ainsi que la simplification et l'automatisation de processus métiers, avec une approche pragmatique orientée ROI.",
     'hero.cta.contact': 'Parlons de votre projet',
     'hero.cta.appointment': 'Prendre rendez-vous',
@@ -164,7 +164,7 @@ export const translations = {
     // Hero
     'hero.badge': 'Product Owner',
     'hero.title': 'Simon Babouhot',
-    'hero.subtitle': 'Product Owner',
+    'hero.subtitle': 'Product Management & Ops',
     'hero.description': "Product Owner with over 5 years of experience, notably within the Allianz group.\n\nI support the design and evolution of user-centered digital products (customer portals, applications, self-care journeys), as well as the simplification and automation of business processes, with a pragmatic approach focused on impact and ROI.",
     'hero.cta.contact': "Let's talk about your project",
     'hero.cta.appointment': 'Book a meeting',

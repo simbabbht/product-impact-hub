@@ -32,41 +32,36 @@ export default function ProductOwner() {
           </div>
         </section>
 
-        {/* Contextes + Quand faire appel — merged side by side */}
+        {/* Quand faire appel + Contextes — side by side, compact */}
         <section className="section bg-surface-2/30">
           <div className="container-custom">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
-              {/* Left: Quand faire appel à moi */}
-              <div>
-                <h2 className="text-h2 mb-6">{t('po.whenTitle')}</h2>
-                <div className="glass-card p-6">
-                  <ul className="space-y-3">
-                    {whenKeys.map((key) => (
-                      <li key={key} className="flex items-start gap-3">
-                        <HelpCircle className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
-                        <span className="text-body">{t(key)}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+            <h2 className="text-h2 mb-6 text-center">{t('po.whenTitle')}</h2>
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-6 max-w-4xl mx-auto items-start">
+              {/* Left: When items */}
+              <div className="glass-card p-6">
+                <ul className="space-y-3">
+                  {whenKeys.map((key) => (
+                    <li key={key} className="flex items-start gap-3">
+                      <HelpCircle className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
+                      <span className="text-body">{t(key)}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
 
-              {/* Right: Context chips compact */}
-              <div>
-                <h2 className="text-h2 mb-6">{t('po.contextsTitle')}</h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {contextKeys.map((key, i) => {
-                    const Icon = contextIcons[i];
-                    return (
-                      <div key={key} className="glass-card p-3 flex items-center gap-2">
-                        <div className="w-8 h-8 rounded-full bg-accent-muted flex items-center justify-center flex-shrink-0">
-                          <Icon className="w-4 h-4 text-accent" />
-                        </div>
-                        <span className="text-small">{t(key)}</span>
+              {/* Right: Context icons grid — compact, no text */}
+              <div className="grid grid-cols-3 gap-3">
+                {contextKeys.map((key, i) => {
+                  const Icon = contextIcons[i];
+                  return (
+                    <div key={key} className="glass-card p-3 flex flex-col items-center justify-center gap-1.5 w-20 h-20">
+                      <div className="w-10 h-10 rounded-full bg-accent-muted flex items-center justify-center">
+                        <Icon className="w-5 h-5 text-accent" />
                       </div>
-                    );
-                  })}
-                </div>
+                      <span className="text-[10px] text-muted-foreground text-center leading-tight line-clamp-2">{t(key)}</span>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>
