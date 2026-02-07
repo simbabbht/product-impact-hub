@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Dumbbell, Music as MusicIcon, Sparkles, X, ExternalLink, Globe } from 'lucide-react';
+import { Dumbbell, Music as MusicIcon, X, ExternalLink, Globe } from 'lucide-react';
 import albumLZ from '@/assets/hobbies/LZ.jpg';
 import albumRHCP from '@/assets/hobbies/RHCP.jpg';
 import albumOcean from '@/assets/hobbies/OCEAN.jpg';
@@ -63,14 +63,6 @@ const hobbies: HobbyData[] = [
     content: {
       titleKey: 'about.travel',
       customComponent: 'worldMap',
-    },
-  },
-  { 
-    icon: Sparkles, 
-    labelKey: 'about.misc',
-    content: {
-      titleKey: 'about.misc',
-      textKey: 'about.miscContent',
     },
   },
 ];

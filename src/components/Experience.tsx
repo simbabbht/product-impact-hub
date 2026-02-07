@@ -1,6 +1,7 @@
-import { Building2, ArrowRight, TrendingUp, Calendar, Target, FolderOpen } from 'lucide-react';
+import { ArrowRight, Calendar, Target, FolderOpen } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from './LanguageProvider';
+import allianzLogo from '@/assets/brands/allianz.png';
 
 export function Experience() {
   const { t } = useLanguage();
@@ -52,11 +53,11 @@ export function Experience() {
             >
               {/* Header row */}
               <div className="flex flex-col sm:flex-row items-start gap-4 mb-4">
-                <div className="w-12 h-12 rounded-lg bg-accent-muted flex items-center justify-center flex-shrink-0 mx-auto sm:mx-0">
-                  <Building2 className="w-6 h-6 text-accent" />
+                <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center flex-shrink-0 mx-auto sm:mx-0 overflow-hidden border border-border">
+                  <img src={allianzLogo} alt="Allianz" className="w-8 h-8 object-contain" />
                 </div>
                 <div className="flex-1 text-center sm:text-left">
-                  <div className="flex flex-col sm:flex-row flex-wrap items-center sm:items-start gap-1 sm:gap-2 mb-1">
+                  <div className="flex flex-col sm:flex-row flex-wrap items-center sm:items-baseline gap-1 sm:gap-2 mb-1">
                     <h3 className="text-h3">{exp.title}</h3>
                     <span className="text-small text-muted-foreground">— {exp.role}</span>
                   </div>

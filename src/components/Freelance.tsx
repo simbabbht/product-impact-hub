@@ -1,4 +1,4 @@
-import { MapPin, Briefcase, Bot, ArrowRight, GraduationCap } from 'lucide-react';
+import { MapPin, Briefcase, Bot, ArrowRight } from 'lucide-react';
 import { useLanguage } from './LanguageProvider';
 
 const locations = ['Nouvelle-Calédonie', 'France'];
@@ -89,14 +89,6 @@ export function Freelance() {
                     </div>
                   </div>
                 ))}
-              </div>
-              
-              {/* Badge formation */}
-              <div className="flex justify-center md:justify-start">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-xs text-accent mb-4">
-                  <GraduationCap className="w-3.5 h-3.5" />
-                  {t('accompagnement.automation.badge')}
-                </div>
               </div>
               
               <div className="flex justify-center md:justify-start">
