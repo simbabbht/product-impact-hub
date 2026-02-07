@@ -41,8 +41,8 @@ export default function ProductOwner() {
               <div className="glass-card p-6 mb-6">
                 <ul className="space-y-3">
                   {whenKeys.map((key) => (
-                    <li key={key} className="flex items-start gap-3">
-                      <Circle className="w-2 h-2 text-accent flex-shrink-0 mt-2 fill-accent" />
+                    <li key={key} className="flex items-center gap-3">
+                      <Circle className="w-2 h-2 text-accent flex-shrink-0 fill-accent" />
                       <span className="text-body">{t(key)}</span>
                     </li>
                   ))}
