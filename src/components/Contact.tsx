@@ -1,5 +1,5 @@
 import { useState, FormEvent } from 'react';
-import { Mail, Linkedin, Calendar, Send, CheckCircle } from 'lucide-react';
+import { Mail, Linkedin, Calendar, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import { useLanguage } from './LanguageProvider';
 
 export function Contact() {
@@ -11,14 +11,41 @@ export function Contact() {
     message: '',
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isError, setIsError] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    setIsSubmitted(true);
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormState({ name: '', email: '', profession: '', message: '' });
-    }, 3000);
+    setIsSubmitting(true);
+    setIsError(false);
+
+    try {
+      const body = new URLSearchParams({
+        'form-name': 'contact',
+        name: formState.name,
+        email: formState.email,
+        profession: formState.profession,
+        message: formState.message,
+      });
+
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: body.toString(),
+      });
+
+      if (!response.ok) throw new Error('Network error');
+
+      setIsSubmitted(true);
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setFormState({ name: '', email: '', profession: '', message: '' });
+      }, 3000);
+    } catch {
+      setIsError(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -55,24 +82,47 @@ export function Contact() {
                 <p className="text-small text-muted-foreground">{t('contact.form.successDetail')}</p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form
+                name="contact"
+                method="POST"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
+                onSubmit={handleSubmit}
+                className="space-y-4"
+              >
+                <input type="hidden" name="form-name" value="contact" />
+                <p className="hidden">
+                  <label>
+                    Don't fill this out:{' '}
+                    <input name="bot-field" />
+                  </label>
+                </p>
+
                 <div>
                   <label htmlFor="name" className="block text-small font-medium mb-1">{t('contact.form.name')}</label>
-                  <input type="text" id="name" required maxLength={100} value={formState.name} onChange={(e) => setFormState(prev => ({ ...prev, name: e.target.value }))} className="w-full px-4 py-3 rounded-md bg-surface border border-border focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors text-body" placeholder={t('contact.form.namePlaceholder')} />
+                  <input type="text" id="name" name="name" required maxLength={100} value={formState.name} onChange={(e) => setFormState(prev => ({ ...prev, name: e.target.value }))} className="w-full px-4 py-3 rounded-md bg-surface border border-border focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors text-body" placeholder={t('contact.form.namePlaceholder')} />
                 </div>
                 <div>
                   <label htmlFor="email" className="block text-small font-medium mb-1">{t('contact.form.email')}</label>
-                  <input type="email" id="email" required maxLength={255} value={formState.email} onChange={(e) => setFormState(prev => ({ ...prev, email: e.target.value }))} className="w-full px-4 py-3 rounded-md bg-surface border border-border focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors text-body" placeholder={t('contact.form.emailPlaceholder')} />
+                  <input type="email" id="email" name="email" required maxLength={255} value={formState.email} onChange={(e) => setFormState(prev => ({ ...prev, email: e.target.value }))} className="w-full px-4 py-3 rounded-md bg-surface border border-border focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors text-body" placeholder={t('contact.form.emailPlaceholder')} />
                 </div>
                 <div>
                   <label htmlFor="profession" className="block text-small font-medium mb-1">{t('contact.form.profession')}</label>
-                  <input type="text" id="profession" maxLength={100} value={formState.profession} onChange={(e) => setFormState(prev => ({ ...prev, profession: e.target.value }))} className="w-full px-4 py-3 rounded-md bg-surface border border-border focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors text-body" placeholder={t('contact.form.professionPlaceholder')} />
+                  <input type="text" id="profession" name="profession" maxLength={100} value={formState.profession} onChange={(e) => setFormState(prev => ({ ...prev, profession: e.target.value }))} className="w-full px-4 py-3 rounded-md bg-surface border border-border focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors text-body" placeholder={t('contact.form.professionPlaceholder')} />
                 </div>
                 <div>
                   <label htmlFor="message" className="block text-small font-medium mb-1">{t('contact.form.message')}</label>
-                  <textarea id="message" required maxLength={1000} rows={4} value={formState.message} onChange={(e) => setFormState(prev => ({ ...prev, message: e.target.value }))} className="w-full px-4 py-3 rounded-md bg-surface border border-border focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors text-body resize-none" placeholder={t('contact.form.messagePlaceholder')} />
+                  <textarea id="message" name="message" required maxLength={1000} rows={4} value={formState.message} onChange={(e) => setFormState(prev => ({ ...prev, message: e.target.value }))} className="w-full px-4 py-3 rounded-md bg-surface border border-border focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors text-body resize-none" placeholder={t('contact.form.messagePlaceholder')} />
                 </div>
-                <button type="submit" className="btn-primary w-full">
+
+                {isError && (
+                  <div className="flex items-center gap-2 text-destructive text-small">
+                    <AlertCircle className="w-4 h-4" />
+                    {t('contact.form.error')}
+                  </div>
+                )}
+
+                <button type="submit" disabled={isSubmitting} className="btn-primary w-full">
                   <Send className="w-4 h-4" />
                   {t('contact.form.send')}
                 </button>

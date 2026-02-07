@@ -33,13 +33,13 @@ export const translations = {
     'accompagnement.product.item3.title': 'Pilotage de la performance',
     'accompagnement.product.item3.desc': 'KPI, data visualisation, adoption et autonomie',
     'accompagnement.automation.title': 'Automation & IA',
-    'accompagnement.automation.cta': "Découvrir l'offre Automation & IA",
-    'accompagnement.automation.item1.title': 'Audit des processus métiers',
-    'accompagnement.automation.item1.desc': 'Analyse des flux existants et identification des points de friction',
-    'accompagnement.automation.item2.title': 'Workflows automatisés',
-    'accompagnement.automation.item2.desc': "Mise en place d'automatisations fiables et adaptées aux usages réels",
+    'accompagnement.automation.cta': "Découvrir l'approche systèmes & automatisation",
+    'accompagnement.automation.item1.title': 'Analyse des processus clés',
+    'accompagnement.automation.item1.desc': "Identifier les tâches chronophages, sources d'erreurs ou de perte de valeur",
+    'accompagnement.automation.item2.title': 'Mise en place de systèmes simples',
+    'accompagnement.automation.item2.desc': 'Automatisations ciblées pour fiabiliser, accélérer et structurer les opérations',
     'accompagnement.automation.item3.title': 'Approche orientée ROI',
-    'accompagnement.automation.item3.desc': 'Optimisation du temps et des coûts, principalement pour les PME',
+    'accompagnement.automation.item3.desc': 'Priorisation par impact concret : temps gagné, coûts réduits, efficacité accrue',
     'accompagnement.automation.badge': 'Formation avancée Automation & IA — Le Wagon',
 
     // Experience
@@ -87,6 +87,7 @@ export const translations = {
     'contact.form.send': 'Envoyer',
     'contact.form.success': 'Message envoyé !',
     'contact.form.successDetail': 'Je vous réponds rapidement.',
+    'contact.form.error': "Une erreur s'est produite. Veuillez réessayer.",
 
     // Footer
     'footer.rights': 'Tous droits réservés',
@@ -168,13 +169,13 @@ export const translations = {
     'accompagnement.product.item3.title': 'Performance management',
     'accompagnement.product.item3.desc': 'KPIs, data visualization, adoption & autonomy',
     'accompagnement.automation.title': 'Automation & AI',
-    'accompagnement.automation.cta': 'Discover Automation & AI',
-    'accompagnement.automation.item1.title': 'Business process audit',
-    'accompagnement.automation.item1.desc': 'Analysis of existing workflows and identification of friction points',
-    'accompagnement.automation.item2.title': 'Automated workflows',
-    'accompagnement.automation.item2.desc': 'Implementation of reliable automations tailored to real usage',
+    'accompagnement.automation.cta': 'Discover the systems & automation approach',
+    'accompagnement.automation.item1.title': 'Key process analysis',
+    'accompagnement.automation.item1.desc': 'Identify time-consuming tasks, error sources, or value leaks',
+    'accompagnement.automation.item2.title': 'Simple systems implementation',
+    'accompagnement.automation.item2.desc': 'Targeted automations to make operations more reliable, faster, and structured',
     'accompagnement.automation.item3.title': 'ROI-driven approach',
-    'accompagnement.automation.item3.desc': 'Time and cost optimization, primarily for SMEs',
+    'accompagnement.automation.item3.desc': 'Prioritization by concrete impact: time saved, reduced costs, increased efficiency',
     'accompagnement.automation.badge': 'Advanced Automation & AI Training — Le Wagon',
 
     // Experience
@@ -222,6 +223,7 @@ export const translations = {
     'contact.form.send': 'Send',
     'contact.form.success': 'Message sent!',
     'contact.form.successDetail': "I'll get back to you soon.",
+    'contact.form.error': 'An error occurred. Please try again.',
 
     // Footer
     'footer.rights': 'All rights reserved',
