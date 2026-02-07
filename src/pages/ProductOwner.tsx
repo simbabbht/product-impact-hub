@@ -1,4 +1,4 @@
-import { ArrowRight, Users, CheckCircle, Building2, Smartphone, Settings, RefreshCw, Layers, HelpCircle } from 'lucide-react';
+import { ArrowRight, CheckCircle, Smartphone, Settings, Users, RefreshCw, Layers, HelpCircle, Building2 } from 'lucide-react';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { ScrollToTop } from '@/components/ScrollToTop';
@@ -7,7 +7,6 @@ import { useLanguage } from '@/components/LanguageProvider';
 const contextIcons = [Building2, Smartphone, Settings, Users, RefreshCw, Layers];
 const contextKeys = ['po.ctx1', 'po.ctx2', 'po.ctx3', 'po.ctx4', 'po.ctx5', 'po.ctx6'] as const;
 const whenKeys = ['po.when1', 'po.when2', 'po.when3', 'po.when4', 'po.when5'] as const;
-const roleKeys = ['po.role1', 'po.role2', 'po.role3', 'po.role4', 'po.role5'] as const;
 
 const projets = [
   { labelKey: 'po.project1' as const, slug: 'refonte-home-espace-client' },
@@ -33,64 +32,41 @@ export default function ProductOwner() {
           </div>
         </section>
 
-        {/* Contextes */}
+        {/* Contextes + Quand faire appel — merged side by side */}
         <section className="section bg-surface-2/30">
           <div className="container-custom">
-            <h2 className="text-h2 mb-8 text-center">{t('po.contextsTitle')}</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
-              {contextKeys.map((key, i) => {
-                const Icon = contextIcons[i];
-                return (
-                  <div key={key} className="glass-card p-4 flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-accent-muted flex items-center justify-center flex-shrink-0">
-                      <Icon className="w-5 h-5 text-accent" />
-                    </div>
-                    <span className="text-small">{t(key)}</span>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-
-        {/* Quand faire appel à moi ? */}
-        <section className="section">
-          <div className="container-custom">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-h2 mb-6 text-center">{t('po.whenTitle')}</h2>
-              <div className="glass-card p-6">
-                <ul className="space-y-3">
-                  {whenKeys.map((key) => (
-                    <li key={key} className="flex items-center gap-3">
-                      <HelpCircle className="w-5 h-5 text-accent flex-shrink-0" />
-                      <span className="text-body">{t(key)}</span>
-                    </li>
-                  ))}
-                </ul>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              {/* Left: Quand faire appel à moi */}
+              <div>
+                <h2 className="text-h2 mb-6">{t('po.whenTitle')}</h2>
+                <div className="glass-card p-6">
+                  <ul className="space-y-3">
+                    {whenKeys.map((key) => (
+                      <li key={key} className="flex items-start gap-3">
+                        <HelpCircle className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
+                        <span className="text-body">{t(key)}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-            </div>
-          </div>
-        </section>
 
-        {/* Ce que je fais */}
-        <section className="section bg-surface-2/30">
-          <div className="container-custom">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-h2 mb-6 text-center">{t('po.roleTitle')}</h2>
-              <p className="text-body text-muted-foreground mb-8 text-center">
-                {t('po.roleDesc1')}
-                <br /><br />
-                {t('po.roleDesc2')}
-              </p>
-              <div className="glass-card p-6">
-                <ul className="space-y-3">
-                  {roleKeys.map((key) => (
-                    <li key={key} className="flex items-center gap-3">
-                      <CheckCircle className="w-5 h-5 text-accent flex-shrink-0" />
-                      <span className="text-body">{t(key)}</span>
-                    </li>
-                  ))}
-                </ul>
+              {/* Right: Context chips compact */}
+              <div>
+                <h2 className="text-h2 mb-6">{t('po.contextsTitle')}</h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {contextKeys.map((key, i) => {
+                    const Icon = contextIcons[i];
+                    return (
+                      <div key={key} className="glass-card p-3 flex items-center gap-2">
+                        <div className="w-8 h-8 rounded-full bg-accent-muted flex items-center justify-center flex-shrink-0">
+                          <Icon className="w-4 h-4 text-accent" />
+                        </div>
+                        <span className="text-small">{t(key)}</span>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             </div>
           </div>

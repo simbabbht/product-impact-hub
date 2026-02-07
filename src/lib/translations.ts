@@ -91,9 +91,9 @@ export const translations = {
     'footer.greenIt': 'Site léger & sobre — Green IT',
 
     // Product Owner page
-    'po.heroTitle': 'Product Owner',
+    'po.heroTitle': 'Product Management',
     'po.heroSubtitle': 'Mon objectif : accompagner et structurer le développement de vos produits digitaux',
-    'po.contextsTitle': "Contextes et types de produits sur lesquels j'interviens",
+    'po.contextsTitle': "Types de produits",
     'po.ctx1': 'Espace client',
     'po.ctx2': 'Applications web et mobile',
     'po.ctx3': 'Produits internes & outils métiers',
@@ -239,9 +239,9 @@ export const translations = {
     'footer.greenIt': 'Lightweight & sustainable — Green IT',
 
     // Product Owner page
-    'po.heroTitle': 'Product Owner',
+    'po.heroTitle': 'Product Management',
     'po.heroSubtitle': 'My goal: support and structure the development of your digital products',
-    'po.contextsTitle': 'Contexts and product types I work on',
+    'po.contextsTitle': 'Product types',
     'po.ctx1': 'Customer portal',
     'po.ctx2': 'Web and mobile applications',
     'po.ctx3': 'Internal products & business tools',
