@@ -42,7 +42,7 @@ export default function ProductOwner() {
                 <ul className="space-y-3">
                   {whenKeys.map((key) => (
                     <li key={key} className="flex items-start gap-3">
-                      <Circle className="w-3 h-3 text-accent flex-shrink-0 mt-1.5 fill-accent" />
+                      <Circle className="w-2 h-2 text-accent flex-shrink-0 mt-2 fill-accent" />
                       <span className="text-body">{t(key)}</span>
                     </li>
                   ))}
