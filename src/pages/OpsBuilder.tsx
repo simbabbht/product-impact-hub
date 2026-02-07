@@ -41,6 +41,7 @@ export default function OpsBuilder() {
         <section className="section bg-surface-2/30">
           <div className="container-custom">
             <div className="max-w-2xl mx-auto">
+              <h2 className="text-h2 mb-4 text-center">{t('ops.introTitle')}</h2>
               <p className="text-body text-muted-foreground text-center">
                 {t('ops.introText')}
               </p>

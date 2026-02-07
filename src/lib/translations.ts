@@ -45,7 +45,7 @@ export const translations = {
     'experience.title': 'Mes expériences',
     'experience.exp1.role': 'Product Owner, Espace Client digital',
     'experience.exp1.period': 'Depuis 2021',
-    'experience.exp1.h1': '+200K utilisateurs',
+    'experience.exp1.h1': "Gestion d'un Espace Client de +200K utilisateurs",
     'experience.exp1.h2': 'Backlog & priorisation : cadrage des besoins clients, arbitrages avec métier / IT, animation en agile',
     'experience.exp1.h3': 'Delivery end-to-end : user stories, suivi dev, recette/UAT, déploiement & release',
     'experience.exp1.h4': 'Mesure & amélioration continue : tests utilisateurs + dashboards KPI pour piloter la performance',
@@ -53,7 +53,7 @@ export const translations = {
     'experience.exp1.project2': "Optimiser la déclaration de sinistre en ligne — moins de friction, plus d'autonomie",
     'experience.exp2.role': 'Business Developer, Affiliation & E-partenariat',
     'experience.exp2.period': '2020–2021',
-    'experience.exp2.h1': "Campagnes d'acquisition : display, affiliation, emailing, SEA",
+    'experience.exp2.h1': "Gestion des campagnes d'acquisition : display, affiliation, emailing, SEA",
     'experience.exp2.h2': 'Pilotage performance : analyse, optimisation continue et reporting',
     'experience.exp2.h3': 'Refonte des communications : kits & assets de campagne',
     'experience.results': 'Résultats',
@@ -61,7 +61,7 @@ export const translations = {
 
     // About / Hobbies
     'about.title': 'Mes hobbies',
-    'about.subtitle': "Quand je ne suis pas sur un backlog, vous me trouverez à faire du sport, admirer la nature, écouter de la musique — ou explorer de nouveaux designs.",
+    'about.subtitle': "Quand je ne suis pas sur des projets, vous me trouverez à faire du sport, admirer la nature, écouter de la musique — ou explorer de nouveaux designs.",
     'about.sport': 'Sport',
     'about.sportContent': "Run, Vélo, Musculation, Natation et plein d'autres",
     'about.strava': 'Mon profil Strava',
@@ -126,6 +126,7 @@ export const translations = {
     'ops.heroTitle': 'Optimisation des processus',
     'ops.heroSubtitle': 'Automation & IA orientées ROI* pour les PME',
     'ops.roiNote': '*ROI : retour sur investissement — temps gagné, coûts réduits, efficacité opérationnelle.',
+    'ops.introTitle': 'Mon offre',
     'ops.introText': "Mon offre vise à identifier et résoudre les pertes de temps et d'argent liées à des tâches répétitives ou mal structurées, afin de permettre aux équipes de se concentrer sur des missions à plus forte valeur ajoutée.",
     'ops.whatTitle': 'Ce que je mets en place',
     'ops.what1.title': 'Audit et analyse des processus',
@@ -139,7 +140,7 @@ export const translations = {
     'ops.offer2': "Mise en place d'un système opérationnel (avec documentation)",
     'ops.offer3': 'Maintenance mensuelle possible',
     'ops.offersNote': 'Offre principalement adaptée aux PME.',
-    'ops.ctaPrimary': "Voir si c'est pertinent pour vous",
+    'ops.ctaPrimary': "Échangeons sur vos problématiques",
     'ops.ctaSecondary': 'Découvrir mon accompagnement Product',
 
     // Ops Builder Full page
@@ -193,7 +194,7 @@ export const translations = {
     'experience.title': 'My experience',
     'experience.exp1.role': 'Product Owner, Digital Customer Portal',
     'experience.exp1.period': 'Since 2021',
-    'experience.exp1.h1': '+200K users',
+    'experience.exp1.h1': 'Management of a Customer Portal with +200K users',
     'experience.exp1.h2': 'Backlog & prioritization: scoping client needs, arbitration with business / IT, agile facilitation',
     'experience.exp1.h3': 'End-to-end delivery: user stories, dev follow-up, UAT, deployment & release',
     'experience.exp1.h4': 'Measurement & continuous improvement: user testing + KPI dashboards to drive performance',
@@ -201,7 +202,7 @@ export const translations = {
     'experience.exp1.project2': "Optimize online claim declaration — less friction, more autonomy",
     'experience.exp2.role': 'Business Developer, Affiliation & E-partnerships',
     'experience.exp2.period': '2020–2021',
-    'experience.exp2.h1': 'Acquisition campaigns: display, affiliation, emailing, SEA',
+    'experience.exp2.h1': 'Management of acquisition campaigns: display, affiliation, emailing, SEA',
     'experience.exp2.h2': 'Performance management: analysis, continuous optimization and reporting',
     'experience.exp2.h3': 'Communications redesign: campaign kits & assets',
     'experience.results': 'Results',
@@ -209,7 +210,7 @@ export const translations = {
 
     // About / Hobbies
     'about.title': 'My hobbies',
-    'about.subtitle': "When I'm not working on a backlog, you'll find me exercising, admiring nature, listening to music — or exploring new designs.",
+    'about.subtitle': "When I'm not working on projects, you'll find me exercising, admiring nature, listening to music — or exploring new designs.",
     'about.sport': 'Sports',
     'about.sportContent': 'Running, Cycling, Gym, Swimming and many more',
     'about.strava': 'My Strava profile',
@@ -274,6 +275,7 @@ export const translations = {
     'ops.heroTitle': 'Process Optimization',
     'ops.heroSubtitle': 'ROI*-focused Automation & AI for SMEs',
     'ops.roiNote': '*ROI: return on investment — time saved, reduced costs, operational efficiency.',
+    'ops.introTitle': 'My offer',
     'ops.introText': "My offer aims to identify and resolve time and money losses linked to repetitive or poorly structured tasks, enabling teams to focus on higher value-added missions.",
     'ops.whatTitle': 'What I implement',
     'ops.what1.title': 'Process audit and analysis',
@@ -287,7 +289,7 @@ export const translations = {
     'ops.offer2': 'Implementation of an operational system (with documentation)',
     'ops.offer3': 'Monthly maintenance available',
     'ops.offersNote': 'Offer primarily designed for SMEs.',
-    'ops.ctaPrimary': "See if it's relevant for you",
+    'ops.ctaPrimary': "Let's discuss your challenges",
     'ops.ctaSecondary': 'Discover my Product services',
 
     // Ops Builder Full page
