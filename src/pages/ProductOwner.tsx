@@ -33,13 +33,12 @@ export default function ProductOwner() {
           </div>
         </section>
 
-        {/* Quand faire appel + Contextes — side by side, compact */}
+        {/* Quand faire appel + Contextes */}
         <section className="section bg-surface-2/30">
           <div className="container-custom">
-            <h2 className="text-h2 mb-6 text-center">{t('po.whenTitle')}</h2>
-            <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-6 max-w-4xl mx-auto items-start">
-              {/* Left: When items */}
-              <div className="glass-card p-6">
+            <div className="max-w-3xl mx-auto">
+              <h2 className="text-h2 mb-6 text-center">{t('po.whenTitle')}</h2>
+              <div className="glass-card p-6 mb-6">
                 <ul className="space-y-3">
                   {whenKeys.map((key) => (
                     <li key={key} className="flex items-start gap-3">
@@ -50,16 +49,14 @@ export default function ProductOwner() {
                 </ul>
               </div>
 
-              {/* Right: Context icons grid — compact, no text */}
-              <div className="grid grid-cols-3 gap-3">
+              <h3 className="text-h3 mb-3 text-center">{t('po.contextsTitle')}</h3>
+              <div className="flex flex-wrap justify-center gap-2">
                 {contextKeys.map((key, i) => {
                   const Icon = contextIcons[i];
                   return (
-                    <div key={key} className="glass-card p-3 flex flex-col items-center justify-center gap-1.5 w-20 h-20">
-                      <div className="w-10 h-10 rounded-full bg-accent-muted flex items-center justify-center">
-                        <Icon className="w-5 h-5 text-accent" />
-                      </div>
-                      <span className="text-[10px] text-muted-foreground text-center leading-tight line-clamp-2">{t(key)}</span>
+                    <div key={key} className="chip flex items-center gap-2">
+                      <Icon className="w-4 h-4" />
+                      <span>{t(key)}</span>
                     </div>
                   );
                 })}
