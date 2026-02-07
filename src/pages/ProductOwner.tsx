@@ -1,4 +1,4 @@
-import { ArrowRight, CheckCircle, Smartphone, Settings, Users, RefreshCw, Layers, HelpCircle, Building2 } from 'lucide-react';
+import { ArrowRight, CheckCircle, Smartphone, Settings, Users, RefreshCw, Layers, Circle, Building2 } from 'lucide-react';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { ScrollToTop } from '@/components/ScrollToTop';
@@ -42,7 +42,7 @@ export default function ProductOwner() {
                 <ul className="space-y-3">
                   {whenKeys.map((key) => (
                     <li key={key} className="flex items-start gap-3">
-                      <HelpCircle className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
+                      <Circle className="w-3 h-3 text-accent flex-shrink-0 mt-1.5 fill-accent" />
                       <span className="text-body">{t(key)}</span>
                     </li>
                   ))}
