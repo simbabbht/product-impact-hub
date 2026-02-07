@@ -123,10 +123,10 @@ export const translations = {
     'po.ctaSecondary': 'Prendre rendez-vous',
 
     // Ops Builder page
-    'ops.heroTitle': 'Ops Builder',
-    'ops.heroSubtitle': 'Automation & IA orientées ROI pour les PME',
-    'ops.roiNote': 'ROI : retour sur investissement — temps gagné, coûts réduits, efficacité opérationnelle.',
-    'ops.introText': "Cette offre vise à identifier et résoudre les pertes de temps et d'argent liées à des tâches répétitives ou mal structurées, afin de permettre aux équipes de se concentrer sur des missions à plus forte valeur ajoutée.",
+    'ops.heroTitle': 'Optimisation des processus',
+    'ops.heroSubtitle': 'Automation & IA orientées ROI* pour les PME',
+    'ops.roiNote': '*ROI : retour sur investissement — temps gagné, coûts réduits, efficacité opérationnelle.',
+    'ops.introText': "Mon offre vise à identifier et résoudre les pertes de temps et d'argent liées à des tâches répétitives ou mal structurées, afin de permettre aux équipes de se concentrer sur des missions à plus forte valeur ajoutée.",
     'ops.whatTitle': 'Ce que je mets en place',
     'ops.what1.title': 'Audit et analyse des processus',
     'ops.what1.desc': "Cartographier les flux existants, identifier les tâches chronophages et les sources d'erreurs",
@@ -271,10 +271,10 @@ export const translations = {
     'po.ctaSecondary': 'Book a meeting',
 
     // Ops Builder page
-    'ops.heroTitle': 'Ops Builder',
-    'ops.heroSubtitle': 'ROI-focused Automation & AI for SMEs',
-    'ops.roiNote': 'ROI: return on investment — time saved, reduced costs, operational efficiency.',
-    'ops.introText': "This offer aims to identify and resolve time and money losses linked to repetitive or poorly structured tasks, enabling teams to focus on higher value-added missions.",
+    'ops.heroTitle': 'Process Optimization',
+    'ops.heroSubtitle': 'ROI*-focused Automation & AI for SMEs',
+    'ops.roiNote': '*ROI: return on investment — time saved, reduced costs, operational efficiency.',
+    'ops.introText': "My offer aims to identify and resolve time and money losses linked to repetitive or poorly structured tasks, enabling teams to focus on higher value-added missions.",
     'ops.whatTitle': 'What I implement',
     'ops.what1.title': 'Process audit and analysis',
     'ops.what1.desc': 'Map existing workflows, identify time-consuming tasks and error sources',

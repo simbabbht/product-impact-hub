@@ -70,26 +70,6 @@ export default function OpsBuilder() {
           </div>
         </section>
 
-        {/* Offres */}
-        <section className="section bg-surface-2/30">
-          <div className="container-custom">
-            <div className="max-w-2xl mx-auto">
-              <h2 className="text-h2 mb-6 text-center">{t('ops.offersTitle')}</h2>
-              <div className="glass-card p-6 mb-4">
-                <ul className="space-y-3">
-                  {offerKeys.map((key) => (
-                    <li key={key} className="flex items-center gap-3">
-                      <CheckCircle className="w-5 h-5 text-accent flex-shrink-0" />
-                      <span className="text-body">{t(key)}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <p className="text-small text-muted-foreground text-center">{t('ops.offersNote')}</p>
-            </div>
-          </div>
-        </section>
-
         {/* CTA */}
         <section className="section">
           <div className="container-custom">
