@@ -60,15 +60,13 @@ export function Freelance() {
                 ))}
               </div>
               
-              <div className="flex justify-center md:justify-start">
-                <a 
-                  href="/product-owner"
-                  className="inline-flex items-center justify-center gap-2 text-accent hover:text-accent/80 font-medium transition-colors group w-full md:w-auto"
-                >
-                  {t('accompagnement.product.cta')}
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </a>
-              </div>
+              <a 
+                href="/product-owner"
+                className="btn-primary w-full justify-center text-base py-3 mt-2"
+              >
+                {t('accompagnement.product.cta')}
+                <ArrowRight className="w-4 h-4" />
+              </a>
             </div>
 
             {/* Automation & IA Card */}
@@ -91,15 +89,13 @@ export function Freelance() {
                 ))}
               </div>
               
-              <div className="flex justify-center md:justify-start">
-                <a 
-                  href="/ops-builder"
-                  className="inline-flex items-center justify-center gap-2 text-accent hover:text-accent/80 font-medium transition-colors group w-full md:w-auto"
-                >
-                  {t('accompagnement.automation.cta')}
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </a>
-              </div>
+              <a 
+                href="/ops-builder"
+                className="btn-secondary w-full justify-center text-base py-3 mt-2"
+              >
+                {t('accompagnement.automation.cta')}
+                <ArrowRight className="w-4 h-4" />
+              </a>
             </div>
           </div>
         </div>
