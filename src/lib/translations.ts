@@ -124,7 +124,7 @@ export const translations = {
 
     // Ops Builder page
     'ops.heroTitle': 'Optimisation des processus',
-    'ops.heroSubtitle': 'Automation & IA orientées ROI* pour les PME',
+    'ops.heroSubtitle': 'Du ROI* pour les PME',
     'ops.roiNote': '*ROI : retour sur investissement — temps gagné, coûts réduits, efficacité opérationnelle.',
     'ops.introTitle': 'Mon offre',
     'ops.introText': "Mon offre vise à identifier et résoudre les pertes de temps et d'argent liées à des tâches répétitives ou mal structurées, afin de permettre aux équipes de se concentrer sur des missions à plus forte valeur ajoutée.",
@@ -141,7 +141,7 @@ export const translations = {
     'ops.offer3': 'Maintenance mensuelle possible',
     'ops.offersNote': 'Offre principalement adaptée aux PME.',
     'ops.ctaPrimary': "Échangeons sur vos problématiques",
-    'ops.ctaSecondary': 'Découvrir mon accompagnement Product',
+    'ops.ctaSecondary': 'Prendre rendez-vous',
 
     // Ops Builder Full page
     'opsFull.heroTitle': 'Ops Builder',
@@ -273,7 +273,7 @@ export const translations = {
 
     // Ops Builder page
     'ops.heroTitle': 'Process Optimization',
-    'ops.heroSubtitle': 'ROI*-focused Automation & AI for SMEs',
+    'ops.heroSubtitle': 'ROI* for SMEs',
     'ops.roiNote': '*ROI: return on investment — time saved, reduced costs, operational efficiency.',
     'ops.introTitle': 'My offer',
     'ops.introText': "My offer aims to identify and resolve time and money losses linked to repetitive or poorly structured tasks, enabling teams to focus on higher value-added missions.",
@@ -290,7 +290,7 @@ export const translations = {
     'ops.offer3': 'Monthly maintenance available',
     'ops.offersNote': 'Offer primarily designed for SMEs.',
     'ops.ctaPrimary': "Let's discuss your challenges",
-    'ops.ctaSecondary': 'Discover my Product services',
+    'ops.ctaSecondary': 'Book a meeting',
 
     // Ops Builder Full page
     'opsFull.heroTitle': 'Ops Builder',
