@@ -13,6 +13,7 @@ const projets = [
   { labelKey: 'po.project2' as const, slug: 'declaration-sinistre-en-ligne' },
 ];
 
+// ProductOwner page component
 export default function ProductOwner() {
   const { t } = useLanguage();
 
