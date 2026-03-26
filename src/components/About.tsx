@@ -6,7 +6,7 @@ import albumOcean from '@/assets/hobbies/OCEAN.jpg';
 import sportRun from '@/assets/hobbies/Sport_Run.jpeg';
 import sportBike from '@/assets/hobbies/Sport_Bike.jpeg';
 import { WorldMap } from './WorldMap';
-import { useLanguage } from './LanguageProvider';
+import { useLanguage } from '@/components/LanguageProvider';
 
 interface AlbumCover {
   src: string;

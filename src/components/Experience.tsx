@@ -1,6 +1,6 @@
 import { ArrowRight, Calendar, Target, FolderOpen } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { useLanguage } from './LanguageProvider';
+import { useLanguage } from '@/components/LanguageProvider';
 import allianzLogo from '@/assets/brands/allianz.png';
 
 export function Experience() {

@@ -1,5 +1,5 @@
 import { MapPin, Briefcase, Bot, ArrowRight } from 'lucide-react';
-import { useLanguage } from './LanguageProvider';
+import { useLanguage } from '@/components/LanguageProvider';
 
 const locations = ['Nouvelle-Calédonie', 'France'];
 
