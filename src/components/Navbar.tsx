@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useTheme } from './ThemeProvider';
-import { useLanguage } from './LanguageProvider';
+import { useLanguage } from '@/components/LanguageProvider';
 import { Moon, Sun, Briefcase, Building2, Heart, Mail, Globe, Menu, X } from 'lucide-react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './ui/tooltip';

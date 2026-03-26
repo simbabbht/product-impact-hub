@@ -1,5 +1,5 @@
 import { Leaf } from 'lucide-react';
-import { useLanguage } from './LanguageProvider';
+import { useLanguage } from '@/components/LanguageProvider';
 
 export function Footer() {
   const { t } = useLanguage();

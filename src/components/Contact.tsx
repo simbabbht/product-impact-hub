@@ -1,6 +1,6 @@
 import { useState, FormEvent } from 'react';
 import { Mail, Linkedin, Calendar, Send, CheckCircle, AlertCircle } from 'lucide-react';
-import { useLanguage } from './LanguageProvider';
+import { useLanguage } from '@/components/LanguageProvider';
 
 export function Contact() {
   const { t } = useLanguage();
