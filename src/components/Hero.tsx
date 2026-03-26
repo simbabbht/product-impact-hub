@@ -2,7 +2,7 @@ import { ArrowRight } from "lucide-react";
 import profilePhoto from "@/assets/SB_Profil2.png";
 import { useLanguage } from "./LanguageProvider";
 
-const chips = ["Product", "Automation & IA", "Customer Experience"];
+const chips = ["Transformation digitale", "Expérience client & collaborateur", "Product & Ops"];
 
 export function Hero() {
   const { t } = useLanguage();
