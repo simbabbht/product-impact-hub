@@ -1,6 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import profilePhoto from "@/assets/SB_Profil2.png";
-import { useLanguage } from "./LanguageProvider";
+import { useLanguage } from '@/components/LanguageProvider';
 
 const chips = ["Transformation digitale", "Expérience client & collaborateur", "Product & Ops"];
 
