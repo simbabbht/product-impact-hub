@@ -7,7 +7,6 @@ export function Contact() {
   const [formState, setFormState] = useState({
     name: '',
     email: '',
-    profession: '',
     message: '',
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -24,7 +23,6 @@ export function Contact() {
         'form-name': 'contact',
         name: formState.name,
         email: formState.email,
-        profession: formState.profession,
         message: formState.message,
       });
 
@@ -39,7 +37,7 @@ export function Contact() {
       setIsSubmitted(true);
       setTimeout(() => {
         setIsSubmitted(false);
-        setFormState({ name: '', email: '', profession: '', message: '' });
+        setFormState({ name: '', email: '', message: '' });
       }, 3000);
     } catch {
       setIsError(true);
@@ -105,10 +103,6 @@ export function Contact() {
                 <div>
                   <label htmlFor="email" className="block text-small font-medium mb-1">{t('contact.form.email')}</label>
                   <input type="email" id="email" name="email" required maxLength={255} value={formState.email} onChange={(e) => setFormState(prev => ({ ...prev, email: e.target.value }))} className="w-full px-4 py-3 rounded-md bg-surface border border-border focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors text-body" placeholder={t('contact.form.emailPlaceholder')} />
-                </div>
-                <div>
-                  <label htmlFor="profession" className="block text-small font-medium mb-1">{t('contact.form.profession')}</label>
-                  <input type="text" id="profession" name="profession" maxLength={100} value={formState.profession} onChange={(e) => setFormState(prev => ({ ...prev, profession: e.target.value }))} className="w-full px-4 py-3 rounded-md bg-surface border border-border focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors text-body" placeholder={t('contact.form.professionPlaceholder')} />
                 </div>
                 <div>
                   <label htmlFor="message" className="block text-small font-medium mb-1">{t('contact.form.message')}</label>
