@@ -65,6 +65,25 @@ export default function ProductOwner() {
           </div>
         </section>
 
+        {/* Ma valeur ajoutée */}
+        <section className="section">
+          <div className="container-custom">
+            <div className="max-w-3xl mx-auto">
+              <h2 className="text-h2 mb-4 text-center">{t('po.roleTitle')}</h2>
+              <p className="text-body text-muted-foreground text-center mb-2">{t('po.roleDesc1')}</p>
+              <p className="text-body text-muted-foreground text-center mb-8">{t('po.roleDesc2')}</p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {(['po.role1', 'po.role2', 'po.role3', 'po.role4', 'po.role5'] as const).map((key) => (
+                  <div key={key} className="glass-card p-4 flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+                    <span className="text-body">{t(key)}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Mes projets */}
         <section className="section">
           <div className="container-custom">
