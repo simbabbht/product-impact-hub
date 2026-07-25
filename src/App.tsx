@@ -10,7 +10,10 @@ import ProjectDetail from "./pages/ProjectDetail";
 import ProductOwner from "./pages/ProductOwner";
 import OpsBuilder from "./pages/OpsBuilder";
 import OpsBuilderFull from "./pages/OpsBuilderFull";
+import Login from "./pages/Login";
+import OAuthConsent from "./pages/OAuthConsent";
 import NotFound from "./pages/NotFound";
+
 
 const queryClient = new QueryClient();
 
@@ -31,7 +34,10 @@ const App = () => (
               <Route path="/ops-builder-full" element={<OpsBuilderFull />} />
               <Route path="/projet/:slug" element={<ProjectDetail />} />
               <Route path="/work/:slug" element={<ProjectDetail />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/.lovable/oauth/consent" element={<OAuthConsent />} />
               <Route path="*" element={<NotFound />} />
+
             </Routes>
           </BrowserRouter>
         </TooltipProvider>
